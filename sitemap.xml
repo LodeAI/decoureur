@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- GEGENEREERD is dit niet: web/sitemap.xml wordt met de hand bijgehouden.
+     Voeg je een pagina toe, zet hem hier én in robots.txt-bereik.
+     De xhtml:link-regels vertellen zoekmachines dat de drie talen dezelfde
+     pagina zijn; zonder die koppeling concurreren ze met elkaar. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://decoureur.eu/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/nl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/how-it-works/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/uitleg/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/explication/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/how-it-works/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/nl/uitleg/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/uitleg/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/explication/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/how-it-works/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/fr/explication/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/uitleg/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/explication/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/how-it-works/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/newsletter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/nieuwsbrief/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/newsletter/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/nl/nieuwsbrief/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/nieuwsbrief/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/newsletter/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/fr/infolettre/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/nieuwsbrief/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/newsletter/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/privacy/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/nl/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/privacy/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/fr/confidentialite/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/privacy/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/terms/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/voorwaarden/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/terms/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/nl/voorwaarden/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/terms/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/voorwaarden/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/terms/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/fr/conditions/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/terms/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/voorwaarden/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/terms/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/support/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/support/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/nl/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/support/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/support/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/fr/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/support/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/support/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

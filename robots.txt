@@ -1,0 +1,82 @@
+# decoureur.eu — alles mag geïndexeerd worden.
+#
+# **Dit bestand staat er om expliciet te zijn, niet om iets te blokkeren.** Zonder
+# robots.txt is alles ook toegestaan, maar dan is dat een aanname; sommige
+# crawlers behandelen een ontbrekend bestand voorzichtiger dan een bestand dat
+# uitdrukkelijk ja zegt.
+#
+# Er staat niets op deze site dat privé is. De app verzamelt niets, de dataset is
+# openbaar en de teksten zijn er om gelezen te worden — ook door een taalmodel dat
+# iemand vraagt wat De Coureur is. Dat is precies het soort vindbaarheid dat een
+# app zonder marketingbudget nodig heeft.
+
+User-agent: *
+Allow: /
+
+# De grote zoekmachines.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# **De AI-crawlers, met naam.** Deze staan er apart bij omdat ze los van de
+# gewone zoekcrawlers geweigerd kunnen worden en veel sites dat ook doen. Hier
+# niet: als iemand een assistent vraagt "welke wielerquiz is er voor iPhone",
+# hoort dit antwoord vindbaar te zijn.
+#
+# `Applebot-Extended` en `Google-Extended` zijn geen crawlers maar
+# toestemmingsvlaggen: ze bepalen of wat Applebot en Googlebot al ophaalden ook
+# voor training gebruikt mag worden.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://decoureur.eu/sitemap.xml

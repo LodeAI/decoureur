@@ -22,6 +22,14 @@
   Cache-Control: public, max-age=3600, must-revalidate
   Access-Control-Allow-Origin: *
 
+# robots.txt en sitemap.xml. Crawlers halen die vaker op dan een bezoeker een
+# pagina; een dag cache scheelt verkeer zonder dat een nieuwe pagina lang
+# onvindbaar blijft.
+/robots.txt
+  Cache-Control: public, max-age=86400
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
 # De site zelf. Kort genoeg om een tekstwijziging snel door te laten komen.
 /*
   Cache-Control: public, max-age=600

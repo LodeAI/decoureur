@@ -21,6 +21,17 @@
    * heeft. */
   --letter-titel: ui-serif, "New York", Georgia, "Times New Roman", serif;
   --letter-tekst: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* **Eén kolombreedte voor alles op de pagina.** Kop, tekst en voettekst delen
+   * deze as, zodat er geen sprong zit tussen pagina's met veel en pagina's met
+   * weinig tekst.
+   *
+   * Hier stond eerst een tweede breedte: `.tekst` zette `main` op 40rem terwijl
+   * de voettekst 34rem bleef. Dat viel alleen op waar de alinea's lang genoeg
+   * waren om de rand te raken — op privacy, voorwaarden en contact dus, en niet
+   * op de nieuwsbrief. Precies het soort verschil dat je ziet zonder te kunnen
+   * benoemen. Eén waarde, geen uitzonderingen.
+   *
+   * 34rem is ongeveer 68 tekens per regel, wat een prettige leesmaat is. */
   --breedte: 34rem;
 }
 
@@ -125,6 +136,33 @@ body {
   color: var(--kleur-ink);
 }
 
+/* **Alleen op de startpagina.** Dezelfde compositie — merkteken boven, naam
+ * eronder — maar fors groter (Lode, 2026-08-04). Daar is het merk het onderwerp
+ * van de pagina en niet de navigatie ernaartoe; op de andere pagina's is het het
+ * omgekeerde en blijft de kop klein.
+ *
+ * De maat schaalt mee met het scherm: op een telefoon zou 140px de halve hoogte
+ * opeten voordat de knop in beeld komt. */
+.kop.groot {
+  padding-top: var(--ruimte-xl);
+  padding-bottom: var(--ruimte-s);
+}
+
+.kop.groot .logo {
+  width: clamp(104px, 26vw, 140px);
+  height: clamp(104px, 26vw, 140px);
+  margin-bottom: var(--ruimte-m);
+}
+
+.kop.groot .woordmerk {
+  font-size: clamp(1.125rem, 4.5vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  /* De laatste letter krijgt de spatiëring ook mee, en dan staat het woord
+   * optisch links van het midden. Die ene spatie corrigeert dat. */
+  text-indent: 0.22em;
+}
+
 /* MARK: - De startpagina
  *
  * Alleen de startpagina centreert verticaal; tekstpagina's zijn gewone
@@ -142,23 +180,35 @@ main {
   padding: var(--ruimte-l) 0 var(--ruimte-xxxl);
 }
 
+/* **Niet verticaal centreren.** Dat deed het hier eerst, en dan zweefde de pitch
+ * met de knoppen in het midden van het scherm terwijl de kop bovenaan bleef
+ * plakken — twee losse dingen in plaats van één blok. Het merkteken, de naam, de
+ * zin en de knoppen horen als één geheel gelezen te worden, dus stromen ze
+ * gewoon door onder de kop. */
 main.start {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding-top: 0;
 }
 
+/* **Bewust klein** (Lode, 2026-08-04). Op de startpagina moeten het merkteken,
+ * de naam en de downloadknop het oog vangen; deze zin is de onderregel daarbij en
+ * niet de kop. Hij stond hier eerst in serif op 1,75rem en trok de aandacht weg
+ * van precies de drie dingen die hem hadden moeten hebben.
+ *
+ * Blijft een `h1`: het is nog steeds de enige koptekst van de pagina, en een
+ * zoekmachine of schermlezer hoort te weten waar de pagina over gaat. Klein
+ * gezet is een opmaakkeuze, geen structuurkeuze. */
 .pitch {
   text-align: center;
-  font-family: var(--letter-titel);
-  font-weight: 600;
-  font-size: clamp(1.375rem, 4.5vw, 1.75rem);
-  line-height: 1.35;
-  color: var(--kleur-ink);
+  font-family: var(--letter-tekst);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--kleur-ink-secondary);
   align-self: center;
-  max-width: 26rem;
-  margin: var(--ruimte-xl) 0 var(--ruimte-xxl);
+  max-width: 22rem;
+  margin: var(--ruimte-m) 0 var(--ruimte-xl);
   text-wrap: balance;
 }
 
@@ -191,21 +241,22 @@ main.start {
   color: var(--kleur-correct-ink);
 }
 
+/* De downloadknop is op de startpagina het doel van de hele pagina, dus hij is
+ * groter dan de twee eronder. */
+.knop.appstore {
+  font-size: 1.0625rem;
+  padding: var(--ruimte-l) var(--ruimte-xl);
+}
+
 .knop.tweede {
   background: var(--kleur-card);
   color: var(--kleur-ink);
   border-color: var(--kleur-divider);
 }
 
-/* De App Store-knop. **De site gaat pas live samen met de app** (Lode,
- * 2026-08-04), dus dit is een echte link en geen aankondiging meer. Zolang de
- * href niet ingevuld is, wijst hij naar het rode invulblok verderop op dezelfde
- * pagina — dan valt het op in plaats van dat er niets gebeurt. */
-.knop.appstore { }
+
 
 /* MARK: - Tekstpagina's (de uitleg, privacy, voorwaarden) */
-
-.tekst { max-width: 40rem; }
 
 /* De openingsalinea van een tekstpagina. Zelfde grootte als .pitch maar
  * linksuitgelijnd — gecentreerde lopende tekst leest slecht zodra het meer dan
@@ -298,21 +349,6 @@ li { margin-bottom: var(--ruimte-s); }
 .cel.goed { background: var(--kleur-correct); color: var(--kleur-correct-ink); }
 .cel.bijna { background: var(--kleur-close); color: var(--kleur-close-ink); }
 .cel.fout { background: var(--kleur-wrong); color: var(--kleur-wrong-ink); }
-
-/* MARK: - Meldingen */
-
-/* Nog in te vullen door Lode. **Zichtbaar rood en met opzet lelijk**: dit mag
- * niet per ongeluk live gaan. Zie web/README.md voor de lijst. */
-.invullen {
-  background: var(--kleur-card);
-  border: 2px dashed var(--kleur-accent);
-  border-radius: var(--rondig-s);
-  padding: var(--ruimte-l);
-  margin: var(--ruimte-l) 0;
-  color: var(--kleur-accent);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.875rem;
-}
 
 /* MARK: - Voet */
 
