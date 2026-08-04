@@ -1,0 +1,47 @@
+/* GENERATED — bewerk design/tokens.json, niet dit bestand.
+ *
+ * Bron:      design/tokens.json
+ * Generator: data/scripts/gen_design_tokens.py
+ * Handmatige wijzigingen gaan verloren en falen de CI-check.
+ *
+ * Geen donkere modus: tokens.json versie 2 zet light en dark gelijk, en
+ * het papierkarakter van #F6F2EA vertaalt niet naar zwart. */
+:root {
+  --kleur-correct: #315D46;   /* Merkgroen */
+  --kleur-correct-ink: #FFFDF8;   /* Inkt op groen */
+  --kleur-close: #C49A3A;   /* Goud */
+  --kleur-close-ink: #1F1E1B;   /* Inkt op goud */
+  --kleur-wrong: #726D66;   /* Steen */
+  --kleur-wrong-ink: #FFFDF8;   /* Inkt op steen */
+  --kleur-unknown: #DED6CB;   /* Mist */
+  --kleur-unknown-ink: #726D66;   /* Inkt op mist */
+  --kleur-accent: #D14C43;   /* Rood */
+  --kleur-success: #4B8B5F;   /* Bladgroen */
+  --kleur-background: #F6F2EA;   /* Papier */
+  --kleur-surface: #FBF8F2;   /* Vlak */
+  --kleur-card: #FFFDF8;   /* Kaart */
+  --kleur-divider: #DED6CB;   /* Scheidingslijn */
+  --kleur-ink: #1F1E1B;   /* Tekst primair */
+  --kleur-ink-secondary: #726D66;   /* Tekst secundair */
+
+  /* De UCI-regenboog uit het logo (brandColors). Officiële opgave. */
+  --merk-logo-ink: #1F1E1B;   /* Logo-inkt */
+  --merk-rainbow-blue: #0078C8;   /* Blauw */
+  --merk-rainbow-red: #C8143C;   /* Rood */
+  --merk-rainbow-black: #000000;   /* Zwart */
+  --merk-rainbow-yellow: #FAE100;   /* Geel */
+  --merk-rainbow-green: #32B432;   /* Groen */
+
+  --ruimte-xs: 4px;
+  --ruimte-s: 8px;
+  --ruimte-m: 12px;
+  --ruimte-l: 16px;
+  --ruimte-xl: 24px;
+  --ruimte-xxl: 32px;
+  --ruimte-xxxl: 48px;
+
+  --rondig-s: 12px;
+  --rondig-m: 16px;
+  --rondig-l: 18px;
+  --rondig-xl: 24px;
+}

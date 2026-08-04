@@ -1,0 +1,343 @@
+/* De landingspagina van De Coureur (plan.md §18).
+ *
+ * Kleuren, spacing en radius komen uit tokens.css — dat bestand is gegenereerd
+ * uit design/tokens.json, net als logo.svg. **Typ hier nooit een hexcode of een
+ * pixelmaat die in tokens.json thuishoort** (CLAUDE.md §1.3); de site en de app
+ * horen dezelfde kleuren te hebben, en dat blijft alleen zo met één bron.
+ *
+ * Geen framework, geen buildstap, geen externe fonts, geen JavaScript. Dat
+ * laatste is geen luiheid maar een belofte: /privacy zegt dat er geen script op
+ * staat en _headers dwingt het af met een CSP. De taalkiezer is daarom drie
+ * links en geen menu.
+ *
+ * **Alle paden zijn relatief.** De site moet zowel op decoureur.eu/ werken als op
+ * een submap; een pad dat met / begint breekt in het tweede geval. Zie
+ * web/README.md. */
+
+:root {
+  /* De serif van de app is New York (SwiftUI `design: .serif`). `ui-serif` mapt
+   * daar op Apple-platformen precies op; elders valt het netjes terug. Geen
+   * webfont: dat is een externe afhankelijkheid voor iets wat het toestel al
+   * heeft. */
+  --letter-titel: ui-serif, "New York", Georgia, "Times New Roman", serif;
+  --letter-tekst: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --breedte: 34rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { height: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--kleur-background);
+  color: var(--kleur-ink);
+  font-family: var(--letter-tekst);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.omhulsel {
+  width: 100%;
+  max-width: var(--breedte);
+  margin: 0 auto;
+  padding: 0 var(--ruimte-xl);
+}
+
+/* MARK: - Taalkiezer
+ *
+ * Rechtsboven, drie links, geen menu. Een dropdown vraagt JavaScript en dat mag
+ * hier niet; bij drie talen is een rij links bovendien sneller in gebruik. */
+
+.talen {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ruimte-s);
+  padding: var(--ruimte-l) var(--ruimte-xl) 0;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.talen a {
+  color: var(--kleur-ink-secondary);
+  text-decoration: none;
+  padding: var(--ruimte-xs) var(--ruimte-s);
+  border-radius: var(--rondig-s);
+}
+
+.talen a:hover { color: var(--kleur-ink); }
+
+/* De huidige taal is geen link maar een markering. `aria-current` doet het
+ * semantische werk; deze regel maakt het zichtbaar. */
+.talen [aria-current="true"] {
+  color: var(--kleur-ink);
+  background: var(--kleur-card);
+  border: 1px solid var(--kleur-divider);
+  font-weight: 600;
+}
+
+/* MARK: - De kop
+ *
+ * **Op elke pagina identiek, en bewust hetzelfde als in de app** (Lode,
+ * 2026-08-04). `AppHeader.swift` zet het merkteken gecentreerd met de naam
+ * eronder in kleine kapitalen; wie van de app naar de site gaat, hoort niets te
+ * hoeven herkennen. Daarom is de kop hier geen navigatiebalk maar een titelblok.
+ *
+ * **De naam staat in de systeemletter, niet in de serif.** Dat is geen
+ * slordigheid maar precisie: `AppHeader` gebruikt `Typography.caption`, en dat is
+ * `design: .default`. De serif is in de app voorbehouden aan titels en grote
+ * getallen (`Typography.title` en `display`). Hier stond eerst een serif
+ * woordmerk — dat week dus af van de app, precies waar het niet mocht.
+ *
+ * De regenboogstreep die hier stond is weg: de app-kop heeft er geen, en het
+ * merkteken draagt de regenboog al. */
+
+.kop {
+  text-align: center;
+  padding: var(--ruimte-l) var(--ruimte-xl) var(--ruimte-m);
+}
+
+.merk {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  display: block;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto var(--ruimte-xs);
+}
+
+.woordmerk {
+  display: block;
+  font-family: var(--letter-tekst);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--kleur-ink);
+}
+
+/* MARK: - De startpagina
+ *
+ * Alleen de startpagina centreert verticaal; tekstpagina's zijn gewone
+ * blokstroom.
+ *
+ * Let op bij het toevoegen van iets aan `.start`: een flex-item met `max-width`
+ * en `margin: 0 auto` krijgt **breedte nul**. Auto-marges op de dwarsas
+ * schakelen `align-items: stretch` uit, dus het item krimpt naar zijn inhoud —
+ * en een lege container heeft geen inhoud. Gebruik `width` plus
+ * `align-self: center`. Dit heeft de regenboogstreep één ronde onzichtbaar
+ * gemaakt. */
+
+main {
+  flex: 1;
+  padding: var(--ruimte-l) 0 var(--ruimte-xxxl);
+}
+
+main.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0;
+}
+
+.pitch {
+  text-align: center;
+  font-family: var(--letter-titel);
+  font-weight: 600;
+  font-size: clamp(1.375rem, 4.5vw, 1.75rem);
+  line-height: 1.35;
+  color: var(--kleur-ink);
+  align-self: center;
+  max-width: 26rem;
+  margin: var(--ruimte-xl) 0 var(--ruimte-xxl);
+  text-wrap: balance;
+}
+
+/* MARK: - Knoppen
+ *
+ * Drie, onder elkaar, allemaal even breed. Onder elkaar en niet naast elkaar:
+ * op een telefoon — waar deze pagina vooral geopend wordt — is dat de enige
+ * vorm die niet afkapt of verspringt. */
+
+.knoppen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ruimte-m);
+  align-self: center;
+  width: min(22rem, 100%);
+}
+
+.knop {
+  display: block;
+  text-align: center;
+  padding: var(--ruimte-m) var(--ruimte-xl);
+  border-radius: var(--rondig-l);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.knop.primair {
+  background: var(--kleur-correct);
+  color: var(--kleur-correct-ink);
+}
+
+.knop.tweede {
+  background: var(--kleur-card);
+  color: var(--kleur-ink);
+  border-color: var(--kleur-divider);
+}
+
+/* De App Store-knop. **De site gaat pas live samen met de app** (Lode,
+ * 2026-08-04), dus dit is een echte link en geen aankondiging meer. Zolang de
+ * href niet ingevuld is, wijst hij naar het rode invulblok verderop op dezelfde
+ * pagina — dan valt het op in plaats van dat er niets gebeurt. */
+.knop.appstore { }
+
+/* MARK: - Tekstpagina's (de uitleg, privacy, voorwaarden) */
+
+.tekst { max-width: 40rem; }
+
+/* De openingsalinea van een tekstpagina. Zelfde grootte als .pitch maar
+ * linksuitgelijnd — gecentreerde lopende tekst leest slecht zodra het meer dan
+ * twee regels is. Een eigen klasse en geen `style`-attribuut, want de CSP staat
+ * geen inline stijlen toe (zie _headers). */
+.inleiding {
+  font-size: 1.1875rem;
+  line-height: 1.5;
+  color: var(--kleur-ink-secondary);
+  margin-bottom: var(--ruimte-xl);
+}
+
+h1, h2, h3 {
+  font-family: var(--letter-titel);
+  font-weight: 600;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); margin: var(--ruimte-l) 0 var(--ruimte-m); }
+h2 { font-size: 1.375rem; margin: var(--ruimte-xxl) 0 var(--ruimte-m); }
+h3 { font-size: 1.0625rem; margin: var(--ruimte-xl) 0 var(--ruimte-s); }
+
+p { margin: 0 0 var(--ruimte-l); }
+.laatste { margin-bottom: 0; }
+
+a { color: var(--kleur-correct); }
+a:hover { text-decoration-thickness: 2px; }
+
+/* Zichtbare focus, en niet alleen de standaard van de browser: op ivoor is die
+ * op sommige toestellen nauwelijks te zien. */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--kleur-close);
+  outline-offset: 2px;
+}
+
+ul, ol { padding-left: 1.25em; }
+li { margin-bottom: var(--ruimte-s); }
+
+.kaart {
+  background: var(--kleur-card);
+  border: 1px solid var(--kleur-divider);
+  border-radius: var(--rondig-m);
+  padding: var(--ruimte-xl);
+  margin: var(--ruimte-xl) 0;
+}
+
+/* MARK: - Het voorbeeldraster in de uitleg
+ *
+ * Elke cel toont een symbool náást de kleur — CLAUDE.md §3: kleur is nooit de
+ * enige informatiedrager, ook niet in een plaatje op een website. */
+
+.rij {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--ruimte-s);
+  margin: var(--ruimte-l) 0;
+}
+
+.cel {
+  border-radius: var(--rondig-s);
+  padding: var(--ruimte-s) var(--ruimte-xs);
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  background: var(--kleur-unknown);
+  color: var(--kleur-unknown-ink);
+}
+
+/* De kop boven een voorbeeldraster. Serif, want in de app is dat een titelrol. */
+.celkop {
+  font-family: var(--letter-titel);
+  font-weight: 600;
+  margin-bottom: var(--ruimte-s);
+}
+
+.cel .symbool { display: block; font-size: 1rem; }
+
+/* De kolomnaam staat ín de cel en niet in een eigen regel erboven. Op een smal
+ * scherm vallen de zes cellen over twee regels, en een losse kopregel hoort dan
+ * bij de verkeerde helft. */
+.cel .kolom {
+  display: block;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.cel.goed { background: var(--kleur-correct); color: var(--kleur-correct-ink); }
+.cel.bijna { background: var(--kleur-close); color: var(--kleur-close-ink); }
+.cel.fout { background: var(--kleur-wrong); color: var(--kleur-wrong-ink); }
+
+/* MARK: - Meldingen */
+
+/* Nog in te vullen door Lode. **Zichtbaar rood en met opzet lelijk**: dit mag
+ * niet per ongeluk live gaan. Zie web/README.md voor de lijst. */
+.invullen {
+  background: var(--kleur-card);
+  border: 2px dashed var(--kleur-accent);
+  border-radius: var(--rondig-s);
+  padding: var(--ruimte-l);
+  margin: var(--ruimte-l) 0;
+  color: var(--kleur-accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.875rem;
+}
+
+/* MARK: - Voet */
+
+footer {
+  border-top: 1px solid var(--kleur-divider);
+  padding: var(--ruimte-l) 0 var(--ruimte-xxl);
+  color: var(--kleur-ink-secondary);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--ruimte-l);
+  margin-bottom: var(--ruimte-m);
+}
+
+/* MARK: - Klein scherm */
+
+@media (max-width: 30rem) {
+  .omhulsel { padding: 0 var(--ruimte-l); }
+  .talen { padding: var(--ruimte-m) var(--ruimte-l) 0; }
+  .rij { grid-template-columns: repeat(3, 1fr); }
+  .kaart { padding: var(--ruimte-l); }
+  .kop { padding-left: var(--ruimte-l); padding-right: var(--ruimte-l); }
+}

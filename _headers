@@ -1,0 +1,45 @@
+# Kopteksten voor Cloudflare Pages en Netlify (plan.md §18).
+#
+# Beide lezen dit bestand uit de wortel van de gepubliceerde map. Staat de site
+# ooit ergens anders, dan moet hetzelfde daar in de serverconfiguratie.
+#
+# **GitHub Pages leest dit bestand niet.** Daar zijn de regels hieronder dus niet
+# actief. Dat is een van de redenen dat §18 voor Cloudflare Pages of Netlify
+# kiest — zonder deze kopteksten berust de belofte in het privacybeleid ("er staat
+# geen analysescript op deze site") alleen op discipline.
+
+# De dataset die de app ophaalt (§8.5). Twee dingen zijn hier belangrijk:
+#
+#  - **De ETag moet blijven werken.** De app stuurt `If-None-Match` en verwacht
+#    een `304` als er niets veranderd is; dat scheelt bij elke gebruiker elke dag
+#    een volledige download. Cloudflare Pages en Netlify zetten zelf een ETag op
+#    statische bestanden, dus er staat er hier geen — een handmatige ETag die
+#    niet meewijzigt met het bestand is erger dan geen.
+#  - **De cache mag niet te lang zijn.** De app kijkt hoogstens één keer per dag;
+#    een cache van een uur betekent dat een verse dataset uiterlijk een uur later
+#    bij iedereen is, zonder dat de ETag-winst verdwijnt.
+/data/v1/*
+  Cache-Control: public, max-age=3600, must-revalidate
+  Access-Control-Allow-Origin: *
+
+# De site zelf. Kort genoeg om een tekstwijziging snel door te laten komen.
+/*
+  Cache-Control: public, max-age=600
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  # Er staat geen enkel script op deze site en dat hoort zo te blijven; het
+  # privacybeleid belooft het letterlijk. Deze regel maakt van die belofte een
+  # afdwinging: plakt iemand later een tracking-fragment uit een mailtool, dan
+  # werkt het niet in plaats van dat het stil meelift.
+  #
+  # LET OP BIJ HET INSCHRIJFFORMULIER (§22.7, nog open): `form-action 'self'`
+  # blokkeert een formulier dat naar MailerLite of Buttondown post. Dat is
+  # opzet — die host hoort er bewust bij te komen en niet per ongeluk. Voeg dan
+  # precies die ene host toe, bijvoorbeeld:
+  #   form-action 'self' https://assets.mailerlite.com;
+  # Zet er nooit een `*` neer, en laat `script-src` ongemoeid: een formulier dat
+  # alleen met JavaScript werkt, hoort hier niet thuis.
+  #
+  # `style-src 'self'` betekent ook: geen `style=""`-attributen in de HTML. Zie
+  # de klasse `.laatste` in stijl.css.
+  Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self' data:; form-action 'self'; base-uri 'none'; frame-ancestors 'none'
