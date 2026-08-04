@@ -6,7 +6,7 @@
 <title>Restez informé — De Coureur</title>
 <link rel="canonical" href="https://decoureur.eu/fr/infolettre/">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="description" content="Un courriel quand un nouveau mode de jeu arrive, et un code de réduction pour Pro. Rien d’autre.">
+<meta name="description" content="Vous ne recevez un courriel que si c’est vraiment important. Les codes de réduction pour Pro aussi.">
 
 <link rel="alternate" hreflang="en" href="https://decoureur.eu/newsletter/">
 <link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/nieuwsbrief/">
@@ -14,7 +14,7 @@
 <link rel="alternate" hreflang="x-default" href="https://decoureur.eu/newsletter/">
 
 <meta property="og:title" content="Restez informé — De Coureur">
-<meta property="og:description" content="Un courriel quand un nouveau mode de jeu arrive, et un code de réduction pour Pro. Rien d’autre.">
+<meta property="og:description" content="Vous ne recevez un courriel que si c’est vraiment important. Les codes de réduction pour Pro aussi.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://decoureur.eu/fr/infolettre/">
 
@@ -40,8 +40,8 @@
   <h1>Restez informé</h1>
 
   <p class="inleiding">
-    Un courriel quand un nouveau mode de jeu arrive, et un code de réduction pour
-    Pro. Rien d’autre.
+    Vous ne recevez un courriel que si c’est vraiment important ! Les codes de
+    réduction pour Pro arrivent ici aussi.
   </p>
 
   <!-- Het MailerLite-formulier, met de hand overgezet. Wat er uit hun fragment
@@ -62,7 +62,6 @@
     <input type="hidden" name="ml-submit" value="1">
     <input type="hidden" name="anticsrf" value="true">
     <button type="submit">S’inscrire</button>
-    <p class="optin">Double opt-in : vous recevez d’abord un courriel de confirmation. Vous n’êtes inscrit qu’après avoir cliqué.</p>
   </form>
 
   <div class="inschrijven row-success" hidden>
@@ -71,11 +70,11 @@
   </div>
   </div>
 
-  <p>
-    Pas d’infolettre hebdomadaire, pas de compte rendu de course. Un clic sous
-    chaque courriel vous désinscrit, et votre adresse ne va nulle part ailleurs —
-    voir la <a href="../confidentialite/">politique de confidentialité</a>.
-  </p>
+  <!-- Eén regel, alleen de link. Alles wat hier stond is op 2026-08-04 geschrapt
+       (Lode: "onder de knop, niet nog eens een uitleg"). Deze link blijft omdat
+       AVG art. 13 vraagt dat je bij het verzamelen naar je privacyverklaring
+       wijst; de dubbele opt-in zelf staat in MailerLite en is geen tekst. -->
+  <p class="optin"><a href="../confidentialite/">Politique de confidentialité</a></p>
 </main>
 
 <footer class="omhulsel">
@@ -99,9 +98,10 @@
      dat. Verplaats je deze pagina, pas dan ook _headers aan. -->
 <script>
     function ml_webform_success_44480480() {
-      var $ = ml_jQuery || jQuery;
-      $('.ml-subscribe-form-44480480 .row-success').show();
-      $('.ml-subscribe-form-44480480 .row-form').hide();
+      var wrap = document.querySelector('.ml-subscribe-form-44480480');
+      if (!wrap) { return; }
+      wrap.querySelector('.row-form').setAttribute('hidden', '');
+      wrap.querySelector('.row-success').removeAttribute('hidden');
     }
   </script>
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js" type="text/javascript"></script>

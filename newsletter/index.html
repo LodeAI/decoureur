@@ -6,7 +6,7 @@
 <title>Stay in the loop — De Coureur</title>
 <link rel="canonical" href="https://decoureur.eu/newsletter/">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="description" content="An email when there is a new game mode, and a discount code for Pro. Nothing else.">
+<meta name="description" content="You only get an email when it really matters. Discount codes for Pro land here too.">
 
 <link rel="alternate" hreflang="en" href="https://decoureur.eu/newsletter/">
 <link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/nieuwsbrief/">
@@ -14,7 +14,7 @@
 <link rel="alternate" hreflang="x-default" href="https://decoureur.eu/newsletter/">
 
 <meta property="og:title" content="Stay in the loop — De Coureur">
-<meta property="og:description" content="An email when there is a new game mode, and a discount code for Pro. Nothing else.">
+<meta property="og:description" content="You only get an email when it really matters. Discount codes for Pro land here too.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://decoureur.eu/newsletter/">
 
@@ -40,8 +40,8 @@
   <h1>Stay in the loop</h1>
 
   <p class="inleiding">
-    An email when there is a new game mode, and a discount code for Pro. Nothing
-    else.
+    You only get an email when it really matters! Discount codes for Pro will
+    land here too.
   </p>
 
   <!-- Het MailerLite-formulier, met de hand overgezet. Wat er uit hun fragment
@@ -62,7 +62,6 @@
     <input type="hidden" name="ml-submit" value="1">
     <input type="hidden" name="anticsrf" value="true">
     <button type="submit">Subscribe</button>
-    <p class="optin">Double opt-in: you will get a confirmation email first. You are only on the list once you click it.</p>
   </form>
 
   <div class="inschrijven row-success" hidden>
@@ -71,11 +70,11 @@
   </div>
   </div>
 
-  <p>
-    You will not get a weekly newsletter and you will not get a race report.
-    One click in any email unsubscribes you, and your address goes nowhere else —
-    see the <a href="../privacy/">privacy policy</a>.
-  </p>
+  <!-- Eén regel, alleen de link. Alles wat hier stond is op 2026-08-04 geschrapt
+       (Lode: "onder de knop, niet nog eens een uitleg"). Deze link blijft omdat
+       AVG art. 13 vraagt dat je bij het verzamelen naar je privacyverklaring
+       wijst; de dubbele opt-in zelf staat in MailerLite en is geen tekst. -->
+  <p class="optin"><a href="../privacy/">Privacy policy</a></p>
 </main>
 
 <footer class="omhulsel">
@@ -99,9 +98,10 @@
      dat. Verplaats je deze pagina, pas dan ook _headers aan. -->
 <script>
     function ml_webform_success_44480480() {
-      var $ = ml_jQuery || jQuery;
-      $('.ml-subscribe-form-44480480 .row-success').show();
-      $('.ml-subscribe-form-44480480 .row-form').hide();
+      var wrap = document.querySelector('.ml-subscribe-form-44480480');
+      if (!wrap) { return; }
+      wrap.querySelector('.row-form').setAttribute('hidden', '');
+      wrap.querySelector('.row-success').removeAttribute('hidden');
     }
   </script>
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js" type="text/javascript"></script>

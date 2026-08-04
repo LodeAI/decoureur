@@ -368,6 +368,22 @@ li { margin-bottom: var(--ruimte-s); }
   margin: var(--ruimte-xl) 0;
 }
 
+/* **`hidden` moet het winnen van de `display` hierboven** (Lode, 2026-08-04).
+ *
+ * Zonder deze regel stond het bedankblok altijd open — ook voor wie zich nog niet
+ * had ingeschreven, en dus ook op de live site. De oorzaak is een klassieker: het
+ * `hidden`-attribuut is niets meer dan `[hidden] { display: none }` in het
+ * stijlblad van de browser, en élke auteursregel die `display` zet wint daarvan.
+ * `.inschrijven` zet `display: flex`, dus het blok werd zichtbaar gemaakt door de
+ * opmaak die het moest vormgeven.
+ *
+ * Deze regel staat ná `.inschrijven` en heeft een hogere specificiteit (klasse +
+ * attribuut), dus hij wint. Zet je hier ooit nog een `display` op `.inschrijven`
+ * of een van zijn varianten, dan moet dit blok mee. */
+.inschrijven[hidden] {
+  display: none;
+}
+
 .inschrijven label {
   font-size: 0.875rem;
   font-weight: 600;
@@ -411,9 +427,16 @@ li { margin-bottom: var(--ruimte-s); }
   margin: 0 0 var(--ruimte-xs);
 }
 
-/* De dubbele opt-in is een wettelijke eis (§17.1) en hoort dus bij het formulier
- * te staan, niet in de kleine lettertjes verderop. */
-.inschrijven .optin {
+/* Kleine letters bij het formulier.
+ *
+ * **Op 2026-08-04 losgetrokken van `.inschrijven`** (Lode: "onder de knop, niet
+ * nog eens een uitleg"). De regel stond alleen binnen het formulier, en daar is
+ * hij nu weg: wat er nog staat is één regel *onder* de kaart met alleen de link
+ * naar het privacybeleid. Vandaar dat de selector geen `.inschrijven` meer
+ * vraagt. Binnen het bedankblok wordt hij nog wel gebruikt — daar staat één zin
+ * die zegt dat je nog moet bevestigen, en dat is geen uitleg vooraf maar een
+ * instructie achteraf. */
+.optin {
   margin: 0;
   font-size: 0.8125rem;
   color: var(--kleur-ink-secondary);
