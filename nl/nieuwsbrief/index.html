@@ -37,16 +37,39 @@
 </header>
 
 <main class="omhulsel">
-  <!-- NOG IN TE VULLEN: hier komt het inschrijfformulier van de mailtool.
-       De keuze staat open (plan.md §22.7). Dubbele opt-in is een harde eis, en
-       haal het externe script of de tracking-pixel uit het fragment — de CSP in
-       _headers blokkeert die toch. Zie web/README.md. -->
   <h1>Blijf op de hoogte</h1>
 
   <p class="inleiding">
     Een mail als er een nieuwe spelmodus is, en een kortingscode voor Pro. Meer
     niet.
   </p>
+
+  <!-- Het MailerLite-formulier, met de hand overgezet. Wat er uit hun fragment
+       gehaald is en waarom:
+         - alle CSS: die zette Open Sans, zwarte knoppen en een grijs kader neer,
+           en de site heeft een eigen palet (tokens.css).
+         - `webforms.min.js` en de `takel`-fetch: dat is hun script plus een
+           tracking-aanroep. De CSP in _headers laat geen scripts toe.
+         - `target="_blank"`: zonder hun script komt er een JSON-antwoord terug,
+           en dat hoort niet in een nieuw tabblad te openen.
+       Wat er moest blijven staan: de action-URL, `fields[email]`, `ml-submit` en
+       `anticsrf` — daar hangt hun endpoint aan. -->
+  <div class="ml-subscribe-form ml-subscribe-form-44480480">
+  <form class="inschrijven row-form" action="https://assets.mailerlite.com/jsonp/2554753/forms/194880748125161004/subscribe" method="post">
+    <label for="email">E-mailadres</label>
+    <input id="email" name="fields[email]" type="email" autocomplete="email"
+           required inputmode="email" spellcheck="false">
+    <input type="hidden" name="ml-submit" value="1">
+    <input type="hidden" name="anticsrf" value="true">
+    <button type="submit">Inschrijven</button>
+    <p class="optin">Dubbele opt-in: je krijgt eerst een bevestigingsmail. Pas als je daarop klikt sta je op de lijst.</p>
+  </form>
+
+  <div class="inschrijven row-success" hidden>
+    <p class="succeskop">Bedankt!</p>
+    <p class="optin">Kijk in je mailbox — je staat op de lijst zodra je bevestigt.</p>
+  </div>
+  </div>
 
   <p>
     Je krijgt geen wekelijkse nieuwsbrief en geen koersverslag. Eén klik onder
@@ -66,5 +89,21 @@
   <p class="laatste">Een spel over wielrennen. Niet verbonden aan de UCI, aan een ploeg of aan een organisator.</p>
 </footer>
 
+<!-- **Het enige JavaScript op deze hele site**, en alleen op de drie
+     nieuwsbriefpagina's (Lode, 2026-08-04). Zonder dit script toont het
+     MailerLite-endpoint rauwe JSON na het verzenden; met dit script vangt
+     het dat op en verschijnt het bedankblok hierboven.
+
+     `_headers` zet voor deze paden een eigen CSP met script-src erin. De
+     rest van de site blijft absoluut scriptvrij, en /privacy zegt precies
+     dat. Verplaats je deze pagina, pas dan ook _headers aan. -->
+<script>
+    function ml_webform_success_44480480() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-44480480 .row-success').show();
+      $('.ml-subscribe-form-44480480 .row-form').hide();
+    }
+  </script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js" type="text/javascript"></script>
 </body>
 </html>

@@ -30,6 +30,33 @@
 /sitemap.xml
   Cache-Control: public, max-age=86400
 
+# **De drie nieuwsbriefpagina's, en alleen die.** Zij mogen het script van
+# MailerLite laden; de rest van de site blijft absoluut scriptvrij (Lode,
+# 2026-08-04).
+#
+# Waarom die uitzondering er is: zonder hun script geeft het endpoint rauwe JSON
+# terug na het verzenden, en dan ziet een bezoeker een regel code op precies het
+# moment dat hij ja zegt. Gemeten op 2026-08-04 met een testaanroep.
+#
+# Wat het kost, en het staat ook zo in /privacy: op deze drie pagina's gaat het
+# IP-adres van de bezoeker naar MailerLite bij het laden, nog vóór hij iets
+# invult. Dat is de reden dat de uitzondering per pad staat en niet site-breed.
+#
+# Het inline script staat met een **hash** in de policy en niet met
+# 'unsafe-inline'. Verandert MailerLite dat fragment, dan werkt het niet meer en
+# meldt de console de nieuwe hash — dat is precies de bedoeling: een script dat
+# stilletjes verandert hoort niet zomaar te draaien.
+#
+# LET OP BIJ HET PUBLICEREN: controleer in de console van de browser dat deze
+# regel wint van de `/*` hieronder. Cloudflare Pages en Netlify behandelen
+# overlappende paden niet identiek, en dat is niet te testen zonder de echte host.
+/newsletter/*
+  Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self' data:; form-action 'self' https://assets.mailerlite.com; script-src 'sha256-416NC6f4WAtdwxeKcauuVZWgWQYUTKJBp8qB2EX34CI=' https://groot.mailerlite.com; connect-src https://assets.mailerlite.com; base-uri 'none'; frame-ancestors 'none'
+/nl/nieuwsbrief/*
+  Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self' data:; form-action 'self' https://assets.mailerlite.com; script-src 'sha256-416NC6f4WAtdwxeKcauuVZWgWQYUTKJBp8qB2EX34CI=' https://groot.mailerlite.com; connect-src https://assets.mailerlite.com; base-uri 'none'; frame-ancestors 'none'
+/fr/infolettre/*
+  Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self' data:; form-action 'self' https://assets.mailerlite.com; script-src 'sha256-416NC6f4WAtdwxeKcauuVZWgWQYUTKJBp8qB2EX34CI=' https://groot.mailerlite.com; connect-src https://assets.mailerlite.com; base-uri 'none'; frame-ancestors 'none'
+
 # De site zelf. Kort genoeg om een tekstwijziging snel door te laten komen.
 /*
   Cache-Control: public, max-age=600
@@ -40,14 +67,10 @@
   # afdwinging: plakt iemand later een tracking-fragment uit een mailtool, dan
   # werkt het niet in plaats van dat het stil meelift.
   #
-  # LET OP BIJ HET INSCHRIJFFORMULIER (§22.7, nog open): `form-action 'self'`
-  # blokkeert een formulier dat naar MailerLite of Buttondown post. Dat is
-  # opzet — die host hoort er bewust bij te komen en niet per ongeluk. Voeg dan
-  # precies die ene host toe, bijvoorbeeld:
-  #   form-action 'self' https://assets.mailerlite.com;
-  # Zet er nooit een `*` neer, en laat `script-src` ongemoeid: een formulier dat
-  # alleen met JavaScript werkt, hoort hier niet thuis.
+  # `form-action` laat precies één externe host toe: die van MailerLite, waar
+  # het inschrijfformulier van §17 naartoe post (gekozen 2026-08-04). Eén host
+  # met naam, nooit een `*`.
   #
   # `style-src 'self'` betekent ook: geen `style=""`-attributen in de HTML. Zie
   # de klasse `.laatste` in stijl.css.
-  Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self' data:; form-action 'self'; base-uri 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self' data:; form-action 'self' https://assets.mailerlite.com; base-uri 'none'; frame-ancestors 'none'

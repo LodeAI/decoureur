@@ -350,6 +350,75 @@ li { margin-bottom: var(--ruimte-s); }
 .cel.bijna { background: var(--kleur-close); color: var(--kleur-close-ink); }
 .cel.fout { background: var(--kleur-wrong); color: var(--kleur-wrong-ink); }
 
+/* MARK: - Het inschrijfformulier (§17)
+ *
+ * Met de hand opgemaakt in plaats van MailerLite's eigen CSS over te nemen: die
+ * zet Open Sans, een zwarte knop en een grijs kader neer, en dat is een andere
+ * app dan de rest van deze site. Alleen de veldnamen en de action-URL komen van
+ * hen — daar hangt hun endpoint aan. */
+
+.inschrijven {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ruimte-s);
+  background: var(--kleur-card);
+  border: 1px solid var(--kleur-divider);
+  border-radius: var(--rondig-m);
+  padding: var(--ruimte-xl);
+  margin: var(--ruimte-xl) 0;
+}
+
+.inschrijven label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.inschrijven input[type="email"] {
+  font: inherit;
+  color: var(--kleur-ink);
+  background: var(--kleur-background);
+  border: 1px solid var(--kleur-divider);
+  border-radius: var(--rondig-s);
+  padding: var(--ruimte-m);
+  /* Zonder dit rekt het veld op een telefoon buiten de kaart. */
+  width: 100%;
+  min-width: 0;
+}
+
+.inschrijven button {
+  font: inherit;
+  font-weight: 600;
+  color: var(--kleur-correct-ink);
+  background: var(--kleur-correct);
+  border: 0;
+  border-radius: var(--rondig-l);
+  padding: var(--ruimte-m) var(--ruimte-xl);
+  cursor: pointer;
+}
+
+/* **Vier klassen zonder eigen opmaak, en dat is opzet:** `.ml-subscribe-form`,
+ * `.ml-subscribe-form-44480480`, `.row-form` en `.row-success` zijn haakjes waar
+ * het script van MailerLite naar zoekt. Ze mogen geen stijl hebben — geef je ze
+ * die wel, dan verandert er iets aan het formulier zodra MailerLite hun script
+ * aanpast. Ze staan hier alleen zodat duidelijk is waarom ze in de HTML staan. */
+
+/* Het bedankblok dat MailerLite's script toont na het verzenden. `hidden` in de
+ * HTML zorgt dat het zonder script nooit verschijnt. */
+.succeskop {
+  font-family: var(--letter-titel);
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin: 0 0 var(--ruimte-xs);
+}
+
+/* De dubbele opt-in is een wettelijke eis (§17.1) en hoort dus bij het formulier
+ * te staan, niet in de kleine lettertjes verderop. */
+.inschrijven .optin {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--kleur-ink-secondary);
+}
+
 /* MARK: - Voet */
 
 footer {
