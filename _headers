@@ -60,9 +60,9 @@
 # LET OP BIJ HET PUBLICEREN: controleer in de console van de browser dat deze
 # regel wint van de `/*` hieronder. Cloudflare Pages en Netlify behandelen
 # overlappende paden niet identiek, en dat is niet te testen zonder de echte host.
-/newsletter/*
+/en/newsletter/*
   Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self' data:; form-action 'self' https://assets.mailerlite.com; script-src 'sha256-Z8YNskw31oIWvDe8kexm1TiEwav5J30ZB9wBTLyEzk0=' https://groot.mailerlite.com; connect-src https://assets.mailerlite.com; base-uri 'none'; frame-ancestors 'none'
-/nl/nieuwsbrief/*
+/nieuwsbrief/*
   Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self' data:; form-action 'self' https://assets.mailerlite.com; script-src 'sha256-Z8YNskw31oIWvDe8kexm1TiEwav5J30ZB9wBTLyEzk0=' https://groot.mailerlite.com; connect-src https://assets.mailerlite.com; base-uri 'none'; frame-ancestors 'none'
 /fr/infolettre/*
   Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self' data:; form-action 'self' https://assets.mailerlite.com; script-src 'sha256-Z8YNskw31oIWvDe8kexm1TiEwav5J30ZB9wBTLyEzk0=' https://groot.mailerlite.com; connect-src https://assets.mailerlite.com; base-uri 'none'; frame-ancestors 'none'

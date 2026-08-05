@@ -452,12 +452,51 @@ footer {
   text-align: center;
 }
 
+/* De voet leest van boven naar onder: de kleine letter, de pitch, een streep, en
+   onderaan de links. Die volgorde is een keuze van Lode (2026-08-05) — de links
+   staan het dichtst bij de duim en zijn het enige waar je in een voet op tikt. */
+
+.voet-klein {
+  margin: 0 0 var(--ruimte-xs);
+  font-size: 0.8125rem;
+  opacity: 0.8;
+}
+
+.voet-pitch {
+  margin: 0 auto var(--ruimte-l);
+  max-width: 38rem;
+  color: var(--kleur-ink);
+}
+
+.voet-streep {
+  border: 0;
+  border-top: 1px solid var(--kleur-divider);
+  margin: 0 auto var(--ruimte-l);
+  max-width: 38rem;
+}
+
 footer nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--ruimte-l);
-  margin-bottom: var(--ruimte-m);
+  margin-bottom: 0;
+}
+
+/* Geen onderlijning in de voet: strak, en de links staan er dicht genoeg op
+   elkaar dat vijf streepjes onrustig staan. De aanwijzing zit in de kleur, en
+   bij hover én focus komt er contrast bij — dat laatste omdat een toetsenbord-
+   gebruiker anders niet ziet waar hij staat. */
+
+footer nav a {
+  text-decoration: none;
+  color: var(--kleur-ink-secondary);
+  transition: color 0.15s ease;
+}
+
+footer nav a:hover,
+footer nav a:focus-visible {
+  color: var(--kleur-ink);
 }
 
 /* MARK: - Klein scherm */
