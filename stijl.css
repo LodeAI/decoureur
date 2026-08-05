@@ -508,3 +508,21 @@ footer nav a:focus-visible {
   .kaart { padding: var(--ruimte-l); }
   .kop { padding-left: var(--ruimte-l); padding-right: var(--ruimte-l); }
 }
+
+/* MARK: - Binnenkort beschikbaar (2026-08-05) */
+
+/* De App Store-knop is een melding geworden zolang de app er niet is: er bestaat
+   nog geen app-id om naartoe te wijzen, dus een knop zou naar een 404 leiden.
+   Zelfde vorm als de knop, maar niet aantikbaar. */
+
+.knop.binnenkort {
+  cursor: default;
+  opacity: 0.85;
+}
+
+.binnenkort-uitleg {
+  margin: 0 auto var(--ruimte-l);
+  max-width: 32rem;
+  color: var(--kleur-ink-secondary);
+  font-size: 0.9375rem;
+}

@@ -72,11 +72,6 @@
   </div>
   </div>
 
-  <!-- Eén regel, alleen de link. Alles wat hier stond is op 2026-08-04 geschrapt
-       (Lode: "onder de knop, niet nog eens een uitleg"). Deze link blijft omdat
-       AVG art. 13 vraagt dat je bij het verzamelen naar je privacyverklaring
-       wijst; de dubbele opt-in zelf staat in MailerLite en is geen tekst. -->
-  <p class="optin"><a href="../privacy/">Privacy policy</a></p>
 </main>
 
 <footer class="omhulsel">
@@ -100,13 +95,41 @@
      rest van de site blijft absoluut scriptvrij, en /privacy zegt precies
      dat. Verplaats je deze pagina, pas dan ook _headers aan. -->
 <script>
-    function ml_webform_success_44480480() {
+    // **Zelf versturen en zelf bevestigen** (Lode, 2026-08-05: "er komt geen
+    // bevestiging, alhoewel de mail wel verstuurd wordt").
+    //
+    // Wat er mis was: dit formulier deed een gewone POST naar het JSONP-endpoint
+    // van MailerLite. De inschrijving lukte — vandaar die mail — maar de browser
+    // navigeerde weg naar een JSON-antwoord, en de bedanktekst hieronder kreeg
+    // niemand ooit te zien. De succesfunctie werd alleen aangeroepen door hun
+    // eigen `webforms.min.js`, en dat script herkent onze handgeschreven markup
+    // niet.
+    //
+    // Nu onderscheppen we de verzending zelf. `mode: no-cors` omdat het endpoint
+    // geen CORS-headers stuurt; het verzoek vertrekt wel degelijk, we kunnen het
+    // antwoord alleen niet lezen. Dat is precies genoeg: de dubbele opt-in van
+    // MailerLite stuurt de bevestigingsmail, en de tekst hieronder zegt niet "je
+    // staat op de lijst" maar "kijk in je mailbox".
+    (function () {
       var wrap = document.querySelector('.ml-subscribe-form-44480480');
       if (!wrap) { return; }
-      wrap.querySelector('.row-form').setAttribute('hidden', '');
-      wrap.querySelector('.row-success').removeAttribute('hidden');
-    }
+      var form = wrap.querySelector('.row-form');
+      var success = wrap.querySelector('.row-success');
+      if (!form || !success) { return; }
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var knop = form.querySelector('button[type="submit"]');
+        if (knop) { knop.disabled = true; }
+        fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
+          .catch(function () { /* opaque antwoord of netwerkfout: zelfde afloop */ })
+          .then(function () {
+            form.setAttribute('hidden', '');
+            success.removeAttribute('hidden');
+            success.setAttribute('tabindex', '-1');
+            success.focus();
+          });
+      });
+    })();
   </script>
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js" type="text/javascript"></script>
 </body>
 </html>
