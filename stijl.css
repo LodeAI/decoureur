@@ -7,7 +7,8 @@
  *
  * Geen framework, geen buildstap, geen externe fonts, geen JavaScript. Dat
  * laatste is geen luiheid maar een belofte: /privacy zegt dat er geen script op
- * staat en _headers dwingt het af met een CSP. De taalkiezer is daarom drie
+ * staat. Er is niets dat dat afdwingt sinds _headers weg is (2026-08-10),
+ * dus het is een regel en geen garantie. De taalkiezer is daarom drie
  * links en geen menu.
  *
  * **Alle paden zijn relatief.** De site moet zowel op decoureur.eu/ werken als op
@@ -126,11 +127,15 @@ body {
   margin: 0 auto var(--ruimte-xs);
 }
 
+/* **Vet sinds 2026-08-10**, en dat volgt de app. `AppHeader.swift` zet "DE
+ * COUREUR" op de tokenrol `wordmark`, en die is die dag van medium naar bold
+ * gegaan (Lode). Deze regel stond op 500 en week daarmee af op precies de plek
+ * waar site en app identiek horen te zijn. */
 .woordmerk {
   display: block;
   font-family: var(--letter-tekst);
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--kleur-ink);
@@ -156,7 +161,8 @@ body {
 
 .kop.groot .woordmerk {
   font-size: clamp(1.125rem, 4.5vw, 1.5rem);
-  font-weight: 600;
+  /* Bold, net als `wordmarkHero` in de app (2026-08-10). */
+  font-weight: 700;
   letter-spacing: 0.22em;
   /* De laatste letter krijgt de spatiëring ook mee, en dan staat het woord
    * optisch links van het midden. Die ene spatie corrigeert dat. */
@@ -261,7 +267,8 @@ main.start {
 /* De openingsalinea van een tekstpagina. Zelfde grootte als .pitch maar
  * linksuitgelijnd — gecentreerde lopende tekst leest slecht zodra het meer dan
  * twee regels is. Een eigen klasse en geen `style`-attribuut, want de CSP staat
- * geen inline stijlen toe (zie _headers). */
+ * dit ooit niet toe; die CSP bestaat sinds 2026-08-10 niet meer, maar
+ * opmaak hoort hoe dan ook in dit bestand en niet in de HTML. */
 .inleiding {
   font-size: 1.1875rem;
   line-height: 1.5;
@@ -440,6 +447,22 @@ li { margin-bottom: var(--ruimte-s); }
   margin: 0;
   font-size: 0.8125rem;
   color: var(--kleur-ink-secondary);
+}
+
+/* De foutmelding onder het inschrijfformulier.
+ *
+ * **Nieuw op 2026-08-10, en het repareert een echte fout.** Het script toonde
+ * tot dan altijd het bedankblok — ook als MailerLite de inschrijving weigerde,
+ * ook als het verzoek nooit aankwam. Een bezoeker las "Bedankt!" en kreeg nooit
+ * een mail, en er was geen enkele manier om te zien dat er iets mis was.
+ *
+ * `--kleur-accent` is het waarschuwingsrood uit tokens.json; op papier haalt dat
+ * ruim voldoende contrast. Het blok krijgt `role="alert"` in de HTML, zodat een
+ * schermlezer het voorleest op het moment dat het verschijnt. */
+.fout {
+  margin: var(--ruimte-s) 0 0;
+  font-size: 0.875rem;
+  color: var(--kleur-accent);
 }
 
 /* MARK: - Voet */

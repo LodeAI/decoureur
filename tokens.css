@@ -7,14 +7,18 @@
  * Geen donkere modus: tokens.json versie 2 zet light en dark gelijk, en
  * het papierkarakter van #F6F2EA vertaalt niet naar zwart. */
 :root {
-  --kleur-correct: #315D46;   /* Merkgroen */
+  --kleur-correct: #1F5138;   /* Merkgroen */
   --kleur-correct-ink: #FFFDF8;   /* Inkt op groen */
+  --kleur-correct-badge: #1F5138;   /* Badge-inkt juist */
   --kleur-close: #C49A3A;   /* Goud */
   --kleur-close-ink: #1F1E1B;   /* Inkt op goud */
-  --kleur-wrong: #726D66;   /* Steen */
-  --kleur-wrong-ink: #FFFDF8;   /* Inkt op steen */
-  --kleur-unknown: #DED6CB;   /* Mist */
-  --kleur-unknown-ink: #726D66;   /* Inkt op mist */
+  --kleur-close-badge: #7A5A1C;   /* Badge-inkt dichtbij */
+  --kleur-wrong: #DED6CB;   /* Licht steen */
+  --kleur-wrong-ink: #57524A;   /* Inkt op licht steen */
+  --kleur-wrong-badge: #57524A;   /* Badge-inkt fout */
+  --kleur-unknown: #DED6CB;   /* Licht steen (onbekend) */
+  --kleur-unknown-ink: #57524A;   /* Inkt op licht steen (onbekend) */
+  --kleur-unknown-badge: #57524A;   /* Badge-inkt onbekend */
   --kleur-accent: #D14C43;   /* Rood */
   --kleur-success: #4B8B5F;   /* Bladgroen */
   --kleur-background: #F6F2EA;   /* Papier */

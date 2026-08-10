@@ -51,7 +51,7 @@
          - alle CSS: die zette Open Sans, zwarte knoppen en een grijs kader neer,
            en de site heeft een eigen palet (tokens.css).
          - `webforms.min.js` en de `takel`-fetch: dat is hun script plus een
-           tracking-aanroep. De CSP in _headers laat geen scripts toe.
+           tracking-aanroep; die willen we hier niet.
          - `target="_blank"`: zonder hun script komt er een JSON-antwoord terug,
            en dat hoort niet in een nieuw tabblad te openen.
        Wat er moest blijven staan: de action-URL, `fields[email]`, `ml-submit` en
@@ -65,6 +65,10 @@
     <input type="hidden" name="anticsrf" value="true">
     <button type="submit">Inschrijven</button>
   </form>
+
+  <p class="fout" role="alert" hidden
+     data-geweigerd="Dat adres is niet aanvaard. Kijk het na en probeer het opnieuw."
+     data-netwerk="De inschrijving kon niet verstuurd worden. Blokkeert je browser externe formulieren?"></p>
 
   <div class="inschrijven row-success" hidden>
     <p class="succeskop">Bedankt!</p>
@@ -89,44 +93,68 @@
 <!-- **Het enige JavaScript op deze hele site**, en alleen op de drie
      nieuwsbriefpagina's (Lode, 2026-08-04). Zonder dit script toont het
      MailerLite-endpoint rauwe JSON na het verzenden; met dit script vangt
-     het dat op en verschijnt het bedankblok hierboven.
-
-     `_headers` zet voor deze paden een eigen CSP met script-src erin. De
-     rest van de site blijft absoluut scriptvrij, en /privacy zegt precies
-     dat. Verplaats je deze pagina, pas dan ook _headers aan. -->
+     het dat op en verschijnt het bedankblok hierboven. -->
 <script>
-    // **Zelf versturen en zelf bevestigen** (Lode, 2026-08-05: "er komt geen
-    // bevestiging, alhoewel de mail wel verstuurd wordt").
+    // **Lees wat MailerLite antwoordt** (Lode, 2026-08-10). Dit script toonde
+    // tot vandaag onvoorwaardelijk het bedankblok:
     //
-    // Wat er mis was: dit formulier deed een gewone POST naar het JSONP-endpoint
-    // van MailerLite. De inschrijving lukte — vandaar die mail — maar de browser
-    // navigeerde weg naar een JSON-antwoord, en de bedanktekst hieronder kreeg
-    // niemand ooit te zien. De succesfunctie werd alleen aangeroepen door hun
-    // eigen `webforms.min.js`, en dat script herkent onze handgeschreven markup
-    // niet.
+    //     fetch(..., { mode: 'no-cors' }).catch(niets).then(toon succes)
     //
-    // Nu onderscheppen we de verzending zelf. `mode: no-cors` omdat het endpoint
-    // geen CORS-headers stuurt; het verzoek vertrekt wel degelijk, we kunnen het
-    // antwoord alleen niet lezen. Dat is precies genoeg: de dubbele opt-in van
-    // MailerLite stuurt de bevestigingsmail, en de tekst hieronder zegt niet "je
-    // staat op de lijst" maar "kijk in je mailbox".
+    // Elke afloop was dezelfde afloop. Werd het adres geweigerd, hield een
+    // adblocker het verzoek tegen, of viel het netwerk weg — de bezoeker las
+    // "Bedankt!" en kreeg nooit een mail. Precies dat is op 2026-08-10 als
+    // "de nieuwsbrief werkt niet meer" gemeld, en het was niet na te gaan.
+    //
+    // **`no-cors` was ook niet meer nodig.** De reden die hier stond — "het
+    // endpoint stuurt geen CORS-headers" — klopt niet meer: gemeten op
+    // 2026-08-10 antwoordt het met `access-control-allow-origin: *`. Daarmee
+    // is het antwoord gewoon leesbaar, en kan een echte fout een echte
+    // melding worden.
+    //
+    // De twee teksten staan als `data-`attributen in de HTML en niet hier,
+    // zodat dit script op alle drie de taalpagina's byte-identiek blijft.
     (function () {
       var wrap = document.querySelector('.ml-subscribe-form-44480480');
       if (!wrap) { return; }
       var form = wrap.querySelector('.row-form');
       var success = wrap.querySelector('.row-success');
-      if (!form || !success) { return; }
+      var fout = wrap.querySelector('.fout');
+      if (!form || !success || !fout) { return; }
+
+      function toonFout(soort) {
+        fout.textContent = fout.getAttribute('data-' + soort);
+        fout.removeAttribute('hidden');
+      }
+
       form.addEventListener('submit', function (event) {
         event.preventDefault();
         var knop = form.querySelector('button[type="submit"]');
         if (knop) { knop.disabled = true; }
-        fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
-          .catch(function () { /* opaque antwoord of netwerkfout: zelfde afloop */ })
-          .then(function () {
+        fout.setAttribute('hidden', '');
+
+        fetch(form.action, { method: 'POST', body: new FormData(form) })
+          .then(function (antwoord) {
+            // Geen `antwoord.ok`-controle: MailerLite meldt een geweigerd
+            // adres met HTTP 200 en `success: false` in de body.
+            return antwoord.json().catch(function () { return null; });
+          })
+          .then(function (data) {
+            if (data && data.success === false) {
+              // Hun foutteksten zijn Engels; we tonen onze eigen zin.
+              toonFout('geweigerd');
+              if (knop) { knop.disabled = false; }
+              return;
+            }
             form.setAttribute('hidden', '');
             success.removeAttribute('hidden');
             success.setAttribute('tabindex', '-1');
             success.focus();
+          })
+          .catch(function () {
+            // Hier komt alleen een verzoek dat niet vertrok: netwerk weg, of
+            // een blocker die `assets.mailerlite.com` tegenhoudt.
+            toonFout('netwerk');
+            if (knop) { knop.disabled = false; }
           });
       });
     })();
