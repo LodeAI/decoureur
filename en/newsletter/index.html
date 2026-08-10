@@ -66,7 +66,7 @@
     <button type="submit">Subscribe</button>
   </form>
 
-  <p class="fout" role="alert" hidden
+  <p class="formfout" role="alert" hidden
      data-netwerk="The sign-up could not be sent. Is your browser blocking external forms?"></p>
 
   <div class="inschrijven row-success" hidden>
@@ -131,7 +131,7 @@
       if (!wrap) { return; }
       var form = wrap.querySelector('.row-form');
       var success = wrap.querySelector('.row-success');
-      var fout = wrap.querySelector('.fout');
+      var fout = wrap.querySelector('.formfout');
       if (!form || !success || !fout) { return; }
 
       var frame = document.createElement('iframe');

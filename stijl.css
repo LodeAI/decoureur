@@ -423,12 +423,18 @@ li { margin-bottom: var(--ruimte-s); }
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: var(--ruimte-xs);
+  align-items: stretch;
 }
 
 .cel {
   position: relative;
   border-radius: var(--rondig-s);
-  min-height: 2.75rem;
+  /* **Vaste hoogte, geen `min-height`.** In de app geldt "elke cel exact even
+   * groot" (Lode, 2026-08-05) en `AttributeCell` zet daar een vaste `celHoogte`.
+   * Met een minimum ging de hoogte hier meebewegen met de inhoud — een vlag en
+   * een icoon zijn hoger dan `TVL` — en dan staan de zes vakjes niet meer op één
+   * lijn. Precies wat de app met die vaste hoogte voorkomt. */
+  height: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -576,7 +582,13 @@ li { margin-bottom: var(--ruimte-s); }
  * `--kleur-accent` is het waarschuwingsrood uit tokens.json; op papier haalt dat
  * ruim voldoende contrast. Het blok krijgt `role="alert"` in de HTML, zodat een
  * schermlezer het voorleest op het moment dat het verschijnt. */
-.fout {
+/* **`.formfout` en niet `.fout`.** Die naam was al bezet door de foute cel in
+ * het voorbeeldraster (`.cel.fout`), en een gedeelde klasse betekende dat die
+ * cellen hier een `margin-top` van 8 punten erfden — de twee lichte vakjes
+ * stonden daardoor lager dan de vier andere. Gevonden op 2026-08-10 door het
+ * raster met een contour te renderen. Generieke klassenamen in een stylesheet
+ * zonder scoping zijn precies zo'n valstrik. */
+.formfout {
   margin: var(--ruimte-s) 0 0;
   font-size: 0.875rem;
   color: var(--kleur-accent);
