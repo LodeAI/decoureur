@@ -373,7 +373,17 @@ li { margin-bottom: var(--ruimte-s); }
 .kolomicoon { width: 18px; height: 18px; }
 
 /* De gokkaart: naamplaat boven, zes cellen eronder. */
-.gokkaart { margin: var(--ruimte-m) 0 var(--ruimte-l); }
+.gokkaart { margin: var(--ruimte-m) 0 var(--ruimte-s); }
+
+/* De uitleg onder elk kaartje. Kleiner en gedempt, zodat het raster het beeld
+ * blijft dragen en de tekst het volgt in plaats van andersom. De laatste heeft
+ * geen extra ruimte nodig: `.laatste` sluit het blok af. */
+.gokuitleg {
+  margin: 0 0 var(--ruimte-xl);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--kleur-ink-secondary);
+}
 
 .gokkop {
   display: flex;
