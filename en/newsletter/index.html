@@ -57,7 +57,7 @@
        Wat er moest blijven staan: de action-URL, `fields[email]`, `ml-submit` en
        `anticsrf` — daar hangt hun endpoint aan. -->
   <div class="ml-subscribe-form ml-subscribe-form-44480480">
-  <form class="inschrijven row-form" action="https://assets.mailerlite.com/jsonp/2554753/forms/194880748125161004/subscribe" method="post">
+  <form class="inschrijven row-form" target="_blank" action="https://assets.mailerlite.com/jsonp/2554753/forms/194880748125161004/subscribe" method="post">
     <label for="email">Email address</label>
     <input id="email" name="fields[email]" type="email" autocomplete="email"
            required inputmode="email" spellcheck="false">
@@ -67,7 +67,6 @@
   </form>
 
   <p class="fout" role="alert" hidden
-     data-geweigerd="That address was not accepted. Please check it and try again."
      data-netwerk="The sign-up could not be sent. Is your browser blocking external forms?"></p>
 
   <div class="inschrijven row-success" hidden>
@@ -91,28 +90,42 @@
 </footer>
 
 <!-- **Het enige JavaScript op deze hele site**, en alleen op de drie
-     nieuwsbriefpagina's (Lode, 2026-08-04). Zonder dit script toont het
-     MailerLite-endpoint rauwe JSON na het verzenden; met dit script vangt
-     het dat op en verschijnt het bedankblok hierboven. -->
+     nieuwsbriefpagina's (Lode, 2026-08-04). Het toont het bedankblok hierboven
+     zodra de inschrijving verstuurd is. -->
 <script>
-    // **Lees wat MailerLite antwoordt** (Lode, 2026-08-10). Dit script toonde
-    // tot vandaag onvoorwaardelijk het bedankblok:
+    // **Een gewone formulierverzending naar een verborgen iframe** (Lode,
+    // 2026-08-10: *"dit moet echt werken in alle browsers en op alle
+    // toestellen"*).
     //
-    //     fetch(..., { mode: 'no-cors' }).catch(niets).then(toon succes)
+    // Wat hier eerder stond en waarom het weg is:
     //
-    // Elke afloop was dezelfde afloop. Werd het adres geweigerd, hield een
-    // adblocker het verzoek tegen, of viel het netwerk weg — de bezoeker las
-    // "Bedankt!" en kreeg nooit een mail. Precies dat is op 2026-08-10 als
-    // "de nieuwsbrief werkt niet meer" gemeld, en het was niet na te gaan.
+    //   1. `fetch(..., { mode: 'no-cors' })` — verstuurde wel, maar het antwoord
+    //      was ondoorzichtig, dus élke afloop toonde "Bedankt!". Een geweigerd
+    //      adres en een geblokkeerd verzoek zagen er identiek uit.
+    //   2. `fetch(...)` zonder `no-cors` — kon het antwoord wél lezen, maar
+    //      faalde in de praktijk. Een `fetch` naar een externe host hangt af van
+    //      drie dingen die per browser en per toestel verschillen: de
+    //      CORS-headers op *elk* antwoord (ook op een 429 — er staat een
+    //      `x-ratelimit-limit: 10` op dit endpoint), de tracking-preventie van de
+    //      browser, en eventuele contentblockers. Op decoureur.eu leverde dat
+    //      "de inschrijving kon niet verstuurd worden" op.
     //
-    // **`no-cors` was ook niet meer nodig.** De reden die hier stond — "het
-    // endpoint stuurt geen CORS-headers" — klopt niet meer: gemeten op
-    // 2026-08-10 antwoordt het met `access-control-allow-origin: *`. Daarmee
-    // is het antwoord gewoon leesbaar, en kan een echte fout een echte
-    // melding worden.
+    // **Een `<form>` die zichzelf verstuurt kent die drie problemen niet.** Er is
+    // geen CORS bij betrokken — het is dezelfde navigatie die formulieren sinds
+    // altijd doen — en tracking-preventie behandelt een formulierverzending
+    // anders dan een scriptverzoek. Het `target` wijst naar een verborgen iframe,
+    // zodat de bezoeker op de pagina blijft.
     //
-    // De twee teksten staan als `data-`attributen in de HTML en niet hier,
-    // zodat dit script op alle drie de taalpagina's byte-identiek blijft.
+    // **Zonder JavaScript werkt het ook**: dan blijft `target="_blank"` uit de
+    // HTML staan en opent het antwoord in een nieuw tabblad. Lelijk, maar de
+    // inschrijving gaat door. Dat is dezelfde terugval die MailerLite zelf
+    // gebruikt.
+    //
+    // **Wat dit kost, en het is eerlijker het te benoemen:** een iframe op een
+    // andere herkomst is niet te lezen, dus we kunnen "geweigerd" niet van
+    // "gelukt" onderscheiden. Wat we wél afvangen is een verzending die nooit
+    // aankomt — dan komt er geen `load` en slaat de klok hieronder aan. De vorm
+    // van het adres bewaakt de browser zelf via `type="email" required`.
     (function () {
       var wrap = document.querySelector('.ml-subscribe-form-44480480');
       if (!wrap) { return; }
@@ -121,41 +134,47 @@
       var fout = wrap.querySelector('.fout');
       if (!form || !success || !fout) { return; }
 
-      function toonFout(soort) {
-        fout.textContent = fout.getAttribute('data-' + soort);
-        fout.removeAttribute('hidden');
+      var frame = document.createElement('iframe');
+      frame.name = 'ml-doel';
+      frame.setAttribute('aria-hidden', 'true');
+      frame.setAttribute('tabindex', '-1');
+      frame.style.display = 'none';
+      document.body.appendChild(frame);
+      form.target = 'ml-doel';
+
+      var bezig = false;
+      var klok = null;
+      var knop = form.querySelector('button[type="submit"]');
+
+      function stop() {
+        bezig = false;
+        if (klok) { clearTimeout(klok); klok = null; }
       }
 
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        var knop = form.querySelector('button[type="submit"]');
-        if (knop) { knop.disabled = true; }
-        fout.setAttribute('hidden', '');
+      frame.addEventListener('load', function () {
+        // Het frame vuurt ook één keer bij het aanmaken, op `about:blank`.
+        if (!bezig) { return; }
+        stop();
+        form.setAttribute('hidden', '');
+        success.removeAttribute('hidden');
+        success.setAttribute('tabindex', '-1');
+        success.focus();
+      });
 
-        fetch(form.action, { method: 'POST', body: new FormData(form) })
-          .then(function (antwoord) {
-            // Geen `antwoord.ok`-controle: MailerLite meldt een geweigerd
-            // adres met HTTP 200 en `success: false` in de body.
-            return antwoord.json().catch(function () { return null; });
-          })
-          .then(function (data) {
-            if (data && data.success === false) {
-              // Hun foutteksten zijn Engels; we tonen onze eigen zin.
-              toonFout('geweigerd');
-              if (knop) { knop.disabled = false; }
-              return;
-            }
-            form.setAttribute('hidden', '');
-            success.removeAttribute('hidden');
-            success.setAttribute('tabindex', '-1');
-            success.focus();
-          })
-          .catch(function () {
-            // Hier komt alleen een verzoek dat niet vertrok: netwerk weg, of
-            // een blocker die `assets.mailerlite.com` tegenhoudt.
-            toonFout('netwerk');
-            if (knop) { knop.disabled = false; }
-          });
+      form.addEventListener('submit', function () {
+        // **Geen `preventDefault`.** De browser verstuurt het formulier zelf; dat
+        // is precies de bedoeling.
+        bezig = true;
+        fout.setAttribute('hidden', '');
+        // Pas uitschakelen nádat de browser het formulier heeft ingelezen.
+        setTimeout(function () { if (knop) { knop.disabled = true; } }, 0);
+        klok = setTimeout(function () {
+          if (!bezig) { return; }
+          stop();
+          fout.textContent = fout.getAttribute('data-netwerk');
+          fout.removeAttribute('hidden');
+          if (knop) { knop.disabled = false; }
+        }, 12000);
       });
     })();
   </script>
