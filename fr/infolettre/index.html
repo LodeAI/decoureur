@@ -46,32 +46,25 @@
     réduction pour Pro arrivent ici aussi.
   </p>
 
-  <!-- Het MailerLite-formulier, met de hand overgezet. Wat er uit hun fragment
-       gehaald is en waarom:
-         - alle CSS: die zette Open Sans, zwarte knoppen en een grijs kader neer,
-           en de site heeft een eigen palet (tokens.css).
-         - `webforms.min.js` en de `takel`-fetch: dat is hun script plus een
-           tracking-aanroep; die willen we hier niet.
-         - `target="_blank"`: zonder hun script komt er een JSON-antwoord terug,
-           en dat hoort niet in een nieuw tabblad te openen.
-       Wat er moest blijven staan: de action-URL, `fields[email]`, `ml-submit` en
-       `anticsrf` — daar hangt hun endpoint aan. -->
-  <div class="ml-subscribe-form ml-subscribe-form-44480480">
-  <form class="inschrijven row-form" target="_blank" action="https://assets.mailerlite.com/jsonp/2554753/forms/194880748125161004/subscribe" method="post">
-    <label for="email">Adresse courriel</label>
-    <input id="email" name="fields[email]" type="email" autocomplete="email"
+  <div class="inschrijfblok">
+  <form class="inschrijven row-form" data-endpoint="https://script.google.com/macros/s/AKfycbwPpOjNX_aZ4QR5SoaOfj2nPrivcol8dRCeYpMtZy9_kiAFJs5wvND7YIxLL0XhBUqT/exec">
+    <label for="email">Adresse e-mail</label>
+    <input id="email" name="email" type="email" autocomplete="email"
            required inputmode="email" spellcheck="false">
-    <input type="hidden" name="ml-submit" value="1">
-    <input type="hidden" name="anticsrf" value="true">
     <button type="submit">S’inscrire</button>
   </form>
 
+  <noscript>
+    <p class="formfout">Ce formulaire nécessite JavaScript. Sans lui, écrivez-nous à <a href="mailto:support@decoureur.eu">support@decoureur.eu</a>.</p>
+  </noscript>
+
   <p class="formfout" role="alert" hidden
-     data-netwerk="L’inscription n’a pas pu être envoyée. Votre navigateur bloque-t-il les formulaires externes ?"></p>
+     data-geweigerd="Cette adresse n’a pas été acceptée. Vérifiez-la et réessayez."
+     data-netwerk="L’inscription n’a pas pu être envoyée. Réessayez plus tard."></p>
 
   <div class="inschrijven row-success" hidden>
     <p class="succeskop">Merci !</p>
-    <p class="optin">Vérifiez votre boîte de réception — vous serez inscrit après confirmation.</p>
+    <p class="optin">Vous êtes sur la liste. Nous vous écrirons dès qu’il y aura du neuf.</p>
   </div>
   </div>
 
@@ -90,91 +83,72 @@
 </footer>
 
 <!-- **Het enige JavaScript op deze hele site**, en alleen op de drie
-     nieuwsbriefpagina's (Lode, 2026-08-04). Het toont het bedankblok hierboven
-     zodra de inschrijving verstuurd is. -->
+     nieuwsbriefpagina's. Het verstuurt het adres naar de Apps Script-webapp en
+     toont daarna het bedankblok of een foutmelding. -->
 <script>
-    // **Een gewone formulierverzending naar een verborgen iframe** (Lode,
-    // 2026-08-10: *"dit moet echt werken in alle browsers en op alle
-    // toestellen"*).
+    // **Google Apps Script schrijft het adres in een spreadsheet** (Lode,
+    // 2026-08-10).
     //
-    // Wat hier eerder stond en waarom het weg is:
+    // **Getest in Safari met AdGuard actief:** het verzoek komt door en het
+    // antwoord is leesbaar. Dat is niet vanzelfsprekend — een adblocker die een
+    // heel domein blokkeert, maakt élke techniek aan de browserkant kansloos:
+    // fetch, iframe en scriptinjectie stuiten dan op dezelfde muur. Wijzig je
+    // ooit van dienst, meet dat dan opnieuw in een browser mét blokkeerlijsten,
+    // en vertrouw niet op `curl` — die kent geen blokkeerlijsten.
     //
-    //   1. `fetch(..., { mode: 'no-cors' })` — verstuurde wel, maar het antwoord
-    //      was ondoorzichtig, dus élke afloop toonde "Bedankt!". Een geweigerd
-    //      adres en een geblokkeerd verzoek zagen er identiek uit.
-    //   2. `fetch(...)` zonder `no-cors` — kon het antwoord wél lezen, maar
-    //      faalde in de praktijk. Een `fetch` naar een externe host hangt af van
-    //      drie dingen die per browser en per toestel verschillen: de
-    //      CORS-headers op *elk* antwoord (ook op een 429 — er staat een
-    //      `x-ratelimit-limit: 10` op dit endpoint), de tracking-preventie van de
-    //      browser, en eventuele contentblockers. Op decoureur.eu leverde dat
-    //      "de inschrijving kon niet verstuurd worden" op.
+    // Drie dingen die dit endpoint bepalen en die je moet weten voor je iets
+    // wijzigt, alle drie gemeten op 2026-08-10:
     //
-    // **Een `<form>` die zichzelf verstuurt kent die drie problemen niet.** Er is
-    // geen CORS bij betrokken — het is dezelfde navigatie die formulieren sinds
-    // altijd doen — en tracking-preventie behandelt een formulierverzending
-    // anders dan een scriptverzoek. Het `target` wijst naar een verborgen iframe,
-    // zodat de bezoeker op de pagina blijft.
+    //   1. **Het verwacht een JSON-body**, niet losse formuliervelden. Een
+    //      gewone urlencoded POST met `email=` antwoordt `{"ok":false}`.
+    //   2. **`text/plain` volstaat als content-type.** Dat is een van de drie
+    //      types die CORS zonder preflight toelaat, dus er gaat geen extra
+    //      OPTIONS-verzoek overheen. `application/json` zou dat wél doen.
+    //   3. **Beide hops sturen `access-control-allow-origin: *`** — zowel de
+    //      302 van `script.google.com` als het antwoord van
+    //      `script.googleusercontent.com` waar hij naartoe wijst. Daardoor is
+    //      `{"ok":true｜false}` echt te lezen en hoeft er niets geraden te worden.
     //
-    // **Zonder JavaScript werkt het ook**: dan blijft `target="_blank"` uit de
-    // HTML staan en opent het antwoord in een nieuw tabblad. Lelijk, maar de
-    // inschrijving gaat door. Dat is dezelfde terugval die MailerLite zelf
-    // gebruikt.
-    //
-    // **Wat dit kost, en het is eerlijker het te benoemen:** een iframe op een
-    // andere herkomst is niet te lezen, dus we kunnen "geweigerd" niet van
-    // "gelukt" onderscheiden. Wat we wél afvangen is een verzending die nooit
-    // aankomt — dan komt er geen `load` en slaat de klok hieronder aan. De vorm
-    // van het adres bewaakt de browser zelf via `type="email" required`.
+    // **Zonder JavaScript werkt dit formulier niet**, en dat is een gevolg van
+    // punt 1: een `<form>` kan geen JSON-body versturen. Het `<noscript>`-blok
+    // hierboven wijst daarom naar het e-mailadres. Wil je die terugval wél,
+    // dan moet het Apps Script ook `e.parameter.email` aannemen.
     (function () {
-      var wrap = document.querySelector('.ml-subscribe-form-44480480');
+      var wrap = document.querySelector('.inschrijfblok');
       if (!wrap) { return; }
       var form = wrap.querySelector('.row-form');
       var success = wrap.querySelector('.row-success');
       var fout = wrap.querySelector('.formfout');
-      if (!form || !success || !fout) { return; }
+      var veld = wrap.querySelector('input[type="email"]');
+      if (!form || !success || !fout || !veld) { return; }
 
-      var frame = document.createElement('iframe');
-      frame.name = 'ml-doel';
-      frame.setAttribute('aria-hidden', 'true');
-      frame.setAttribute('tabindex', '-1');
-      frame.style.display = 'none';
-      document.body.appendChild(frame);
-      form.target = 'ml-doel';
-
-      var bezig = false;
-      var klok = null;
       var knop = form.querySelector('button[type="submit"]');
 
-      function stop() {
-        bezig = false;
-        if (klok) { clearTimeout(klok); klok = null; }
+      function toonFout(soort) {
+        fout.textContent = fout.getAttribute('data-' + soort);
+        fout.removeAttribute('hidden');
+        if (knop) { knop.disabled = false; }
       }
 
-      frame.addEventListener('load', function () {
-        // Het frame vuurt ook één keer bij het aanmaken, op `about:blank`.
-        if (!bezig) { return; }
-        stop();
-        form.setAttribute('hidden', '');
-        success.removeAttribute('hidden');
-        success.setAttribute('tabindex', '-1');
-        success.focus();
-      });
-
-      form.addEventListener('submit', function () {
-        // **Geen `preventDefault`.** De browser verstuurt het formulier zelf; dat
-        // is precies de bedoeling.
-        bezig = true;
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
         fout.setAttribute('hidden', '');
-        // Pas uitschakelen nádat de browser het formulier heeft ingelezen.
-        setTimeout(function () { if (knop) { knop.disabled = true; } }, 0);
-        klok = setTimeout(function () {
-          if (!bezig) { return; }
-          stop();
-          fout.textContent = fout.getAttribute('data-netwerk');
-          fout.removeAttribute('hidden');
-          if (knop) { knop.disabled = false; }
-        }, 12000);
+        if (knop) { knop.disabled = true; }
+
+        fetch(form.getAttribute('data-endpoint'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({ email: veld.value })
+        })
+          .then(function (antwoord) { return antwoord.json(); })
+          .then(function (data) {
+            if (!data || !data.ok) { toonFout('geweigerd'); return; }
+            form.setAttribute('hidden', '');
+            success.removeAttribute('hidden');
+            success.setAttribute('tabindex', '-1');
+            success.focus();
+          })
+          .catch(function () { toonFout('netwerk'); });
       });
     })();
   </script>

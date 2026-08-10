@@ -482,10 +482,9 @@ li { margin-bottom: var(--ruimte-s); }
 
 /* MARK: - Het inschrijfformulier (§17)
  *
- * Met de hand opgemaakt in plaats van MailerLite's eigen CSS over te nemen: die
- * zet Open Sans, een zwarte knop en een grijs kader neer, en dat is een andere
- * app dan de rest van deze site. Alleen de veldnamen en de action-URL komen van
- * hen — daar hangt hun endpoint aan. */
+ * Eén veld en een knop, in het palet van de site. Het adres gaat naar een Google
+ * Apps Script-webapp die het in een spreadsheet zet; er is geen opmaak van een
+ * externe dienst bij betrokken. */
 
 .inschrijven {
   display: flex;
@@ -542,14 +541,12 @@ li { margin-bottom: var(--ruimte-s); }
   cursor: pointer;
 }
 
-/* **Vier klassen zonder eigen opmaak, en dat is opzet:** `.ml-subscribe-form`,
- * `.ml-subscribe-form-44480480`, `.row-form` en `.row-success` zijn haakjes waar
- * het script van MailerLite naar zoekt. Ze mogen geen stijl hebben — geef je ze
- * die wel, dan verandert er iets aan het formulier zodra MailerLite hun script
- * aanpast. Ze staan hier alleen zodat duidelijk is waarom ze in de HTML staan. */
-
-/* Het bedankblok dat MailerLite's script toont na het verzenden. `hidden` in de
- * HTML zorgt dat het zonder script nooit verschijnt. */
+/* **Drie klassen zonder eigen opmaak, en dat is opzet:** `.inschrijfblok`,
+ * `.row-form` en `.row-success` zijn haakjes waar het script op deze pagina naar
+ * zoekt. Ze mogen geen stijl hebben — dan blijft opmaak en gedrag gescheiden.
+ *
+ * Het bedankblok verschijnt na een geslaagde inschrijving. `hidden` in de HTML
+ * zorgt dat het zonder script nooit te zien is. */
 .succeskop {
   font-family: var(--letter-titel);
   font-weight: 600;
@@ -574,10 +571,10 @@ li { margin-bottom: var(--ruimte-s); }
 
 /* De foutmelding onder het inschrijfformulier.
  *
- * **Nieuw op 2026-08-10, en het repareert een echte fout.** Het script toonde
- * tot dan altijd het bedankblok — ook als MailerLite de inschrijving weigerde,
- * ook als het verzoek nooit aankwam. Een bezoeker las "Bedankt!" en kreeg nooit
- * een mail, en er was geen enkele manier om te zien dat er iets mis was.
+ * **Er is er een nodig.** Een formulier dat altijd "Bedankt!" toont, ook als de
+ * inschrijving geweigerd wordt of het verzoek nooit aankomt, is niet na te gaan
+ * — niet voor de bezoeker en niet voor jou. Het endpoint antwoordt met
+ * `{"ok":true|false}`, dus er valt een echt onderscheid te maken.
  *
  * `--kleur-accent` is het waarschuwingsrood uit tokens.json; op papier haalt dat
  * ruim voldoende contrast. Het blok krijgt `role="alert"` in de HTML, zodat een
