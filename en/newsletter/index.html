@@ -47,16 +47,21 @@
   </p>
 
   <div class="inschrijfblok">
-  <form class="inschrijven row-form" data-endpoint="https://script.google.com/macros/s/AKfycbwPpOjNX_aZ4QR5SoaOfj2nPrivcol8dRCeYpMtZy9_kiAFJs5wvND7YIxLL0XhBUqT/exec">
+  <form class="inschrijven row-form" method="post" action="https://script.google.com/macros/s/AKfycbxtNdOmujhZmJCLnzLGdwQ8BSH_bBzCjGJOn6h7qy59aZXS0YWkziNqumaexk9DYvWM/exec">
     <label for="email">Email address</label>
     <input id="email" name="email" type="email" autocomplete="email"
            required inputmode="email" spellcheck="false">
+    <!-- **Honeypot.** Het Apps Script leest dit veld: staat er iets in, dan
+         doet het alsof de inschrijving lukte maar bewaart het niets. Een mens
+         ziet dit veld nooit — het staat buiten beeld en buiten de tabvolgorde.
+         `display: none` wordt door invulbots juist herkend; wegschuiven niet. -->
+    <div class="honeypot" aria-hidden="true">
+      <label for="website">Leave this field empty</label>
+      <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
     <button type="submit">Subscribe</button>
   </form>
-
-  <noscript>
-    <p class="formfout">This form needs JavaScript. Without it, send us a note at <a href="mailto:support@decoureur.eu">support@decoureur.eu</a>.</p>
-  </noscript>
 
   <p class="formfout" role="alert" hidden
      data-geweigerd="That address was not accepted. Please check it and try again."
@@ -109,10 +114,15 @@
     //      `script.googleusercontent.com` waar hij naartoe wijst. Daardoor is
     //      `{"ok":true｜false}` echt te lezen en hoeft er niets geraden te worden.
     //
-    // **Zonder JavaScript werkt dit formulier niet**, en dat is een gevolg van
-    // punt 1: een `<form>` kan geen JSON-body versturen. Het `<noscript>`-blok
-    // hierboven wijst daarom naar het e-mailadres. Wil je die terugval wél,
-    // dan moet het Apps Script ook `e.parameter.email` aannemen.
+    // **Zonder JavaScript werkt het ook**, sinds 2026-08-10. Het `<form>` heeft
+    // een gewone `action` en `method="post"`; valt JavaScript weg, dan verstuurt
+    // de browser hem zelf en antwoordt het Apps Script met een HTML-pagina in
+    // plaats van JSON. De bezoeker verlaat dan wel de site — daarom onderschept
+    // dit script de verzending zolang het kán, met `preventDefault`.
+    //
+    // Dat vroeg twee dingen aan de kant van het script: `e.parameter` aannemen
+    // als de body geen JSON is, en HtmlService gebruiken bij een formulierpost.
+    // Beide zijn er sinds 2026-08-10; alle vier de paden zijn nagemeten.
     (function () {
       var wrap = document.querySelector('.inschrijfblok');
       if (!wrap) { return; }
@@ -120,6 +130,7 @@
       var success = wrap.querySelector('.row-success');
       var fout = wrap.querySelector('.formfout');
       var veld = wrap.querySelector('input[type="email"]');
+      var lokaas = wrap.querySelector('input[name="website"]');
       if (!form || !success || !fout || !veld) { return; }
 
       var knop = form.querySelector('button[type="submit"]');
@@ -135,10 +146,15 @@
         fout.setAttribute('hidden', '');
         if (knop) { knop.disabled = true; }
 
-        fetch(form.getAttribute('data-endpoint'), {
+        fetch(form.action, {
           method: 'POST',
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify({ email: veld.value })
+          // `website` is het honeypot-veld. Het Apps Script doet bij een
+          // ingevulde waarde alsof het lukte en bewaart niets.
+          body: JSON.stringify({
+            email: veld.value,
+            website: lokaas ? lokaas.value : ''
+          })
         })
           .then(function (antwoord) { return antwoord.json(); })
           .then(function (data) {

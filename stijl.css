@@ -585,6 +585,20 @@ li { margin-bottom: var(--ruimte-s); }
  * stonden daardoor lager dan de vier andere. Gevonden op 2026-08-10 door het
  * raster met een contour te renderen. Generieke klassenamen in een stylesheet
  * zonder scoping zijn precies zo'n valstrik. */
+/* Het honeypot-veld: buiten beeld, maar niet `display: none`.
+ *
+ * Invulbots herkennen `display: none` en `visibility: hidden` en slaan zulke
+ * velden over — dan vangt de val niets. Wegschuiven werkt wél. `tabindex="-1"`
+ * houdt het uit de tabvolgorde, zodat een toetsenbordgebruiker er nooit in
+ * belandt. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .formfout {
   margin: var(--ruimte-s) 0 0;
   font-size: 0.875rem;
