@@ -443,14 +443,27 @@ li { margin-bottom: var(--ruimte-s); }
    * groot" (Lode, 2026-08-05) en `AttributeCell` zet daar een vaste `celHoogte`.
    * Met een minimum ging de hoogte hier meebewegen met de inhoud — een vlag en
    * een icoon zijn hoger dan `TVL` — en dan staan de zes vakjes niet meer op één
-   * lijn. Precies wat de app met die vaste hoogte voorkomt. */
-  height: 2.75rem;
+   * lijn. Precies wat de app met die vaste hoogte voorkomt.
+   *
+   * **De maten komen één op één uit `AttributeCell`** (Lode, 2026-08-11: *"de
+   * vakjes zijn veel te hoog. Die moeten even hoog zijn zoals in de app. Die
+   * moeten identiek lijken zoals in de app!"*). Ze stonden hier op eigen
+   * waarden: 2.75rem hoog (44px) tegenover 38 punten in de app, en de tekst op
+   * 0.875rem/700 tegenover `Typography.cellDigit` — dat is `.body` semibold,
+   * dus 17px/600. De browser rekent in px wat de app in punten doet, dus de
+   * getallen mogen letterlijk overgenomen worden.
+   *
+   * Verandert `AttributeCell.celHoogte`, `iconHoogte` of `dotSize`, dan
+   * verandert dit mee. Dat is met de hand bijhouden — de generator van
+   * `tokens.json` doet de kleuren en de spacing, niet deze drie. */
+  height: 2.375rem;               /* AttributeCell.celHoogte = 38 */
+  padding: 0 2px;                 /* Spacing.xxs */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 1.0625rem;           /* Typography.cellDigit = .body (17) */
+  font-weight: 600;               /* .semibold */
   line-height: 1.2;
   background: var(--kleur-unknown);
   color: var(--kleur-unknown-ink);
@@ -461,22 +474,25 @@ li { margin-bottom: var(--ruimte-s); }
  * ivoor haalt maar 2,5:1. Zie tokens.json `_over_de_uitslagkleuren`. */
 .merkje {
   position: absolute;
-  top: -6px;
-  right: -6px;
-  width: 15px;
-  height: 15px;
+  /* `AttributeCell` zet de badge op `dotSize` en verschuift hem `dotSize / 3`
+   * naar buiten — 13 en 4,33. Hier stond 15px op -6px, en dat maakte het
+   * schijfje bijna anderhalve punt groter dan in de app. */
+  top: -4.33px;
+  right: -4.33px;
+  width: 13px;                    /* AttributeCell.dotSize */
+  height: 13px;
   border-radius: 50%;
   background: var(--kleur-surface);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.5625rem;
+  font-size: 9.36px;              /* dotSize * 0.72 */
   font-weight: 900;
   line-height: 1;
 }
 
 .celwaarde { display: block; }
-.celicoon { width: 22px; height: 22px; }
+.celicoon { width: 18px; height: 18px; }  /* AttributeCell.iconHoogte */
 
 .cel.goed  { background: var(--kleur-correct); color: var(--kleur-correct-ink); }
 .cel.bijna { background: var(--kleur-close);   color: var(--kleur-close-ink); }
