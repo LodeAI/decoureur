@@ -1,156 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P1EHCM6ET9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P1EHCM6ET9');
-</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How it works — De Coureur</title>
-<link rel="canonical" href="https://decoureur.eu/how-it-works/">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="description" content="Six clues, eight guesses, one rider a day. How De Coureur works, column by column.">
 
-<link rel="alternate" hreflang="en" href="https://decoureur.eu/how-it-works/">
-<link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/uitleg/">
-<link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/explication/">
-<link rel="alternate" hreflang="x-default" href="https://decoureur.eu/how-it-works/">
+<!-- **Deze pagina is verhuisd op 2026-08-05 en dit is de doorverwijzing.**
 
-<meta property="og:title" content="How it works — De Coureur">
-<meta property="og:description" content="Six clues, eight guesses, one rider a day. How De Coureur works, column by column.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://decoureur.eu/how-it-works/">
+     De site is die dag hertekend: het Nederlands ging van /nl/ naar de wortel en
+     het Engels van de wortel naar /en/. De oude adressen stonden toen al in de
+     index van Google, en die geeft sindsdien een 404 aan wie erop klikt.
 
+     GitHub Pages kan geen 301 sturen — er is geen server om te configureren, en
+     `_headers` is op 2026-08-10 verwijderd omdat GitHub Pages het niet leest.
+     Een `meta refresh` met nul seconden is wat er overblijft; Google behandelt
+     die als een permanente omleiding en verplaatst het adres.
+
+     `noindex` staat erbij zodat deze tussenpagina zelf nooit in de resultaten
+     komt, en de `canonical` wijst naar de nieuwe pagina. Deze map mag weg zodra
+     Search Console de oude adressen niet meer meldt. Ze staat met opzet niet in
+     `sitemap.xml`: een sitemap hoort de adressen te noemen die je wél
+     geïndexeerd wil zien. -->
+<meta http-equiv="refresh" content="0; url=../en/how-it-works/">
+<link rel="canonical" href="https://decoureur.eu/en/how-it-works/">
+<meta name="robots" content="noindex, follow">
+
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../stijl.css">
 </head>
 <body>
 
-<nav class="talen" aria-label="Language">
-  <a href="../how-it-works/" hreflang="en" aria-current="true">EN</a>
-  <a href="../nl/uitleg/" hreflang="nl">NL</a>
-  <a href="../fr/explication/" hreflang="fr">FR</a>
-</nav>
-
-<header class="kop">
-  <a class="merk" href="../">
-    <img class="logo" src="../logo.svg" alt="" width="52" height="52">
-    <span class="woordmerk">De Coureur</span>
-  </a>
-</header>
-
 <main class="omhulsel">
-  <!-- NOG IN TE VULLEN: schermafbeeldingen van de app. Komen in de laatste
-       fase van het project, als de rennersdata compleet is. Zie web/README.md. -->
-  <h1>How it works</h1>
-
-  <p class="inleiding">
-    Every day there is one cyclist to guess. The same one for everybody, anywhere
-    in the world. At midnight a new one appears.
-  </p>
-
-  <h2>Eight guesses</h2>
-
-  <p>
-    You type a rider's name and pick one from the list. After each guess, six
-    columns tell you how close you were.
-  </p>
-
-  <div class="kaart">
-    <p class="celkop">Guess 3 — Wout van Aert</p>
-    <div class="rij">
-      <div class="cel goed"><span class="kolom">Country</span><span class="symbool">✓</span>Belgium</div>
-      <div class="cel bijna"><span class="kolom">Age</span><span class="symbool">↑</span>29</div>
-      <div class="cel fout"><span class="kolom">Team</span><span class="symbool">×</span>Visma</div>
-      <div class="cel goed"><span class="kolom">Type</span><span class="symbool">✓</span>Classics</div>
-      <div class="cel bijna"><span class="kolom">Turned pro</span><span class="symbool">↓</span>2014</div>
-      <div class="cel fout"><span class="kolom">Wins</span><span class="symbool">×</span>50+</div>
-    </div>
-    <p class="laatste">
-      Read that as: the rider you are looking for is Belgian too and a classics
-      rider too, is older than 29, turned pro after 2014, rides for a different
-      team and has a different number of wins.
-    </p>
-  </div>
-
-  <h2>What the colours mean</h2>
-
-  <ul>
-    <li><strong>Green&nbsp;✓</strong> — exactly right.</li>
-    <li><strong>Gold&nbsp;~</strong> — close. Same continent, same kind of team, or within three years.</li>
-    <li><strong>Grey&nbsp;×</strong> — no match.</li>
-    <li><strong>↑ and ↓</strong> — on age and turning pro: higher or lower.</li>
-  </ul>
-
-  <p>
-    Every cell carries a symbol as well as a colour, so the game works if you see
-    colours differently. There is a separate colour-blind mode on top of that.
-  </p>
-
-  <h2>The six columns</h2>
-
-  <ol>
-    <li><strong>Country</strong> — green for the same country, gold for the same continent.</li>
-    <li><strong>Age</strong> — green within a year, gold within three, with an arrow.</li>
-    <li><strong>Team</strong> — the team the rider is best known for. Gold for a team at the same level.</li>
-    <li><strong>Type</strong> — climber, sprinter, classics rider, time trialist, all-rounder. Gold if the two riders share any speciality.</li>
-    <li><strong>Turned pro</strong> — the year of the first professional contract, with an arrow.</li>
-    <li><strong>Wins</strong> — career road wins, in bands: 0–9, 10+, 25+, 50+, 99+.</li>
-  </ol>
-
-  <h2>Some days are harder</h2>
-
-  <p>The week has a rhythm, and it is deliberate:</p>
-
-  <ul>
-    <li><strong>Monday to Thursday</strong> — riders anyone who follows the news in July would know.</li>
-    <li><strong>Friday and Saturday</strong> — riders a cycling fan knows.</li>
-    <li><strong>Sunday</strong> — one for the connoisseur. Sunday is race day in Flanders, so Sunday is the hard one.</li>
-  </ul>
-
-  <p>Men and women are mixed throughout. Not a separate category, not a bonus round.</p>
-
-  <h2>Sharing</h2>
-
-  <p>
-    When you finish you get a small grid of coloured squares to paste into a group
-    chat. <strong>It never contains the rider's name</strong>, so sharing your
-    result spoils nothing.
-  </p>
-
-  <h2>What it costs</h2>
-
-  <p>
-    <strong>The daily puzzle is free and stays free.</strong> A subscription
-    unlocks the archive of past days, a practice mode and detailed statistics — it
-    never unlocks today's puzzle.
-  </p>
-
-  <h2>What it does not do</h2>
-
-  <ul>
-    <li>No account, no login, no registration. The app collects nothing.</li>
-    <li>No ads, no analytics, no trackers.</li>
-    <li>Works completely offline.</li>
-  </ul>
+  <p>This page has moved. <a href="../en/how-it-works/">Continue to How it works</a>.</p>
 </main>
-
-<footer class="omhulsel">
-  <nav>
-    <a href="../">Home</a>
-    <a href="../newsletter/">Newsletter</a>
-    <a href="../privacy/">Privacy</a>
-    <a href="../terms/">Terms</a>
-    <a href="../support/">Contact</a>
-  </nav>
-  <p class="laatste">A game about cycling. Not affiliated with the UCI, any team or any race organiser.</p>
-</footer>
 
 </body>
 </html>

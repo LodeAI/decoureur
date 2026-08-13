@@ -565,6 +565,22 @@ li { margin-bottom: var(--ruimte-s); }
   border-radius: var(--rondig-l);
   padding: var(--ruimte-m) var(--ruimte-xl);
   cursor: pointer;
+  /* Zonder dit springt de kaart op het moment dat het opschrift naar "Even
+   * geduld" wisselt — dat is een andere tekstbreedte. Een knop die van maat
+   * verandert terwijl je erop wacht, leest als een fout. */
+  transition: opacity 120ms ease;
+}
+
+/* **De knop tijdens het verzenden** (Lode, 2026-08-13). Het Apps Script doet er
+ * merkbaar lang over voor "Bedankt!" verschijnt, en tot dan zag de knop er
+ * ongewijzigd uit. Het opschrift wisselt in het script; dit is de andere helft,
+ * want `disabled` alleen verandert in deze opmaak niets aan hoe hij eruitziet.
+ *
+ * Geen `pointer-events: none`: `disabled` weert de klik al, en dat is de vorm
+ * die een schermlezer ook doorgeeft. */
+.inschrijven button:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
 
 /* **Drie klassen zonder eigen opmaak, en dat is opzet:** `.inschrijfblok`,

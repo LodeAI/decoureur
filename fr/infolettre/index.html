@@ -60,7 +60,10 @@
       <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
     </div>
 
-    <button type="submit">S’inscrire</button>
+    <!-- `data-wachten` is het opschrift zolang de inschrijving loopt (Lode,
+         2026-08-13). Het staat hier en niet in het script, zodat het script op
+         de drie taalversies letterlijk hetzelfde blijft. -->
+    <button type="submit" data-wachten="Un instant">S’inscrire</button>
   </form>
 
   <p class="formfout" role="alert" hidden
@@ -134,17 +137,34 @@
       if (!form || !success || !fout || !veld) { return; }
 
       var knop = form.querySelector('button[type="submit"]');
+      // Het oorspronkelijke opschrift, want na een fout moet de knop terug naar
+      // wat er eerst stond en niet naar een vertaling die hier hardgecodeerd is.
+      var knopTekst = knop ? knop.textContent : '';
+
+      // **De knop wisselt van opschrift zolang het verzoek loopt** (Lode,
+      // 2026-08-13: *"het duurt even vooraleer de Bedankt verschijnt"*).
+      // `disabled` alleen was niet genoeg: de knop bleef "Inschrijven" zeggen en
+      // zag er ongewijzigd uit, dus wie niets zag gebeuren, klikte opnieuw.
+      // `aria-live` op het bedankblok bestaat niet, dus dit opschrift is voor een
+      // schermlezer ook het enige teken dat er iets loopt.
+      function zetKnop(bezig) {
+        if (!knop) { return; }
+        knop.disabled = bezig;
+        knop.textContent = bezig
+          ? (knop.getAttribute('data-wachten') || knopTekst)
+          : knopTekst;
+      }
 
       function toonFout(soort) {
         fout.textContent = fout.getAttribute('data-' + soort);
         fout.removeAttribute('hidden');
-        if (knop) { knop.disabled = false; }
+        zetKnop(false);
       }
 
       form.addEventListener('submit', function (event) {
         event.preventDefault();
         fout.setAttribute('hidden', '');
-        if (knop) { knop.disabled = true; }
+        zetKnop(true);
 
         fetch(form.action, {
           method: 'POST',

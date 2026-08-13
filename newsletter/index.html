@@ -1,118 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P1EHCM6ET9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P1EHCM6ET9');
-</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stay in the loop — De Coureur</title>
-<link rel="canonical" href="https://decoureur.eu/newsletter/">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="description" content="You only get an email when it really matters. Discount codes for Pro land here too.">
+<title>Newsletter — De Coureur</title>
 
-<link rel="alternate" hreflang="en" href="https://decoureur.eu/newsletter/">
-<link rel="alternate" hreflang="nl" href="https://decoureur.eu/nl/nieuwsbrief/">
-<link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/">
-<link rel="alternate" hreflang="x-default" href="https://decoureur.eu/newsletter/">
+<!-- **Deze pagina is verhuisd op 2026-08-05 en dit is de doorverwijzing.**
 
-<meta property="og:title" content="Stay in the loop — De Coureur">
-<meta property="og:description" content="You only get an email when it really matters. Discount codes for Pro land here too.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://decoureur.eu/newsletter/">
+     De site is die dag hertekend: het Nederlands ging van /nl/ naar de wortel en
+     het Engels van de wortel naar /en/. De oude adressen stonden toen al in de
+     index van Google, en die geeft sindsdien een 404 aan wie erop klikt.
 
+     GitHub Pages kan geen 301 sturen — er is geen server om te configureren, en
+     `_headers` is op 2026-08-10 verwijderd omdat GitHub Pages het niet leest.
+     Een `meta refresh` met nul seconden is wat er overblijft; Google behandelt
+     die als een permanente omleiding en verplaatst het adres.
+
+     `noindex` staat erbij zodat deze tussenpagina zelf nooit in de resultaten
+     komt, en de `canonical` wijst naar de nieuwe pagina. Deze map mag weg zodra
+     Search Console de oude adressen niet meer meldt. Ze staat met opzet niet in
+     `sitemap.xml`: een sitemap hoort de adressen te noemen die je wél
+     geïndexeerd wil zien. -->
+<meta http-equiv="refresh" content="0; url=../en/newsletter/">
+<link rel="canonical" href="https://decoureur.eu/en/newsletter/">
+<meta name="robots" content="noindex, follow">
+
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../stijl.css">
 </head>
 <body>
 
-<nav class="talen" aria-label="Language">
-  <a href="../newsletter/" hreflang="en" aria-current="true">EN</a>
-  <a href="../nl/nieuwsbrief/" hreflang="nl">NL</a>
-  <a href="../fr/infolettre/" hreflang="fr">FR</a>
-</nav>
-
-<header class="kop">
-  <a class="merk" href="../">
-    <img class="logo" src="../logo.svg" alt="" width="52" height="52">
-    <span class="woordmerk">De Coureur</span>
-  </a>
-</header>
-
 <main class="omhulsel">
-  <h1>Stay in the loop</h1>
-
-  <p class="inleiding">
-    You only get an email when it really matters! Discount codes for Pro will
-    land here too.
-  </p>
-
-  <!-- Het MailerLite-formulier, met de hand overgezet. Wat er uit hun fragment
-       gehaald is en waarom:
-         - alle CSS: die zette Open Sans, zwarte knoppen en een grijs kader neer,
-           en de site heeft een eigen palet (tokens.css).
-         - `webforms.min.js` en de `takel`-fetch: dat is hun script plus een
-           tracking-aanroep. De CSP in _headers laat geen scripts toe.
-         - `target="_blank"`: zonder hun script komt er een JSON-antwoord terug,
-           en dat hoort niet in een nieuw tabblad te openen.
-       Wat er moest blijven staan: de action-URL, `fields[email]`, `ml-submit` en
-       `anticsrf` — daar hangt hun endpoint aan. -->
-  <div class="ml-subscribe-form ml-subscribe-form-44480480">
-  <form class="inschrijven row-form" action="https://assets.mailerlite.com/jsonp/2554753/forms/194880748125161004/subscribe" method="post">
-    <label for="email">Email address</label>
-    <input id="email" name="fields[email]" type="email" autocomplete="email"
-           required inputmode="email" spellcheck="false">
-    <input type="hidden" name="ml-submit" value="1">
-    <input type="hidden" name="anticsrf" value="true">
-    <button type="submit">Subscribe</button>
-  </form>
-
-  <div class="inschrijven row-success" hidden>
-    <p class="succeskop">Thank you!</p>
-    <p class="optin">Check your inbox — you are on the list once you confirm.</p>
-  </div>
-  </div>
-
-  <!-- Eén regel, alleen de link. Alles wat hier stond is op 2026-08-04 geschrapt
-       (Lode: "onder de knop, niet nog eens een uitleg"). Deze link blijft omdat
-       AVG art. 13 vraagt dat je bij het verzamelen naar je privacyverklaring
-       wijst; de dubbele opt-in zelf staat in MailerLite en is geen tekst. -->
-  <p class="optin"><a href="../privacy/">Privacy policy</a></p>
+  <p>This page has moved. <a href="../en/newsletter/">Continue to Newsletter</a>.</p>
 </main>
 
-<footer class="omhulsel">
-  <nav>
-    <a href="../">Home</a>
-    <a href="../how-it-works/">How it works</a>
-    <a href="../privacy/">Privacy</a>
-    <a href="../terms/">Terms</a>
-    <a href="../support/">Contact</a>
-  </nav>
-  <p class="laatste">A game about cycling. Not affiliated with the UCI, any team or any race organiser.</p>
-</footer>
-
-<!-- **Het enige JavaScript op deze hele site**, en alleen op de drie
-     nieuwsbriefpagina's (Lode, 2026-08-04). Zonder dit script toont het
-     MailerLite-endpoint rauwe JSON na het verzenden; met dit script vangt
-     het dat op en verschijnt het bedankblok hierboven.
-
-     `_headers` zet voor deze paden een eigen CSP met script-src erin. De
-     rest van de site blijft absoluut scriptvrij, en /privacy zegt precies
-     dat. Verplaats je deze pagina, pas dan ook _headers aan. -->
-<script>
-    function ml_webform_success_44480480() {
-      var wrap = document.querySelector('.ml-subscribe-form-44480480');
-      if (!wrap) { return; }
-      wrap.querySelector('.row-form').setAttribute('hidden', '');
-      wrap.querySelector('.row-success').removeAttribute('hidden');
-    }
-  </script>
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js" type="text/javascript"></script>
 </body>
 </html>
