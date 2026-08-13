@@ -22,6 +22,28 @@
 
 <link rel="stylesheet" href="../../tokens.css">
 <link rel="stylesheet" href="../../stijl.css">
+
+<!-- **Google Analytics 4** (Lode, 2026-08-13). Dit is het enige externe verzoek
+     op de site en het enige script dat op élke pagina staat; de huisregel "geen
+     scripts, niet één" in `web/README.md` is daarmee vervallen en daar herschreven.
+
+     Het staat op de achttien inhoudelijke pagina's en op `404.html` — daar juist
+     wél, want daar zie je welke oude adressen nog aangeklikt worden. Het staat
+     **niet** op de tien doorverwijspagina's onder /nl/, /how-it-works/,
+     /newsletter/, /support/ en /terms/: die tonen zichzelf nooit aan een bezoeker,
+     en een meting daar levert alleen spookbezoeken van nul seconden op.
+
+     Wat het plaatst en wat de privacypagina daarover zegt, staat in
+     `web/privacy/index.html` onder "Bezoekersmeting". -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P1EHCM6ET9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P1EHCM6ET9');
+</script>
 </head>
 <body>
 

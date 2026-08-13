@@ -22,6 +22,28 @@
 
 <link rel="stylesheet" href="../../tokens.css">
 <link rel="stylesheet" href="../../stijl.css">
+
+<!-- **Google Analytics 4** (Lode, 2026-08-13). Dit is het enige externe verzoek
+     op de site en het enige script dat op élke pagina staat; de huisregel "geen
+     scripts, niet één" in `web/README.md` is daarmee vervallen en daar herschreven.
+
+     Het staat op de achttien inhoudelijke pagina's en op `404.html` — daar juist
+     wél, want daar zie je welke oude adressen nog aangeklikt worden. Het staat
+     **niet** op de tien doorverwijspagina's onder /nl/, /how-it-works/,
+     /newsletter/, /support/ en /terms/: die tonen zichzelf nooit aan een bezoeker,
+     en een meting daar levert alleen spookbezoeken van nul seconden op.
+
+     Wat het plaatst en wat de privacypagina daarover zegt, staat in
+     `web/privacy/index.html` onder "Bezoekersmeting". -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P1EHCM6ET9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P1EHCM6ET9');
+</script>
 </head>
 <body>
 
@@ -109,19 +131,51 @@
   <h2>The website</h2>
 
   <p>
-    This site uses no cookies for visitor measurement and carries no analytics
-    script anywhere. What remains is what any web server records in order to work: your IP
-    address, the address requested, the time and the browser type. Those logs serve
-    to investigate faults and abuse, and are not used to track or profile visitors.
+    What any web server records in order to work: your IP address, the address
+    requested, the time and the browser type. Those logs serve to investigate
+    faults and abuse, and are not used to track or profile visitors.
+  </p>
+
+  <h3>Visitor measurement</h3>
+
+  <p>
+    This site uses <strong>Google Analytics 4</strong> to count how many people
+    come by and which pages they read. It is the only script on the site and the
+    only thing loaded from elsewhere. It is there to answer a single question —
+    <em>does anyone come here, and do they find their way?</em> — for an app with
+    no marketing budget.
+  </p>
+
+  <p>
+    <strong>What Google processes for this:</strong> a cookie on your device
+    holding a random number by which your visits are recognised, your IP address,
+    the pages you request, the time, and general information about your browser,
+    device and approximate location (country or region, not your address).
+    <strong>No name, no email address and no game data</strong> goes with it: the
+    app sends nothing to this site, and the sign-up form is entirely separate.
+  </p>
+
+  <p>
+    <strong>This concerns the website only.</strong> The app contains no analytics
+    software — no Google Analytics, none at all. Nothing under <em>The app</em>
+    above changes because of this.
+  </p>
+
+  <p>
+    Google acts as our processor here; for what Google itself does with that data,
+    Google's privacy policy applies. If you would rather not be measured, you can
+    refuse or block cookies in your browser, or install the
+    <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google
+    Analytics opt-out</a>. The site works exactly the same either way — no feature
+    depends on the measurement.
   </p>
 
   <h3>The newsletter</h3>
 
   <p>
-    <strong>This site loads nothing from elsewhere.</strong> Not even the sign-up
-    page: the form lives on this site, styled like everything else. Something is
-    only sent outward at the moment you click <em>Subscribe</em> — not when the
-    page loads.
+    <strong>The form lives on this site</strong>, styled like everything else —
+    there is no embedded window from a mailing platform. Your address is only sent
+    outward at the moment you click <em>Subscribe</em>, not when the page loads.
   </p>
 
   <p>
@@ -147,9 +201,14 @@
   </p>
 
   <p>
+    Visitor measurement likewise runs through <strong>Google</strong> (Google
+    Ireland Limited), acting as our processor. See <em>Visitor measurement</em>
+    above for what is processed.
+  </p>
+
+  <p>
     This site is hosted by <strong>GitHub Pages</strong> (GitHub, Inc.). Like any
-    web server it sees the IP address of your visit; we have no access to that, and
-    there is no analytics script anywhere on this site.
+    web server it sees the IP address of your visit; we have no access to that.
   </p>
 
   <!-- NOG IN TE VULLEN: registered address of LV IT Consulting BV, then the date

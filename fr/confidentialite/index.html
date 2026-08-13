@@ -22,6 +22,28 @@
 
 <link rel="stylesheet" href="../../tokens.css">
 <link rel="stylesheet" href="../../stijl.css">
+
+<!-- **Google Analytics 4** (Lode, 2026-08-13). Dit is het enige externe verzoek
+     op de site en het enige script dat op élke pagina staat; de huisregel "geen
+     scripts, niet één" in `web/README.md` is daarmee vervallen en daar herschreven.
+
+     Het staat op de achttien inhoudelijke pagina's en op `404.html` — daar juist
+     wél, want daar zie je welke oude adressen nog aangeklikt worden. Het staat
+     **niet** op de tien doorverwijspagina's onder /nl/, /how-it-works/,
+     /newsletter/, /support/ en /terms/: die tonen zichzelf nooit aan een bezoeker,
+     en een meting daar levert alleen spookbezoeken van nul seconden op.
+
+     Wat het plaatst en wat de privacypagina daarover zegt, staat in
+     `web/privacy/index.html` onder "Bezoekersmeting". -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P1EHCM6ET9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P1EHCM6ET9');
+</script>
 </head>
 <body>
 
@@ -114,20 +136,56 @@
   <h2>Le site</h2>
 
   <p>
-    Ce site n’utilise pas de cookies de mesure d’audience et ne comporte aucun
-    script d’analyse, nulle part. Il reste ce que tout serveur web enregistre pour
-    fonctionner : votre adresse IP, l’adresse demandée, l’heure et le type de
-    navigateur. Ces journaux servent à examiner les pannes et les abus, et ne sont
-    pas utilisés pour suivre ou profiler les visiteurs.
+    Ce que tout serveur web enregistre pour fonctionner : votre adresse IP,
+    l’adresse demandée, l’heure et le type de navigateur. Ces journaux servent à
+    examiner les pannes et les abus, et ne sont pas utilisés pour suivre ou
+    profiler les visiteurs.
+  </p>
+
+  <h3>Mesure d’audience</h3>
+
+  <p>
+    Ce site utilise <strong>Google Analytics 4</strong> pour compter combien de
+    personnes passent et quelles pages elles lisent. C’est le seul script du site
+    et la seule chose chargée depuis l’extérieur. Il est là pour répondre à une
+    seule question — <em>quelqu’un vient-il ici, et trouve-t-il son chemin ?</em> —
+    pour une application sans budget marketing.
+  </p>
+
+  <p>
+    <strong>Ce que Google traite à cette occasion :</strong> un cookie déposé sur
+    votre appareil, contenant un numéro aléatoire qui permet de reconnaître vos
+    visites, votre adresse IP, les pages que vous demandez, l’heure, ainsi que des
+    informations générales sur votre navigateur, votre appareil et votre
+    localisation approximative (pays ou région, pas votre adresse).
+    <strong>Aucun nom, aucune adresse courriel et aucune donnée de jeu</strong> ne
+    l’accompagne : l’application n’envoie rien à ce site, et le formulaire
+    d’inscription en est entièrement distinct.
+  </p>
+
+  <p>
+    <strong>Cela ne concerne que le site.</strong> L’application ne contient aucun
+    logiciel d’analyse — ni Google Analytics, ni aucun autre. Ce qui figure
+    ci-dessus sous <em>L’application</em> n’en est pas modifié.
+  </p>
+
+  <p>
+    Google agit ici comme sous-traitant pour notre compte ; pour ce que Google fait
+    lui-même de ces données, la politique de confidentialité de Google s’applique.
+    Si vous préférez ne pas être mesuré, vous pouvez refuser ou bloquer les cookies
+    dans votre navigateur, ou installer le
+    <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">module de
+    désactivation de Google Analytics</a>. Le site fonctionne exactement de la même
+    manière — aucune fonction ne dépend de cette mesure.
   </p>
 
   <h3>L’infolettre</h3>
 
   <p>
-    <strong>Ce site ne charge rien de l’extérieur.</strong> Pas même la page
-    d’inscription : le formulaire se trouve sur ce site, dans la même présentation
-    que le reste. Rien n’est envoyé vers l’extérieur avant le moment où vous
-    cliquez vous-même sur <em>S’inscrire</em> — pas au chargement de la page.
+    <strong>Le formulaire se trouve sur ce site</strong>, dans la même présentation
+    que le reste — il n’y a pas de fenêtre intégrée d’une plateforme d’envoi. Votre
+    adresse n’est envoyée vers l’extérieur qu’au moment où vous cliquez vous-même
+    sur <em>S’inscrire</em>, pas au chargement de la page.
   </p>
 
   <p>
@@ -156,9 +214,14 @@
   </p>
 
   <p>
+    La mesure d’audience passe elle aussi par <strong>Google</strong> (Google
+    Ireland Limited), en qualité de sous-traitant pour notre compte. Voir
+    <em>Mesure d’audience</em> ci-dessus pour ce qui y est traité.
+  </p>
+
+  <p>
     Ce site est hébergé par <strong>GitHub Pages</strong> (GitHub, Inc.). Comme tout
-    serveur web, il voit l'adresse IP de votre visite ; nous n'y avons pas accès, et
-    aucun script de mesure ne figure sur ce site.
+    serveur web, il voit l'adresse IP de votre visite ; nous n'y avons pas accès.
   </p>
 
   <!-- NOG IN TE VULLEN: adresse du siège de LV IT Consulting BV, puis la date de

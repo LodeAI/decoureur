@@ -22,6 +22,28 @@
 
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../stijl.css">
+
+<!-- **Google Analytics 4** (Lode, 2026-08-13). Dit is het enige externe verzoek
+     op de site en het enige script dat op élke pagina staat; de huisregel "geen
+     scripts, niet één" in `web/README.md` is daarmee vervallen en daar herschreven.
+
+     Het staat op de achttien inhoudelijke pagina's en op `404.html` — daar juist
+     wél, want daar zie je welke oude adressen nog aangeklikt worden. Het staat
+     **niet** op de tien doorverwijspagina's onder /nl/, /how-it-works/,
+     /newsletter/, /support/ en /terms/: die tonen zichzelf nooit aan een bezoeker,
+     en een meting daar levert alleen spookbezoeken van nul seconden op.
+
+     Wat het plaatst en wat de privacypagina daarover zegt, staat in
+     `web/privacy/index.html` onder "Bezoekersmeting". -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P1EHCM6ET9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P1EHCM6ET9');
+</script>
 </head>
 <body>
 
@@ -111,20 +133,54 @@
   <h2>De website</h2>
 
   <p>
-    Deze site gebruikt geen cookies voor bezoekersmeting en er staat nergens een
-    analysescript op. Wat overblijft is wat elke webserver noteert om te kunnen
-    werken: je IP-adres, het opgevraagde adres, het tijdstip en het type browser.
-    Die logboeken dienen om storingen en misbruik te onderzoeken en worden niet
-    gebruikt om bezoekers te volgen of te profileren.
+    Wat elke webserver noteert om te kunnen werken: je IP-adres, het opgevraagde
+    adres, het tijdstip en het type browser. Die logboeken dienen om storingen en
+    misbruik te onderzoeken en worden niet gebruikt om bezoekers te volgen of te
+    profileren.
+  </p>
+
+  <h3>Bezoekersmeting</h3>
+
+  <p>
+    Deze site gebruikt <strong>Google Analytics 4</strong> om te tellen hoeveel
+    mensen langskomen en welke pagina's ze lezen. Dat is het enige script op de
+    site en het enige dat van buitenaf geladen wordt. Het staat er om één vraag te
+    kunnen beantwoorden — <em>komt hier iemand, en vindt die de weg?</em> — voor
+    een app zonder marketingbudget.
+  </p>
+
+  <p>
+    <strong>Wat Google daarbij verwerkt:</strong> een cookie op je toestel met een
+    willekeurig nummer waaraan je bezoeken herkend worden, je IP-adres, de
+    pagina's die je opvraagt, het tijdstip, en algemene gegevens over je browser,
+    toestel en bij benadering je plaats (land of streek, niet je adres). Er gaat
+    <strong>geen naam, geen e-mailadres en geen spelgegeven</strong> mee: de app
+    stuurt niets naar deze site, en het inschrijfformulier staat er volledig los
+    van.
+  </p>
+
+  <p>
+    <strong>Dit gaat alleen over de website.</strong> In de app zit geen
+    analysesoftware — geen Google Analytics, geen enkele andere. Wat hierboven
+    onder <em>De app</em> staat, verandert hier niet door.
+  </p>
+
+  <p>
+    Google treedt hierbij op als verwerker voor ons; voor wat Google zelf met die
+    gegevens doet, geldt het privacybeleid van Google. Wil je niet gemeten worden,
+    dan kun je cookies weigeren of blokkeren in je browser, of de
+    <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">opt-out van
+    Google Analytics</a> installeren. De site werkt dan precies hetzelfde — er
+    hangt geen enkele functie aan de meting.
   </p>
 
   <h3>De nieuwsbrief</h3>
 
   <p>
-    <strong>Deze site laadt niets van elders.</strong> Ook de inschrijfpagina niet:
-    het formulier staat gewoon op deze site, in dezelfde opmaak als de rest. Er
-    wordt pas iets naar buiten gestuurd op het moment dat jij zelf op
-    <em>Inschrijven</em> klikt — niet bij het laden van de pagina.
+    <strong>Het formulier staat gewoon op deze site</strong>, in dezelfde opmaak
+    als de rest — er is geen ingesloten venster van een mailplatform. Je adres
+    wordt pas naar buiten gestuurd op het moment dat jij zelf op
+    <em>Inschrijven</em> klikt, niet bij het laden van de pagina.
   </p>
 
   <p>
@@ -152,9 +208,15 @@
   </p>
 
   <p>
+    De bezoekersmeting loopt eveneens via <strong>Google</strong> (Google Ireland
+    Limited), als verwerker voor ons. Zie <em>Bezoekersmeting</em> hierboven voor
+    wat daarbij verwerkt wordt.
+  </p>
+
+  <p>
     Deze site wordt gehost door <strong>GitHub Pages</strong> (GitHub, Inc.). Zoals
     elke webserver ziet die het IP-adres van je bezoek; wij hebben daar geen inzage
-    in en er staat geen enkel meetscript op deze site.
+    in.
   </p>
 
   <!-- NOG IN TE VULLEN: het vestigingsadres van LV IT Consulting BV, en daarna de
