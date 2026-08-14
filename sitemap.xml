@@ -1,170 +1,444 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- GEGENEREERD is dit niet: web/sitemap.xml wordt met de hand bijgehouden.
-     Voeg je een pagina toe, zet hem hier én in robots.txt-bereik.
-     De xhtml:link-regels vertellen zoekmachines dat de drie talen dezelfde
-     pagina zijn; zonder die koppeling concurreren ze met elkaar. -->
+<!-- Zesendertig pagina's: zes talen maal zes pagina's (2026-08-14).
+
+     De tien doorverwijspagina's van 2026-08-05 staan hier bewust NIET in: ze
+     tonen zichzelf nooit aan een bezoeker en horen niet in een sitemap.
+
+     Elke <url> draagt de volledige set hreflang-alternatieven, ook naar zichzelf.
+     Dat is geen overbodigheid maar de eis van Google: een taalcluster telt pas
+     als elke pagina naar alle andere én naar zichzelf verwijst. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://decoureur.eu/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/"/>
+    <loc>https://decoureur.eu/</loc>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/"/>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://decoureur.eu/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/"/>
+    <loc>https://decoureur.eu/en/</loc>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/"/>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://decoureur.eu/fr/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/"/>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://decoureur.eu/en/how-it-works/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/how-it-works/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/uitleg/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/explication/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/how-it-works/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://decoureur.eu/de/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/it/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/es/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://decoureur.eu/uitleg/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/how-it-works/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/uitleg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/how-it-works/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/explication/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/how-it-works/"/>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/so-gehts/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/come-funziona/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/como-funciona/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/uitleg/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/en/how-it-works/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/uitleg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/explication/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/so-gehts/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/come-funziona/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/como-funciona/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/uitleg/"/>
+    <lastmod>2026-08-14</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://decoureur.eu/fr/explication/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/how-it-works/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/uitleg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/how-it-works/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/explication/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/how-it-works/"/>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/so-gehts/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/come-funziona/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/como-funciona/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/uitleg/"/>
+    <lastmod>2026-08-14</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://decoureur.eu/en/newsletter/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/newsletter/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nieuwsbrief/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/newsletter/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://decoureur.eu/de/so-gehts/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/uitleg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/explication/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/so-gehts/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/come-funziona/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/como-funciona/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/uitleg/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/it/come-funziona/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/uitleg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/explication/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/so-gehts/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/come-funziona/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/como-funciona/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/uitleg/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/es/como-funciona/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/uitleg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/explication/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/so-gehts/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/come-funziona/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/como-funciona/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/uitleg/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://decoureur.eu/nieuwsbrief/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/newsletter/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nieuwsbrief/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/newsletter/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/newsletter/"/>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/boletin/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/nieuwsbrief/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/en/newsletter/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nieuwsbrief/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/boletin/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/nieuwsbrief/"/>
+    <lastmod>2026-08-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://decoureur.eu/fr/infolettre/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/newsletter/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nieuwsbrief/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/newsletter/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/newsletter/"/>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/boletin/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/nieuwsbrief/"/>
+    <lastmod>2026-08-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://decoureur.eu/en/privacy/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/confidentialite/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/privacy/"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <loc>https://decoureur.eu/de/newsletter/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nieuwsbrief/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/boletin/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/nieuwsbrief/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/it/newsletter/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nieuwsbrief/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/boletin/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/nieuwsbrief/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/es/boletin/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/nieuwsbrief/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/newsletter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/boletin/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/nieuwsbrief/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://decoureur.eu/privacy/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/confidentialite/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/privacy/"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/privacy/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/privacy/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://decoureur.eu/fr/confidentialite/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/confidentialite/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/privacy/"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/privacy/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://decoureur.eu/en/terms/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/terms/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/voorwaarden/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/conditions/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/terms/"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <loc>https://decoureur.eu/de/datenschutz/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/privacy/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/it/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/privacy/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/es/privacidad/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/privacy/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://decoureur.eu/voorwaarden/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/terms/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/voorwaarden/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/terms/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/conditions/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/terms/"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/condizioni/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/condiciones/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/voorwaarden/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/en/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/voorwaarden/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/condizioni/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/condiciones/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/voorwaarden/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://decoureur.eu/fr/conditions/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/terms/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/voorwaarden/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/terms/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/conditions/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/terms/"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/condizioni/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/condiciones/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/voorwaarden/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://decoureur.eu/en/support/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/support/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/contact/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/contact/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/support/"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://decoureur.eu/de/agb/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/voorwaarden/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/condizioni/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/condiciones/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/voorwaarden/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/it/condizioni/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/voorwaarden/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/condizioni/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/condiciones/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/voorwaarden/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/es/condiciones/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/voorwaarden/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/condizioni/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/condiciones/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/voorwaarden/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://decoureur.eu/contact/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/support/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/support/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/contact/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/support/"/>
-    <changefreq>yearly</changefreq>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/contact/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/en/support/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/contact/"/>
+    <lastmod>2026-08-14</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://decoureur.eu/fr/contact/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/support/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/support/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/contact/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/en/support/"/>
-    <changefreq>yearly</changefreq>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/contact/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/de/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/contact/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/it/contatti/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/contact/"/>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://decoureur.eu/es/contacto/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://decoureur.eu/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://decoureur.eu/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://decoureur.eu/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://decoureur.eu/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://decoureur.eu/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://decoureur.eu/contact/"/>
+    <lastmod>2026-08-14</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>

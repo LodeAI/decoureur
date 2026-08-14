@@ -1,0 +1,194 @@
+{
+  "de": {
+    "titel": "So geht’s - De Coureur",
+    "desc": "Ein Radprofi pro Tag. Sechs Hinweise, acht Versuche. So liest du das Raster.",
+    "h1": "So geht’s",
+    "h_acht": "Acht Versuche",
+    "p_acht": "Du tippst einen Fahrernamen ein und wählst einen aus der Liste. Nach jedem Versuch sagen dir sechs Spalten, wie nah du dran warst.",
+    "gok": [
+      "Merckx liegt zeitlich weit daneben, aber <strong>zwei Felder sind sofort grün</strong>: Typ und Siege. Der gesuchte Fahrer ist also ebenfalls Allrounder und hat auch mehr als neunundneunzig Siege. Der Pfeil nach unten bei Alter heißt, dass wir jemanden Jüngeren suchen; der Pfeil nach oben bei Profi, dass der gesuchte Fahrer viel später Profi wurde.",
+      "Van Aert legt <strong>Profi</strong> fest: Auch er wurde 2019 Profi, also ist das Feld grün. Alter bleibt falsch, denn 31 liegt mehr als drei Jahre entfernt, und dann färbt sich das Feld nicht golden. Land, Team und Typ sind daneben, es ist also kein belgischer Klassikerfahrer.",
+      "Vingegaard trifft <strong>Typ</strong> voll: Wir suchen einen Allrounder. Alter wird jetzt golden mit einem Pfeil nach unten, 29 liegt innerhalb von drei Jahren, aber der gesuchte Fahrer ist noch etwas jünger. Siege bleibt falsch: 50+ liegt zu weit von 99+ entfernt.",
+      "Ganna zeigt, was <strong>Gold bei Land</strong> bedeutet: Italien ist nicht das richtige Land, grenzt aber daran. Das schneidet die Karte in einem Zug auf eine Handvoll Nachbarn zurück: Slowenien, Österreich, Ungarn, Kroatien. Grün ist nur das Land selbst; Gold ist ein Nachbarland.",
+      "Roglič verrät das Land: <strong>Slowenien</strong>. Sein Profijahr wird golden, 2016 liegt innerhalb von drei Jahren. Zusammen mit Allrounder und einem Alter knapp unter 29 bleibt nicht mehr viel übrig.",
+      "Treffer. Alle sechs Felder grün: <strong>Tadej Pogačar</strong>, Slowene, UAE Team Emirates, Allrounder, Profi seit 2019 und mehr als neunundneunzig Siege. Ein außergewöhnliches Talent, das sowohl Klassiker als auch große Rundfahrten gewinnt, genau wie Merckx, und deshalb wurde Typ bei ihm sofort grün."
+    ],
+    "h_kleur": "Was die Farben bedeuten",
+    "li_kleur": [
+      "<strong>Grün&nbsp;✓</strong> — genau richtig.",
+      "<strong>Gold&nbsp;~</strong> — nah dran. Ein Nachbarland, oder innerhalb von drei Jahren.",
+      "<strong>Heller Sand&nbsp;×</strong> — falsch.",
+      "<strong>↑ und ↓</strong> — bei Alter, Profidebüt und Siegen: höher oder niedriger."
+    ],
+    "p_kleur1": "Die drei Farben laufen von dunkel nach hell: Grün ist am dunkelsten, Gold liegt dazwischen, Falsch ist am hellsten.",
+    "p_kleur2": "Land, Alter, Profi und Siege können golden werden. Typ und Team nicht; die sind richtig oder falsch und nichts dazwischen.",
+    "p_kleur3": "Jedes Feld trägt rechts oben einen kleinen Punkt: ✓, × oder einen Pfeil. So funktioniert das Spiel auch, wenn du Farben anders siehst. In den Einstellungen gibt es zusätzlich einen Farbenblind-Modus.",
+    "h_kolom": "Die sechs Spalten",
+    "li_kolom": [
+      "<strong>Land</strong> — grün beim gleichen Land, golden bei einem Nachbarland. Es zählen nur echte Landgrenzen: Belgien und England sind also keine Nachbarn.",
+      "<strong>Alter</strong> — grün innerhalb eines Jahres, golden innerhalb von drei, mit einem Pfeil.",
+      "<strong>Team</strong> — das Team, mit dem der Fahrer am bekanntesten ist. Richtig oder falsch, ohne Zwischenfarbe.",
+      "<strong>Typ</strong> — Kletterer, Sprinter, Klassikerfahrer, Zeitfahrer, Allrounder. Richtig oder falsch, ohne Zwischenfarbe.",
+      "<strong>Profi</strong> — das Jahr des ersten Profivertrags, mit einem Pfeil zum richtigen Jahr.",
+      "<strong>Siege</strong> — Straßensiege in der Karriere, in Stufen: 0–9, 10+, 25+, 50+, 99+, mit einem Pfeil."
+    ],
+    "h_dagen": "Manche Tage sind schwerer",
+    "p_dagen": "Die Woche hat einen Rhythmus:",
+    "li_dagen": [
+      "<strong>Montag bis Donnerstag</strong> — Radsportikonen.",
+      "<strong>Freitag</strong> — ebenfalls eine Ikone, aber immer jemand, der aufgehört hat. Ein früherer großer Name.",
+      "<strong>Samstag und Sonntag</strong> — das Wochenende gehört den echten Kennern."
+    ],
+    "h_bidon": "Die Trinkflasche",
+    "p_bidon": "Neben dem Eingabefeld steht eine Trinkflasche. Wenn du feststeckst, gibt sie einen Spaltenwert preis: eine Spalte, die du noch nicht grün hast, denn eine Spalte, die du schon kennst, bringt dich nicht weiter.",
+    "li_bidon": [
+      "<strong>Sie wird nach deinem sechsten Versuch frei.</strong>",
+      "<strong>Eine pro Tag.</strong>",
+      "<strong>Kostenlos für alle.</strong>"
+    ],
+    "p_bidon2": "Ob du sie benutzt hast, steht in deinem Ergebnis: voll und grün bei null, leer und rot bei einer.",
+    "h_reeks": "Deine Serie",
+    "p_reeks": "Jeder Tag, den du löst, verlängert deine Serie; ein ausgelassener oder nicht gefundener Tag setzt sie auf null zurück. Oben rechts in der App steht die Flamme mit deiner Serie.",
+    "p_reeks2": "Wenn du lieber nichts verpassen möchtest, schickt dir die App eine Erinnerung pro Tag, zu der Uhrzeit, die du wählst. Zu finden in den Einstellungen.",
+    "h_delen": "Teilen",
+    "p_delen": "Wenn du fertig bist, erstellt die App eine Karte für den Gruppenchat: dein Ergebnis, deine Zeit, deine Serie, ob du eine Trinkflasche gebraucht hast, und deine Versuche als Raster farbiger Felder. Der Name des Fahrers steht nie darauf, seine Flagge auch nicht, du verrätst also nichts an alle, die noch spielen müssen.",
+    "p_delen2": "Es geht auch eine Textfassung mit, mit denselben Feldern als Emoji, für Apps, die lieber Text als ein Bild haben.",
+    "h_kost": "Was es kostet",
+    "p_kost1": "Das tägliche Rätsel ist kostenlos und bleibt kostenlos.",
+    "p_kost2": "Ein PRO-Abonnement schaltet das Archiv der vergangenen Tage frei, einen Übungsmodus und die Zahlen darüber, wie du spielst: deine Gewinnquote, deine durchschnittliche Anzahl Versuche, die Verteilung deiner Versuche, deine Durchschnittszeit, deine Vorliebe nach Generation und wie oft du eine Trinkflasche gebraucht hast. Neue Funktionen können kostenlos sein oder hinter das PRO-Abonnement kommen.",
+    "h_niet": "Was es nicht tut",
+    "li_niet": [
+      "Kein Konto, kein Login, keine Registrierung. Die App sammelt nichts.",
+      "Keine Werbung, keine Analysesoftware, keine Tracker in der App. Diese Website zählt allerdings Besucher; siehe die Datenschutzseite.",
+      "Funktioniert vollständig offline."
+    ]
+  },
+  "it": {
+    "titel": "Come funziona - De Coureur",
+    "desc": "Un corridore al giorno. Sei indizi, otto tentativi. Ecco come si legge la griglia.",
+    "h1": "Come funziona",
+    "h_acht": "Otto tentativi",
+    "p_acht": "Digiti il nome di un corridore e ne scegli uno dalla lista. Dopo ogni tentativo sei colonne ti dicono quanto eri vicino.",
+    "gok": [
+      "Merckx è lontanissimo nel tempo, ma <strong>due caselle sono subito verdi</strong>: Tipo e Vittorie. Il corridore cercato è quindi anch’egli un completo e ha anch’egli più di novantanove vittorie. La freccia verso il basso su Età significa che cerchiamo qualcuno più giovane; quella verso l’alto su Pro che il corridore cercato è passato professionista molto più tardi.",
+      "Van Aert fissa <strong>Pro</strong>: anche lui è passato professionista nel 2019, quindi la casella è verde. Età resta sbagliata: 31 dista più di tre anni, e allora la casella non diventa oro. Paese, Squadra e Tipo sono errati, quindi non è un classicomane belga.",
+      "Vingegaard centra <strong>Tipo</strong>: cerchiamo un corridore completo. Età diventa ora oro con una freccia verso il basso, 29 rientra nei tre anni, ma il corridore cercato è ancora un po’ più giovane. Vittorie resta sbagliata: 50+ è troppo lontano da 99+.",
+      "Ganna mostra che cosa significa <strong>l’oro su Paese</strong>: l’Italia non è il paese giusto, ma vi confina. Questo riduce di colpo la mappa a una manciata di vicini: Slovenia, Austria, Ungheria, Croazia. Il verde è solo il paese stesso; l’oro è un paese confinante.",
+      "Roglič svela il paese: <strong>Slovenia</strong>. Il suo anno da professionista diventa oro, il 2016 rientra nei tre anni. Insieme a completo e a un’età appena sotto i 29, non resta granché.",
+      "Fatto. Tutte e sei le caselle verdi: <strong>Tadej Pogačar</strong>, sloveno, UAE Team Emirates, completo, professionista dal 2019 e con più di novantanove vittorie. Un talento fuori dal comune che vince sia le classiche sia i grandi giri, proprio come Merckx, ed è esattamente per questo che Tipo era subito verde."
+    ],
+    "h_kleur": "Che cosa significano i colori",
+    "li_kleur": [
+      "<strong>Verde&nbsp;✓</strong> — esatto.",
+      "<strong>Oro&nbsp;~</strong> — vicino. Un paese confinante, o entro tre anni.",
+      "<strong>Sabbia chiaro&nbsp;×</strong> — sbagliato.",
+      "<strong>↑ e ↓</strong> — su età, esordio da professionista e vittorie: più alto o più basso."
+    ],
+    "p_kleur1": "I tre colori vanno dallo scuro al chiaro: il verde è il più scuro, l’oro sta nel mezzo, lo sbagliato è il più chiaro.",
+    "p_kleur2": "Paese, Età, Pro e Vittorie possono diventare oro. Tipo e Squadra no; quelle sono giuste o sbagliate e nulla nel mezzo.",
+    "p_kleur3": "Ogni casella porta in alto a destra un piccolo segno: ✓, × o una freccia. Così il gioco funziona anche se percepisci i colori in modo diverso. Nelle impostazioni c’è inoltre una modalità per daltonici.",
+    "h_kolom": "Le sei colonne",
+    "li_kolom": [
+      "<strong>Paese</strong> — verde se è lo stesso paese, oro se è un paese confinante. Contano solo i confini terrestri reali: Belgio e Inghilterra non sono vicini.",
+      "<strong>Età</strong> — verde entro un anno, oro entro tre, con una freccia.",
+      "<strong>Squadra</strong> — la squadra con cui il corridore è più noto. Giusto o sbagliato, senza colore intermedio.",
+      "<strong>Tipo</strong> — scalatore, velocista, classicomane, cronoman, completo. Giusto o sbagliato, senza colore intermedio.",
+      "<strong>Pro</strong> — l’anno del primo contratto da professionista, con una freccia verso l’anno giusto.",
+      "<strong>Vittorie</strong> — vittorie su strada in carriera, a fasce: 0–9, 10+, 25+, 50+, 99+, con una freccia."
+    ],
+    "h_dagen": "Alcuni giorni sono più difficili",
+    "p_dagen": "La settimana ha un ritmo:",
+    "li_dagen": [
+      "<strong>Dal lunedì al giovedì</strong> — icone del ciclismo.",
+      "<strong>Venerdì</strong> — anche un’icona, ma sempre qualcuno che ha smesso. Un grande nome del passato.",
+      "<strong>Sabato e domenica</strong> — il fine settimana è per i veri intenditori."
+    ],
+    "h_bidon": "La borraccia",
+    "p_bidon": "Accanto al campo di inserimento c’è una borraccia. Se sei bloccato, ti rivela il valore di una colonna: una colonna che non hai ancora verde, perché una colonna che già conosci non ti aiuta.",
+    "li_bidon": [
+      "<strong>Si sblocca dopo il sesto tentativo.</strong>",
+      "<strong>Una al giorno.</strong>",
+      "<strong>Gratis per tutti.</strong>"
+    ],
+    "p_bidon2": "Se l’hai usata si vede nel tuo risultato: piena e verde a zero, vuota e rossa a una.",
+    "h_reeks": "La tua serie",
+    "p_reeks": "Ogni giorno che risolvi allunga la tua serie; saltare un giorno o non trovare il corridore la riporta a zero. In alto a destra nell’app c’è la fiammella con la tua serie.",
+    "p_reeks2": "Se preferisci non perderti nulla, l’app ti manda un promemoria al giorno all’ora che scegli tu. Lo trovi nelle impostazioni.",
+    "h_delen": "Condividere",
+    "p_delen": "Quando hai finito, l’app crea una scheda da mettere in una chat di gruppo: il tuo risultato, il tuo tempo, la tua serie, se hai avuto bisogno di una borraccia, e i tuoi tentativi come griglia di caselle colorate. Il nome del corridore non compare mai, e nemmeno la sua bandiera, quindi non riveli nulla a chi deve ancora giocare.",
+    "p_delen2": "Va anche una versione testuale, con le stesse caselle come emoji, per le app che preferiscono il testo a un’immagine.",
+    "h_kost": "Quanto costa",
+    "p_kost1": "L’indovinello quotidiano è gratuito e resta gratuito.",
+    "p_kost2": "Un abbonamento PRO sblocca l’archivio dei giorni passati, una modalità di allenamento e i numeri su come giochi: percentuale di vittorie, numero medio di tentativi, distribuzione dei tentativi, tempo medio, la tua preferenza per generazione e quante volte hai avuto bisogno di una borraccia. Le nuove funzioni potranno essere gratuite oppure finire dietro l’abbonamento PRO.",
+    "h_niet": "Che cosa non fa",
+    "li_niet": [
+      "Nessun account, nessun login, nessuna registrazione. L’app non raccoglie nulla.",
+      "Nessuna pubblicità, nessun software di analisi, nessun tracker nell’app. Questo sito però conta i visitatori; vedi la pagina sulla privacy.",
+      "Funziona completamente offline."
+    ]
+  },
+  "es": {
+    "titel": "Cómo funciona - De Coureur",
+    "desc": "Un ciclista al día. Seis pistas, ocho intentos. Así se lee la cuadrícula.",
+    "h1": "Cómo funciona",
+    "h_acht": "Ocho intentos",
+    "p_acht": "Escribes el nombre de un corredor y eliges uno de la lista. Después de cada intento, seis columnas te dicen lo cerca que estabas.",
+    "gok": [
+      "Merckx queda lejísimos en el tiempo, pero <strong>dos casillas se ponen verdes de inmediato</strong>: Tipo y Victorias. El corredor buscado es por tanto también un corredor completo y también tiene más de noventa y nueve victorias. La flecha hacia abajo en Edad significa que buscamos a alguien más joven; la flecha hacia arriba en Pro, que el corredor buscado se hizo profesional mucho más tarde.",
+      "Van Aert fija <strong>Pro</strong>: él también se hizo profesional en 2019, así que esa casilla es verde. Edad sigue siendo incorrecta: 31 está a más de tres años, y entonces la casilla no se pone dorada. País, Equipo y Tipo fallan, así que no es un clasicómano belga.",
+      "Vingegaard acierta <strong>Tipo</strong> de lleno: buscamos un corredor completo. Edad se pone ahora dorada con una flecha hacia abajo, 29 entra dentro de los tres años, pero el corredor buscado es aún algo más joven. Victorias sigue mal: 50+ queda demasiado lejos de 99+.",
+      "Ganna muestra lo que significa <strong>el dorado en País</strong>: Italia no es el país correcto, pero limita con él. Eso reduce el mapa de golpe a un puñado de vecinos: Eslovenia, Austria, Hungría, Croacia. El verde es solo el país en sí; el dorado es un país vecino.",
+      "Roglič revela el país: <strong>Eslovenia</strong>. Su año de debut profesional se pone dorado, 2016 entra dentro de los tres años. Junto con completo y una edad justo por debajo de 29, ya no queda mucho.",
+      "¡Acertado! Las seis casillas en verde: <strong>Tadej Pogačar</strong>, esloveno, UAE Team Emirates, corredor completo, profesional desde 2019 y con más de noventa y nueve victorias. Un talento fuera de lo común que gana tanto clásicas como grandes vueltas, igual que Merckx, y por eso Tipo se puso verde con él de inmediato."
+    ],
+    "h_kleur": "Qué significan los colores",
+    "li_kleur": [
+      "<strong>Verde&nbsp;✓</strong> — exacto.",
+      "<strong>Dorado&nbsp;~</strong> — cerca. Un país vecino, o dentro de tres años.",
+      "<strong>Arena claro&nbsp;×</strong> — incorrecto.",
+      "<strong>↑ y ↓</strong> — en edad, debut profesional y victorias: más alto o más bajo."
+    ],
+    "p_kleur1": "Los tres colores van de oscuro a claro: el verde es el más oscuro, el dorado está en medio, el incorrecto es el más claro.",
+    "p_kleur2": "País, Edad, Pro y Victorias pueden ponerse dorados. Tipo y Equipo no; esos son correctos o incorrectos y nada intermedio.",
+    "p_kleur3": "Cada casilla lleva arriba a la derecha una marca pequeña: ✓, × o una flecha. Así el juego funciona también si percibes los colores de otra manera. En los ajustes hay además un modo para daltónicos.",
+    "h_kolom": "Las seis columnas",
+    "li_kolom": [
+      "<strong>País</strong> — verde si es el mismo país, dorado si es un país vecino. Solo cuentan las fronteras terrestres reales: Bélgica e Inglaterra no son vecinos.",
+      "<strong>Edad</strong> — verde dentro de un año, dorado dentro de tres, con una flecha.",
+      "<strong>Equipo</strong> — el equipo con el que el corredor es más conocido. Correcto o incorrecto, sin color intermedio.",
+      "<strong>Tipo</strong> — escalador, velocista, clasicómano, contrarrelojista, completo. Correcto o incorrecto, sin color intermedio.",
+      "<strong>Pro</strong> — el año del primer contrato profesional, con una flecha hacia el año correcto.",
+      "<strong>Victorias</strong> — victorias en ruta en la carrera deportiva, por tramos: 0–9, 10+, 25+, 50+, 99+, con una flecha."
+    ],
+    "h_dagen": "Algunos días son más difíciles",
+    "p_dagen": "La semana tiene un ritmo:",
+    "li_dagen": [
+      "<strong>De lunes a jueves</strong> — iconos del ciclismo.",
+      "<strong>Viernes</strong> — también un icono, pero siempre alguien retirado. Un gran nombre de antes.",
+      "<strong>Sábado y domingo</strong> — el fin de semana es para los verdaderos entendidos."
+    ],
+    "h_bidon": "El bidón",
+    "p_bidon": "Junto al campo de entrada hay un bidón. Si te atascas, te revela el valor de una columna: una columna que aún no tengas en verde, porque una columna que ya conoces no te ayuda.",
+    "li_bidon": [
+      "<strong>Se libera tras tu sexto intento.</strong>",
+      "<strong>Uno al día.</strong>",
+      "<strong>Gratis para todos.</strong>"
+    ],
+    "p_bidon2": "Si lo has usado se ve en tu resultado: lleno y verde con cero, vacío y rojo con uno.",
+    "h_reeks": "Tu racha",
+    "p_reeks": "Cada día que resuelves alarga tu racha; saltarte un día o no encontrar al corredor la devuelve a cero. Arriba a la derecha en la app está la llama con tu racha.",
+    "p_reeks2": "Si prefieres no perderte nada, la app te envía un recordatorio al día a la hora que elijas. Lo encuentras en los ajustes.",
+    "h_delen": "Compartir",
+    "p_delen": "Cuando terminas, la app crea una tarjeta para poner en un chat de grupo: tu resultado, tu tiempo, tu racha, si necesitaste un bidón, y tus intentos como una cuadrícula de casillas de colores. El nombre del corredor nunca aparece, ni su bandera, así que no destripas nada a quien aún tiene que jugar.",
+    "p_delen2": "También va una versión en texto, con las mismas casillas como emoji, para apps que prefieren texto antes que una imagen.",
+    "h_kost": "Cuánto cuesta",
+    "p_kost1": "El acertijo diario es gratis y seguirá siendo gratis.",
+    "p_kost2": "Una suscripción PRO desbloquea el archivo de los días pasados, un modo de práctica y las cifras sobre cómo juegas: tu porcentaje de victorias, tu número medio de intentos, la distribución de tus intentos, tu tiempo medio, tu preferencia por generación y cuántas veces necesitaste un bidón. Las funciones nuevas pueden ser gratuitas o quedar detrás de la suscripción PRO.",
+    "h_niet": "Qué no hace",
+    "li_niet": [
+      "Sin cuenta, sin inicio de sesión, sin registro. La app no recoge nada.",
+      "Sin anuncios, sin software de análisis, sin rastreadores en la app. Este sitio sí cuenta visitantes; consulta la página de privacidad.",
+      "Funciona completamente sin conexión."
+    ]
+  }
+}

@@ -1,0 +1,336 @@
+{
+ "kaarten": [
+  [
+   "Eddy Merckx",
+   [
+    [
+     "fout",
+     "🇧🇪",
+     "✕"
+    ],
+    [
+     "fout",
+     "81",
+     "↓"
+    ],
+    [
+     "fout",
+     "MOL",
+     "✕"
+    ],
+    [
+     "goed",
+     "@allround",
+     "✓"
+    ],
+    [
+     "fout",
+     "1965",
+     "↑"
+    ],
+    [
+     "goed",
+     "99+",
+     "✓"
+    ]
+   ]
+  ],
+  [
+   "Wout van Aert",
+   [
+    [
+     "fout",
+     "🇧🇪",
+     "✕"
+    ],
+    [
+     "fout",
+     "31",
+     "↓"
+    ],
+    [
+     "fout",
+     "TVL",
+     "✕"
+    ],
+    [
+     "fout",
+     "@klassiek",
+     "✕"
+    ],
+    [
+     "goed",
+     "2019",
+     "✓"
+    ],
+    [
+     "fout",
+     "50+",
+     "↑"
+    ]
+   ]
+  ],
+  [
+   "Jonas Vingegaard",
+   [
+    [
+     "fout",
+     "🇩🇰",
+     "✕"
+    ],
+    [
+     "bijna",
+     "29",
+     "↓"
+    ],
+    [
+     "fout",
+     "TVL",
+     "✕"
+    ],
+    [
+     "goed",
+     "@allround",
+     "✓"
+    ],
+    [
+     "goed",
+     "2019",
+     "✓"
+    ],
+    [
+     "fout",
+     "50+",
+     "↑"
+    ]
+   ]
+  ],
+  [
+   "Filippo Ganna",
+   [
+    [
+     "bijna",
+     "🇮🇹",
+     "~"
+    ],
+    [
+     "bijna",
+     "30",
+     "↓"
+    ],
+    [
+     "fout",
+     "NCI",
+     "✕"
+    ],
+    [
+     "fout",
+     "@tijdrit",
+     "✕"
+    ],
+    [
+     "fout",
+     "2015",
+     "↑"
+    ],
+    [
+     "fout",
+     "25+",
+     "↑"
+    ]
+   ]
+  ],
+  [
+   "Primož Roglič",
+   [
+    [
+     "goed",
+     "🇸🇮",
+     "✓"
+    ],
+    [
+     "fout",
+     "36",
+     "↓"
+    ],
+    [
+     "fout",
+     "RBH",
+     "✕"
+    ],
+    [
+     "fout",
+     "@klimmer",
+     "✕"
+    ],
+    [
+     "bijna",
+     "2016",
+     "↑"
+    ],
+    [
+     "fout",
+     "50+",
+     "↑"
+    ]
+   ]
+  ],
+  [
+   "Tadej Pogačar",
+   [
+    [
+     "goed",
+     "🇸🇮",
+     "✓"
+    ],
+    [
+     "goed",
+     "27",
+     "✓"
+    ],
+    [
+     "goed",
+     "UEX",
+     "✓"
+    ],
+    [
+     "goed",
+     "@allround",
+     "✓"
+    ],
+    [
+     "goed",
+     "2019",
+     "✓"
+    ],
+    [
+     "goed",
+     "99+",
+     "✓"
+    ]
+   ]
+  ]
+ ],
+ "taal": {
+  "nl": {
+   "kol": [
+    "Land",
+    "Leeftijd",
+    "Ploeg",
+    "Type",
+    "Prof",
+    "Zeges"
+   ],
+   "juist": "juist",
+   "mis": "mis",
+   "bij": "dichtbij",
+   "buur": "buurland",
+   "typen": {
+    "@allround": "Allround",
+    "@klassiek": "Klassiek",
+    "@tijdrit": "Tijdrit",
+    "@klimmer": "Klimmer"
+   }
+  },
+  "en": {
+   "kol": [
+    "Country",
+    "Age",
+    "Team",
+    "Type",
+    "Pro",
+    "Wins"
+   ],
+   "juist": "correct",
+   "mis": "wrong",
+   "bij": "close",
+   "buur": "neighbour",
+   "typen": {
+    "@allround": "All-round",
+    "@klassiek": "Classics",
+    "@tijdrit": "Time trial",
+    "@klimmer": "Climber"
+   }
+  },
+  "fr": {
+   "kol": [
+    "Pays",
+    "Âge",
+    "Équipe",
+    "Type",
+    "Pro",
+    "Victoires"
+   ],
+   "juist": "correct",
+   "mis": "faux",
+   "bij": "proche",
+   "buur": "pays voisin",
+   "typen": {
+    "@allround": "Complet",
+    "@klassiek": "Classiques",
+    "@tijdrit": "Chrono",
+    "@klimmer": "Grimpeur"
+   }
+  },
+  "de": {
+   "kol": [
+    "Land",
+    "Alter",
+    "Team",
+    "Typ",
+    "Profi",
+    "Siege"
+   ],
+   "juist": "richtig",
+   "mis": "falsch",
+   "bij": "nah dran",
+   "buur": "Nachbarland",
+   "typen": {
+    "@allround": "Allrounder",
+    "@klassiek": "Klassiker",
+    "@tijdrit": "Zeitfahren",
+    "@klimmer": "Kletterer"
+   }
+  },
+  "it": {
+   "kol": [
+    "Paese",
+    "Età",
+    "Squadra",
+    "Tipo",
+    "Pro",
+    "Vittorie"
+   ],
+   "juist": "giusto",
+   "mis": "sbagliato",
+   "bij": "vicino",
+   "buur": "paese confinante",
+   "typen": {
+    "@allround": "Completo",
+    "@klassiek": "Classiche",
+    "@tijdrit": "Crono",
+    "@klimmer": "Scalatore"
+   }
+  },
+  "es": {
+   "kol": [
+    "País",
+    "Edad",
+    "Equipo",
+    "Tipo",
+    "Pro",
+    "Victorias"
+   ],
+   "juist": "correcto",
+   "mis": "incorrecto",
+   "bij": "cerca",
+   "buur": "país vecino",
+   "typen": {
+    "@allround": "Completo",
+    "@klassiek": "Clásicas",
+    "@tijdrit": "Contrarreloj",
+    "@klimmer": "Escalador"
+   }
+  }
+ }
+}
