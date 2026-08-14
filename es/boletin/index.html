@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boletín - De Coureur</title>
+<link rel="canonical" href="https://decoureur.eu/es/boletin/">
+<link rel="icon" href="../../favicon.ico" sizes="any">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="description" content="Solo un correo cuando de verdad hay algo que contar.">
+
+<link rel="alternate" hreflang="nl" href="https://decoureur.eu/nieuwsbrief/">
+<link rel="alternate" hreflang="en" href="https://decoureur.eu/en/newsletter/">
+<link rel="alternate" hreflang="fr" href="https://decoureur.eu/fr/infolettre/">
+<link rel="alternate" hreflang="de" href="https://decoureur.eu/de/newsletter/">
+<link rel="alternate" hreflang="it" href="https://decoureur.eu/it/newsletter/">
+<link rel="alternate" hreflang="es" href="https://decoureur.eu/es/boletin/">
+<link rel="alternate" hreflang="x-default" href="https://decoureur.eu/nieuwsbrief/">
+
+<meta property="og:title" content="Boletín - De Coureur">
+<meta property="og:description" content="Solo un correo cuando de verdad hay algo que contar.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://decoureur.eu/es/boletin/">
+
+<link rel="stylesheet" href="../../tokens.css">
+<link rel="stylesheet" href="../../stijl.css">
+
+<!-- **Google Analytics 4** (Lode, 2026-08-13). Dit is het enige externe verzoek
+     op de site en het enige script dat op élke pagina staat; de huisregel "geen
+     scripts, niet één" in `web/README.md` is daarmee vervallen en daar herschreven.
+
+     Het staat op de achttien inhoudelijke pagina's en op `404.html` — daar juist
+     wél, want daar zie je welke oude adressen nog aangeklikt worden. Het staat
+     **niet** op de tien doorverwijspagina's onder /nl/, /how-it-works/,
+     /newsletter/, /support/ en /terms/: die tonen zichzelf nooit aan een bezoeker,
+     en een meting daar levert alleen spookbezoeken van nul seconden op.
+
+     Wat het plaatst en wat de privacypagina daarover zegt, staat in
+     `web/privacy/index.html` onder "Bezoekersmeting". -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P1EHCM6ET9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P1EHCM6ET9');
+</script>
+</head>
+<body>
+
+<nav class="talen" aria-label="Idioma">
+  <a href="/nieuwsbrief/" hreflang="nl">NL</a>
+  <a href="/en/newsletter/" hreflang="en">EN</a>
+  <a href="/fr/infolettre/" hreflang="fr">FR</a>
+  <a href="/de/newsletter/" hreflang="de">DE</a>
+  <a href="/it/newsletter/" hreflang="it">IT</a>
+  <a href="/es/boletin/" hreflang="es" aria-current="true">ES</a>
+</nav>
+
+<header class="kop">
+  <a class="merk" href="../">
+    <img class="logo" src="../../logo.svg" alt="" width="52" height="52">
+    <span class="woordmerk">De Coureur</span>
+  </a>
+</header>
+
+<main class="omhulsel">
+  <h1>Mantente al día</h1>
+
+  <p class="inleiding">
+    Solo recibirás un correo cuando de verdad importe. Los códigos de descuento para Pro también llegarán aquí.
+  </p>
+
+  <div class="inschrijfblok">
+  <form class="inschrijven row-form" method="post" action="https://script.google.com/macros/s/AKfycbxtNdOmujhZmJCLnzLGdwQ8BSH_bBzCjGJOn6h7qy59aZXS0YWkziNqumaexk9DYvWM/exec">
+    <label for="email">Dirección de correo</label>
+    <input id="email" name="email" type="email" autocomplete="email"
+           required inputmode="email" spellcheck="false">
+    <!-- Honeypot: het Apps Script doet bij een ingevulde waarde alsof het lukte
+         en bewaart niets. Een mens ziet dit veld nooit. -->
+    <div class="honeypot" aria-hidden="true">
+      <label for="website">Deja este campo vacío</label>
+      <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
+    <button type="submit" data-wachten="Un momento">Suscribirse</button>
+  </form>
+
+  <p class="formfout" role="alert" hidden
+     data-geweigerd="Esa dirección no se aceptó. Compruébala e inténtalo de nuevo."
+     data-netwerk="No se pudo enviar la suscripción. Inténtalo más tarde."></p>
+
+  <div class="inschrijven row-success" hidden>
+    <p class="succeskop">¡Gracias!</p>
+    <p class="optin">Ya estás en la lista. Te escribiremos cuando haya novedades.</p>
+  </div>
+  </div>
+
+</main>
+
+<footer class="omhulsel">
+  <p class="voet-klein">Un juego sobre ciclismo. Sin vínculo con la UCI, un equipo o un organizador.</p>
+  <hr class="voet-streep">
+  <nav>
+    <a href="../">Inicio</a>
+    <a href="../como-funciona/">Cómo funciona</a>
+    <a href="../privacidad/">Privacidad</a>
+    <a href="../condiciones/">Condiciones</a>
+    <a href="../contacto/">Contacto</a>
+  </nav>
+</footer>
+
+<!-- **Het enige JavaScript op deze hele site**, en alleen op de drie
+     nieuwsbriefpagina's. Het verstuurt het adres naar de Apps Script-webapp en
+     toont daarna het bedankblok of een foutmelding. -->
+<script>
+    // **Google Apps Script schrijft het adres in een spreadsheet** (Lode,
+    // 2026-08-10).
+    //
+    // **Getest in Safari met AdGuard actief:** het verzoek komt door en het
+    // antwoord is leesbaar. Dat is niet vanzelfsprekend — een adblocker die een
+    // heel domein blokkeert, maakt élke techniek aan de browserkant kansloos:
+    // fetch, iframe en scriptinjectie stuiten dan op dezelfde muur. Wijzig je
+    // ooit van dienst, meet dat dan opnieuw in een browser mét blokkeerlijsten,
+    // en vertrouw niet op `curl` — die kent geen blokkeerlijsten.
+    //
+    // Drie dingen die dit endpoint bepalen en die je moet weten voor je iets
+    // wijzigt, alle drie gemeten op 2026-08-10:
+    //
+    //   1. **Het verwacht een JSON-body**, niet losse formuliervelden. Een
+    //      gewone urlencoded POST met `email=` antwoordt `{"ok":false}`.
+    //   2. **`text/plain` volstaat als content-type.** Dat is een van de drie
+    //      types die CORS zonder preflight toelaat, dus er gaat geen extra
+    //      OPTIONS-verzoek overheen. `application/json` zou dat wél doen.
+    //   3. **Beide hops sturen `access-control-allow-origin: *`** — zowel de
+    //      302 van `script.google.com` als het antwoord van
+    //      `script.googleusercontent.com` waar hij naartoe wijst. Daardoor is
+    //      `{"ok":true｜false}` echt te lezen en hoeft er niets geraden te worden.
+    //
+    // **Zonder JavaScript werkt het ook**, sinds 2026-08-10. Het `<form>` heeft
+    // een gewone `action` en `method="post"`; valt JavaScript weg, dan verstuurt
+    // de browser hem zelf en antwoordt het Apps Script met een HTML-pagina in
+    // plaats van JSON. De bezoeker verlaat dan wel de site — daarom onderschept
+    // dit script de verzending zolang het kán, met `preventDefault`.
+    //
+    // Dat vroeg twee dingen aan de kant van het script: `e.parameter` aannemen
+    // als de body geen JSON is, en HtmlService gebruiken bij een formulierpost.
+    // Beide zijn er sinds 2026-08-10; alle vier de paden zijn nagemeten.
+    (function () {
+      var wrap = document.querySelector('.inschrijfblok');
+      if (!wrap) { return; }
+      var form = wrap.querySelector('.row-form');
+      var success = wrap.querySelector('.row-success');
+      var fout = wrap.querySelector('.formfout');
+      var veld = wrap.querySelector('input[type="email"]');
+      var lokaas = wrap.querySelector('input[name="website"]');
+      if (!form || !success || !fout || !veld) { return; }
+
+      var knop = form.querySelector('button[type="submit"]');
+      // Het oorspronkelijke opschrift, want na een fout moet de knop terug naar
+      // wat er eerst stond en niet naar een vertaling die hier hardgecodeerd is.
+      var knopTekst = knop ? knop.textContent : '';
+
+      // **De knop wisselt van opschrift zolang het verzoek loopt** (Lode,
+      // 2026-08-13: *"het duurt even vooraleer de Bedankt verschijnt"*).
+      // `disabled` alleen was niet genoeg: de knop bleef "Inschrijven" zeggen en
+      // zag er ongewijzigd uit, dus wie niets zag gebeuren, klikte opnieuw.
+      // `aria-live` op het bedankblok bestaat niet, dus dit opschrift is voor een
+      // schermlezer ook het enige teken dat er iets loopt.
+      function zetKnop(bezig) {
+        if (!knop) { return; }
+        knop.disabled = bezig;
+        knop.textContent = bezig
+          ? (knop.getAttribute('data-wachten') || knopTekst)
+          : knopTekst;
+      }
+
+      function toonFout(soort) {
+        fout.textContent = fout.getAttribute('data-' + soort);
+        fout.removeAttribute('hidden');
+        zetKnop(false);
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        fout.setAttribute('hidden', '');
+        zetKnop(true);
+
+        fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          // `website` is het honeypot-veld. Het Apps Script doet bij een
+          // ingevulde waarde alsof het lukte en bewaart niets.
+          body: JSON.stringify({
+            email: veld.value,
+            website: lokaas ? lokaas.value : ''
+          })
+        })
+          .then(function (antwoord) { return antwoord.json(); })
+          .then(function (data) {
+            if (!data || !data.ok) { toonFout('geweigerd'); return; }
+            form.setAttribute('hidden', '');
+            success.removeAttribute('hidden');
+            success.setAttribute('tabindex', '-1');
+            success.focus();
+          })
+          .catch(function () { toonFout('netwerk'); });
+      });
+    })();
+  </script>
+</body>
+</html>
