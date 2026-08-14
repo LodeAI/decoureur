@@ -1,0 +1,50 @@
+{
+  "nl": {
+    "root": "/",
+    "uitleg": "uitleg",
+    "nieuwsbrief": "nieuwsbrief",
+    "privacy": "privacy",
+    "voorwaarden": "voorwaarden",
+    "contact": "contact"
+  },
+  "en": {
+    "root": "/en/",
+    "uitleg": "how-it-works",
+    "nieuwsbrief": "newsletter",
+    "privacy": "privacy",
+    "voorwaarden": "terms",
+    "contact": "support"
+  },
+  "fr": {
+    "root": "/fr/",
+    "uitleg": "explication",
+    "nieuwsbrief": "infolettre",
+    "privacy": "confidentialite",
+    "voorwaarden": "conditions",
+    "contact": "contact"
+  },
+  "de": {
+    "root": "/de/",
+    "uitleg": "so-gehts",
+    "nieuwsbrief": "newsletter",
+    "privacy": "datenschutz",
+    "voorwaarden": "agb",
+    "contact": "kontakt"
+  },
+  "it": {
+    "root": "/it/",
+    "uitleg": "come-funziona",
+    "nieuwsbrief": "newsletter",
+    "privacy": "privacy",
+    "voorwaarden": "condizioni",
+    "contact": "contatti"
+  },
+  "es": {
+    "root": "/es/",
+    "uitleg": "como-funciona",
+    "nieuwsbrief": "boletin",
+    "privacy": "privacidad",
+    "voorwaarden": "condiciones",
+    "contact": "contacto"
+  }
+}
