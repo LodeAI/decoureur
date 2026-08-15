@@ -30,7 +30,7 @@
      op de site en het enige script dat op élke pagina staat; de huisregel "geen
      scripts, niet één" in `web/README.md` is daarmee vervallen en daar herschreven.
 
-     Het staat op de achttien inhoudelijke pagina's en op `404.html` — daar juist
+     Het staat op de achttien inhoudelijke pagina's en op `404.html`; daar juist
      wél, want daar zie je welke oude adressen nog aangeklikt worden. Het staat
      **niet** op de tien doorverwijspagina's onder /nl/, /how-it-works/,
      /newsletter/, /support/ en /terms/: die tonen zichzelf nooit aan een bezoeker,
@@ -86,7 +86,7 @@
            required inputmode="email" spellcheck="false">
     <!-- **Honeypot.** Het Apps Script leest dit veld: staat er iets in, dan
          doet het alsof de inschrijving lukte maar bewaart het niets. Een mens
-         ziet dit veld nooit — het staat buiten beeld en buiten de tabvolgorde.
+         ziet dit veld nooit; het staat buiten beeld en buiten de tabvolgorde.
          `display: none` wordt door invulbots juist herkend; wegschuiven niet. -->
     <div class="honeypot" aria-hidden="true">
       <label for="website">Leave this field empty</label>
@@ -131,11 +131,11 @@
     // 2026-08-10).
     //
     // **Getest in Safari met AdGuard actief:** het verzoek komt door en het
-    // antwoord is leesbaar. Dat is niet vanzelfsprekend — een adblocker die een
+    // antwoord is leesbaar. Dat is niet vanzelfsprekend; een adblocker die een
     // heel domein blokkeert, maakt élke techniek aan de browserkant kansloos:
     // fetch, iframe en scriptinjectie stuiten dan op dezelfde muur. Wijzig je
     // ooit van dienst, meet dat dan opnieuw in een browser mét blokkeerlijsten,
-    // en vertrouw niet op `curl` — die kent geen blokkeerlijsten.
+    // en vertrouw niet op `curl`, die kent geen blokkeerlijsten.
     //
     // Drie dingen die dit endpoint bepalen en die je moet weten voor je iets
     // wijzigt, alle drie gemeten op 2026-08-10:
@@ -145,7 +145,7 @@
     //   2. **`text/plain` volstaat als content-type.** Dat is een van de drie
     //      types die CORS zonder preflight toelaat, dus er gaat geen extra
     //      OPTIONS-verzoek overheen. `application/json` zou dat wél doen.
-    //   3. **Beide hops sturen `access-control-allow-origin: *`** — zowel de
+    //   3. **Beide hops sturen `access-control-allow-origin: *`**; zowel de
     //      302 van `script.google.com` als het antwoord van
     //      `script.googleusercontent.com` waar hij naartoe wijst. Daardoor is
     //      `{"ok":true｜false}` echt te lezen en hoeft er niets geraden te worden.
@@ -153,7 +153,7 @@
     // **Zonder JavaScript werkt het ook**, sinds 2026-08-10. Het `<form>` heeft
     // een gewone `action` en `method="post"`; valt JavaScript weg, dan verstuurt
     // de browser hem zelf en antwoordt het Apps Script met een HTML-pagina in
-    // plaats van JSON. De bezoeker verlaat dan wel de site — daarom onderschept
+    // plaats van JSON. De bezoeker verlaat dan wel de site; daarom onderschept
     // dit script de verzending zolang het kán, met `preventDefault`.
     //
     // Dat vroeg twee dingen aan de kant van het script: `e.parameter` aannemen

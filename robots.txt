@@ -1,4 +1,4 @@
-# decoureur.eu — alles mag geïndexeerd worden.
+# decoureur.eu; alles mag geïndexeerd worden.
 #
 # **Dit bestand staat er om expliciet te zijn, niet om iets te blokkeren.** Zonder
 # robots.txt is alles ook toegestaan, maar dan is dat een aanname; sommige
@@ -6,7 +6,7 @@
 # uitdrukkelijk ja zegt.
 #
 # Er staat niets op deze site dat privé is. De app verzamelt niets, de dataset is
-# openbaar en de teksten zijn er om gelezen te worden — ook door een taalmodel dat
+# openbaar en de teksten zijn er om gelezen te worden; ook door een taalmodel dat
 # iemand vraagt wat De Coureur is. Dat is precies het soort vindbaarheid dat een
 # app zonder marketingbudget nodig heeft.
 

@@ -15,29 +15,29 @@
     ],
     "h_kleur": "Was die Farben bedeuten",
     "li_kleur": [
-      "<strong>Grün&nbsp;✓</strong> — genau richtig.",
-      "<strong>Gold&nbsp;~</strong> — nah dran. Ein Nachbarland, oder innerhalb von drei Jahren.",
-      "<strong>Heller Sand&nbsp;×</strong> — falsch.",
-      "<strong>↑ und ↓</strong> — bei Alter, Profidebüt und Siegen: höher oder niedriger."
+      "<strong>Grün&nbsp;✓</strong>; genau richtig.",
+      "<strong>Gold&nbsp;~</strong>; nah dran. Ein Nachbarland, oder innerhalb von drei Jahren.",
+      "<strong>Heller Sand&nbsp;×</strong>; falsch.",
+      "<strong>↑ und ↓</strong>; bei Alter, Profidebüt und Siegen: höher oder niedriger."
     ],
     "p_kleur1": "Die drei Farben laufen von dunkel nach hell: Grün ist am dunkelsten, Gold liegt dazwischen, Falsch ist am hellsten.",
     "p_kleur2": "Land, Alter, Profi und Siege können golden werden. Typ und Team nicht; die sind richtig oder falsch und nichts dazwischen.",
     "p_kleur3": "Jedes Feld trägt rechts oben einen kleinen Punkt: ✓, × oder einen Pfeil. So funktioniert das Spiel auch, wenn du Farben anders siehst. In den Einstellungen gibt es zusätzlich einen Farbenblind-Modus.",
     "h_kolom": "Die sechs Spalten",
     "li_kolom": [
-      "<strong>Land</strong> — grün beim gleichen Land, golden bei einem Nachbarland. Es zählen nur echte Landgrenzen: Belgien und England sind also keine Nachbarn.",
-      "<strong>Alter</strong> — grün innerhalb eines Jahres, golden innerhalb von drei, mit einem Pfeil.",
-      "<strong>Team</strong> — das Team, mit dem der Fahrer am bekanntesten ist. Richtig oder falsch, ohne Zwischenfarbe.",
-      "<strong>Typ</strong> — Kletterer, Sprinter, Klassikerfahrer, Zeitfahrer, Allrounder. Richtig oder falsch, ohne Zwischenfarbe.",
-      "<strong>Profi</strong> — das Jahr des ersten Profivertrags, mit einem Pfeil zum richtigen Jahr.",
-      "<strong>Siege</strong> — Straßensiege in der Karriere, in Stufen: 0–9, 10+, 25+, 50+, 99+, mit einem Pfeil."
+      "<strong>Land</strong>; grün beim gleichen Land, golden bei einem Nachbarland. Es zählen nur echte Landgrenzen: Belgien und England sind also keine Nachbarn.",
+      "<strong>Alter</strong>; grün innerhalb eines Jahres, golden innerhalb von drei, mit einem Pfeil.",
+      "<strong>Team</strong>; das Team, mit dem der Fahrer am bekanntesten ist. Richtig oder falsch, ohne Zwischenfarbe.",
+      "<strong>Typ</strong>; Kletterer, Sprinter, Klassikerfahrer, Zeitfahrer, Allrounder. Richtig oder falsch, ohne Zwischenfarbe.",
+      "<strong>Profi</strong>; das Jahr des ersten Profivertrags, mit einem Pfeil zum richtigen Jahr.",
+      "<strong>Siege</strong>; Straßensiege in der Karriere, in Stufen: 0–9, 10+, 25+, 50+, 99+, mit einem Pfeil."
     ],
     "h_dagen": "Manche Tage sind schwerer",
     "p_dagen": "Die Woche hat einen Rhythmus:",
     "li_dagen": [
-      "<strong>Montag bis Donnerstag</strong> — Radsportikonen.",
-      "<strong>Freitag</strong> — ebenfalls eine Ikone, aber immer jemand, der aufgehört hat. Ein früherer großer Name.",
-      "<strong>Samstag und Sonntag</strong> — das Wochenende gehört den echten Kennern."
+      "<strong>Montag bis Donnerstag</strong>; Radsportikonen.",
+      "<strong>Freitag</strong>; ebenfalls eine Ikone, aber immer jemand, der aufgehört hat. Ein früherer großer Name.",
+      "<strong>Samstag und Sonntag</strong>; das Wochenende gehört den echten Kennern."
     ],
     "h_bidon": "Die Trinkflasche",
     "p_bidon": "Neben dem Eingabefeld steht eine Trinkflasche. Wenn du feststeckst, gibt sie einen Spaltenwert preis: eine Spalte, die du noch nicht grün hast, denn eine Spalte, die du schon kennst, bringt dich nicht weiter.",
@@ -79,29 +79,29 @@
     ],
     "h_kleur": "Che cosa significano i colori",
     "li_kleur": [
-      "<strong>Verde&nbsp;✓</strong> — esatto.",
-      "<strong>Oro&nbsp;~</strong> — vicino. Un paese confinante, o entro tre anni.",
-      "<strong>Sabbia chiaro&nbsp;×</strong> — sbagliato.",
-      "<strong>↑ e ↓</strong> — su età, esordio da professionista e vittorie: più alto o più basso."
+      "<strong>Verde&nbsp;✓</strong>; esatto.",
+      "<strong>Oro&nbsp;~</strong>; vicino. Un paese confinante, o entro tre anni.",
+      "<strong>Sabbia chiaro&nbsp;×</strong>; sbagliato.",
+      "<strong>↑ e ↓</strong>; su età, esordio da professionista e vittorie: più alto o più basso."
     ],
     "p_kleur1": "I tre colori vanno dallo scuro al chiaro: il verde è il più scuro, l’oro sta nel mezzo, lo sbagliato è il più chiaro.",
     "p_kleur2": "Paese, Età, Pro e Vittorie possono diventare oro. Tipo e Squadra no; quelle sono giuste o sbagliate e nulla nel mezzo.",
     "p_kleur3": "Ogni casella porta in alto a destra un piccolo segno: ✓, × o una freccia. Così il gioco funziona anche se percepisci i colori in modo diverso. Nelle impostazioni c’è inoltre una modalità per daltonici.",
     "h_kolom": "Le sei colonne",
     "li_kolom": [
-      "<strong>Paese</strong> — verde se è lo stesso paese, oro se è un paese confinante. Contano solo i confini terrestri reali: Belgio e Inghilterra non sono vicini.",
-      "<strong>Età</strong> — verde entro un anno, oro entro tre, con una freccia.",
-      "<strong>Squadra</strong> — la squadra con cui il corridore è più noto. Giusto o sbagliato, senza colore intermedio.",
-      "<strong>Tipo</strong> — scalatore, velocista, classicomane, cronoman, completo. Giusto o sbagliato, senza colore intermedio.",
-      "<strong>Pro</strong> — l’anno del primo contratto da professionista, con una freccia verso l’anno giusto.",
-      "<strong>Vittorie</strong> — vittorie su strada in carriera, a fasce: 0–9, 10+, 25+, 50+, 99+, con una freccia."
+      "<strong>Paese</strong>; verde se è lo stesso paese, oro se è un paese confinante. Contano solo i confini terrestri reali: Belgio e Inghilterra non sono vicini.",
+      "<strong>Età</strong>; verde entro un anno, oro entro tre, con una freccia.",
+      "<strong>Squadra</strong>; la squadra con cui il corridore è più noto. Giusto o sbagliato, senza colore intermedio.",
+      "<strong>Tipo</strong>; scalatore, velocista, classicomane, cronoman, completo. Giusto o sbagliato, senza colore intermedio.",
+      "<strong>Pro</strong>; l’anno del primo contratto da professionista, con una freccia verso l’anno giusto.",
+      "<strong>Vittorie</strong>; vittorie su strada in carriera, a fasce: 0–9, 10+, 25+, 50+, 99+, con una freccia."
     ],
     "h_dagen": "Alcuni giorni sono più difficili",
     "p_dagen": "La settimana ha un ritmo:",
     "li_dagen": [
-      "<strong>Dal lunedì al giovedì</strong> — icone del ciclismo.",
-      "<strong>Venerdì</strong> — anche un’icona, ma sempre qualcuno che ha smesso. Un grande nome del passato.",
-      "<strong>Sabato e domenica</strong> — il fine settimana è per i veri intenditori."
+      "<strong>Dal lunedì al giovedì</strong>; icone del ciclismo.",
+      "<strong>Venerdì</strong>; anche un’icona, ma sempre qualcuno che ha smesso. Un grande nome del passato.",
+      "<strong>Sabato e domenica</strong>; il fine settimana è per i veri intenditori."
     ],
     "h_bidon": "La borraccia",
     "p_bidon": "Accanto al campo di inserimento c’è una borraccia. Se sei bloccato, ti rivela il valore di una colonna: una colonna che non hai ancora verde, perché una colonna che già conosci non ti aiuta.",
@@ -143,29 +143,29 @@
     ],
     "h_kleur": "Qué significan los colores",
     "li_kleur": [
-      "<strong>Verde&nbsp;✓</strong> — exacto.",
-      "<strong>Dorado&nbsp;~</strong> — cerca. Un país vecino, o dentro de tres años.",
-      "<strong>Arena claro&nbsp;×</strong> — incorrecto.",
-      "<strong>↑ y ↓</strong> — en edad, debut profesional y victorias: más alto o más bajo."
+      "<strong>Verde&nbsp;✓</strong>; exacto.",
+      "<strong>Dorado&nbsp;~</strong>; cerca. Un país vecino, o dentro de tres años.",
+      "<strong>Arena claro&nbsp;×</strong>; incorrecto.",
+      "<strong>↑ y ↓</strong>, en edad, debut profesional y victorias: más alto o más bajo."
     ],
     "p_kleur1": "Los tres colores van de oscuro a claro: el verde es el más oscuro, el dorado está en medio, el incorrecto es el más claro.",
     "p_kleur2": "País, Edad, Pro y Victorias pueden ponerse dorados. Tipo y Equipo no; esos son correctos o incorrectos y nada intermedio.",
     "p_kleur3": "Cada casilla lleva arriba a la derecha una marca pequeña: ✓, × o una flecha. Así el juego funciona también si percibes los colores de otra manera. En los ajustes hay además un modo para daltónicos.",
     "h_kolom": "Las seis columnas",
     "li_kolom": [
-      "<strong>País</strong> — verde si es el mismo país, dorado si es un país vecino. Solo cuentan las fronteras terrestres reales: Bélgica e Inglaterra no son vecinos.",
-      "<strong>Edad</strong> — verde dentro de un año, dorado dentro de tres, con una flecha.",
-      "<strong>Equipo</strong> — el equipo con el que el corredor es más conocido. Correcto o incorrecto, sin color intermedio.",
-      "<strong>Tipo</strong> — escalador, velocista, clasicómano, contrarrelojista, completo. Correcto o incorrecto, sin color intermedio.",
-      "<strong>Pro</strong> — el año del primer contrato profesional, con una flecha hacia el año correcto.",
-      "<strong>Victorias</strong> — victorias en ruta en la carrera deportiva, por tramos: 0–9, 10+, 25+, 50+, 99+, con una flecha."
+      "<strong>País</strong>; verde si es el mismo país, dorado si es un país vecino. Solo cuentan las fronteras terrestres reales: Bélgica e Inglaterra no son vecinos.",
+      "<strong>Edad</strong>; verde dentro de un año, dorado dentro de tres, con una flecha.",
+      "<strong>Equipo</strong>; el equipo con el que el corredor es más conocido. Correcto o incorrecto, sin color intermedio.",
+      "<strong>Tipo</strong>; escalador, velocista, clasicómano, contrarrelojista, completo. Correcto o incorrecto, sin color intermedio.",
+      "<strong>Pro</strong>; el año del primer contrato profesional, con una flecha hacia el año correcto.",
+      "<strong>Victorias</strong>; victorias en ruta en la carrera deportiva, por tramos: 0–9, 10+, 25+, 50+, 99+, con una flecha."
     ],
     "h_dagen": "Algunos días son más difíciles",
     "p_dagen": "La semana tiene un ritmo:",
     "li_dagen": [
-      "<strong>De lunes a jueves</strong> — iconos del ciclismo.",
-      "<strong>Viernes</strong> — también un icono, pero siempre alguien retirado. Un gran nombre de antes.",
-      "<strong>Sábado y domingo</strong> — el fin de semana es para los verdaderos entendidos."
+      "<strong>De lunes a jueves</strong>; iconos del ciclismo.",
+      "<strong>Viernes</strong>; también un icono, pero siempre alguien retirado. Un gran nombre de antes.",
+      "<strong>Sábado y domingo</strong>; el fin de semana es para los verdaderos entendidos."
     ],
     "h_bidon": "El bidón",
     "p_bidon": "Junto al campo de entrada hay un bidón. Si te atascas, te revela el valor de una columna: una columna que aún no tengas en verde, porque una columna que ya conoces no te ayuda.",
