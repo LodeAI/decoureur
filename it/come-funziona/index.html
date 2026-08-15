@@ -51,12 +51,17 @@
 <body>
 
 <nav class="talen" aria-label="Lingua">
-  <a href="/uitleg/" hreflang="nl">NL</a>
-  <a href="/en/how-it-works/" hreflang="en">EN</a>
-  <a href="/fr/explication/" hreflang="fr">FR</a>
-  <a href="/de/so-gehts/" hreflang="de">DE</a>
-  <a href="/it/come-funziona/" hreflang="it" aria-current="true">IT</a>
-  <a href="/es/como-funciona/" hreflang="es">ES</a>
+  <details class="taalkiezer" name="taalkiezer">
+    <summary aria-label="Lingua: Italiano"><span aria-hidden="true">IT</span></summary>
+    <ul>
+      <li><a href="/uitleg/" hreflang="nl" lang="nl">Nederlands</a></li>
+      <li><a href="/en/how-it-works/" hreflang="en" lang="en">English</a></li>
+      <li><a href="/fr/explication/" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/so-gehts/" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/it/come-funziona/" hreflang="it" lang="it" aria-current="true">Italiano</a></li>
+      <li><a href="/es/como-funciona/" hreflang="es" lang="es">Español</a></li>
+    </ul>
+  </details>
 </nav>
 
 <header class="kop">
@@ -73,6 +78,7 @@
 
   <p class="inleiding">Digiti il nome di un corridore e ne scegli uno dalla lista. Dopo ogni tentativo sei colonne ti dicono quanto eri vicino.</p>
 
+  <div class="kaart">
   <svg class="iconen" aria-hidden="true" focusable="false"><defs>
     <symbol id="i-land" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.6"></circle><path d="M3.4 12h17.2"></path><ellipse cx="12" cy="12" rx="4.1" ry="8.6"></ellipse></symbol>
     <symbol id="i-leeftijd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3.6" y="5.2" width="16.8" height="15" rx="3"></rect><path d="M3.6 10h16.8M8.4 3.2v3.6M15.6 3.2v3.6"></path></symbol>
@@ -81,9 +87,14 @@
     <symbol id="i-prof" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3.6l2.7 5.4 5.9.8-4.3 4.2 1 5.9-5.3-2.9-5.3 2.9 1-5.9-4.3-4.2 5.9-.8z"></path></symbol>
     <symbol id="i-zeges" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.8h8v4.6a4 4 0 0 1-8 0z"></path><path d="M8 5.4H5.4v1.1A3.6 3.6 0 0 0 8.6 10"></path><path d="M16 5.4h2.6v1.1A3.6 3.6 0 0 1 15.4 10"></path><path d="M12 12.6v3.6M8.4 19.6h7.2"></path></symbol>
     <symbol id="i-kassei" viewBox="0 0 24 24"><g fill="currentColor"><rect x="2.9" y="5.9" width="6" height="3.5" rx="1.1" transform="rotate(-16 5.9 7.65)"></rect><rect x="9" y="3.9" width="6.4" height="3.7" rx="1.1" transform="rotate(-2 12.2 5.75)"></rect><rect x="15.5" y="6.2" width="5.6" height="3.4" rx="1.1" transform="rotate(16 18.3 7.9)"></rect><rect x="2.1" y="11.5" width="5" height="3.4" rx="1.1" transform="rotate(-12 4.6 13.2)"></rect><rect x="7.9" y="9.7" width="7" height="3.8" rx="1.1"></rect><rect x="15.8" y="11.3" width="5.3" height="3.6" rx="1.1" transform="rotate(12 18.45 13.1)"></rect><rect x="3.7" y="17" width="5.8" height="3.4" rx="1.1" transform="rotate(-8 6.6 18.7)"></rect><rect x="9.6" y="15.6" width="6.2" height="4" rx="1.1" transform="rotate(2 12.7 17.6)"></rect><rect x="16.2" y="17.2" width="4.9" height="3.3" rx="1.1" transform="rotate(10 18.65 18.85)"></rect></g></symbol>
+    <symbol id="i-t-klimmer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M7.6 20L14.6 7 21.6 20z"></path><path d="M11.5 13.2l1.5-1.3 1.6 1.1 1.6-1.1 1.5 1.3"></path><path d="M1.4 20L6.6 10.6 11.8 20z"></path><path d="M4.3 15.4l1.2-1.1 1.3 1 1.4-1"></path></symbol>
+    <symbol id="i-t-sprinter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="17.2" r="3.4"></circle><circle cx="20" cy="17.2" r="3.4"></circle><path d="M11 11h6.4M11 11l2.8 6.2H9M17.4 11l2.6 6.2"></path><path d="M12.4 9.8l3.6-3"></path><circle cx="17.9" cy="5.2" r="1.9"></circle><path d="M0.8 7.6h4.2M0.8 11.4h3.2M2 15.2h2.2"></path></symbol>
+    <symbol id="i-t-klassiek" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="4.4" y="4.6" width="3.7" height="3.4" rx="1.2"></rect><rect x="9.2" y="4.6" width="3.7" height="3.4" rx="1.2"></rect><rect x="14" y="4.6" width="3.7" height="3.4" rx="1.2"></rect><rect x="18.8" y="4.6" width="1.8" height="3.4" rx="0.9"></rect><rect x="2" y="10.3" width="1.8" height="3.4" rx="0.9"></rect><rect x="4.9" y="10.3" width="3.7" height="3.4" rx="1.2"></rect><rect x="9.7" y="10.3" width="3.7" height="3.4" rx="1.2"></rect><rect x="14.5" y="10.3" width="3.7" height="3.4" rx="1.2"></rect><rect x="19.3" y="10.3" width="1.8" height="3.4" rx="0.9"></rect><rect x="3.3" y="16" width="3.7" height="3.4" rx="1.2"></rect><rect x="8.1" y="16" width="3.7" height="3.4" rx="1.2"></rect><rect x="12.9" y="16" width="3.7" height="3.4" rx="1.2"></rect><rect x="17.7" y="16" width="3.7" height="3.4" rx="1.2"></rect></symbol>
+    <symbol id="i-t-tijdrit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="13.6" r="7.6"></circle><rect x="10.4" y="3" width="3.2" height="3.2" rx="0.9"></rect><path d="M12 13.6l3.4-3.2"></path></symbol>
+    <symbol id="i-t-allround" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M9.2 4h5.6l4.6 2.6-1.8 4-2-1.1V20H7.4V9.5l-2 1.1-1.8-4z"></path><path d="M9.6 4.2a2.5 2.5 0 0 0 4.8 0"></path></symbol>
   </defs></svg>
 
-  <div class="kolomkop" aria-hidden="true">
+  <div class="kolomkoppen" aria-hidden="true">
     <div><svg class="kolomicoon"><use href="#i-land"></use></svg><span>Paese</span></div>
     <div><svg class="kolomicoon"><use href="#i-leeftijd"></use></svg><span>Età</span></div>
     <div><svg class="kolomicoon"><use href="#i-ploeg"></use></svg><span>Squadra</span></div>
@@ -102,7 +113,7 @@
         <div class="cel fout"><span class="verborgen">Paese — sbagliato</span><span aria-hidden="true"><span class="celwaarde">🇧🇪</span></span><span class="merkje" aria-hidden="true">✕</span></div>
         <div class="cel fout"><span class="verborgen">Età — sbagliato</span><span aria-hidden="true"><span class="celwaarde">81</span></span><span class="merkje" aria-hidden="true">↓</span></div>
         <div class="cel fout"><span class="verborgen">Squadra — sbagliato</span><span aria-hidden="true"><span class="celwaarde">MOL</span></span><span class="merkje" aria-hidden="true">✕</span></div>
-        <div class="cel goed"><span class="verborgen">Tipo — giusto</span><span aria-hidden="true"><span class="celwaarde">Completo</span></span><span class="merkje" aria-hidden="true">✓</span></div>
+        <div class="cel goed"><span class="verborgen">Tipo: Completo — giusto</span><span aria-hidden="true"><svg class="celicoon"><use href="#i-t-allround"></use></svg></span><span class="merkje" aria-hidden="true">✓</span></div>
         <div class="cel fout"><span class="verborgen">Pro — sbagliato</span><span aria-hidden="true"><span class="celwaarde">1965</span></span><span class="merkje" aria-hidden="true">↑</span></div>
         <div class="cel goed"><span class="verborgen">Vittorie — giusto</span><span aria-hidden="true"><span class="celwaarde">99+</span></span><span class="merkje" aria-hidden="true">✓</span></div>
     </div>
@@ -120,7 +131,7 @@
         <div class="cel fout"><span class="verborgen">Paese — sbagliato</span><span aria-hidden="true"><span class="celwaarde">🇧🇪</span></span><span class="merkje" aria-hidden="true">✕</span></div>
         <div class="cel fout"><span class="verborgen">Età — sbagliato</span><span aria-hidden="true"><span class="celwaarde">31</span></span><span class="merkje" aria-hidden="true">↓</span></div>
         <div class="cel fout"><span class="verborgen">Squadra — sbagliato</span><span aria-hidden="true"><span class="celwaarde">TVL</span></span><span class="merkje" aria-hidden="true">✕</span></div>
-        <div class="cel fout"><span class="verborgen">Tipo — sbagliato</span><span aria-hidden="true"><span class="celwaarde">Classiche</span></span><span class="merkje" aria-hidden="true">✕</span></div>
+        <div class="cel fout"><span class="verborgen">Tipo: Classiche — sbagliato</span><span aria-hidden="true"><svg class="celicoon"><use href="#i-t-klassiek"></use></svg></span><span class="merkje" aria-hidden="true">✕</span></div>
         <div class="cel goed"><span class="verborgen">Pro — giusto</span><span aria-hidden="true"><span class="celwaarde">2019</span></span><span class="merkje" aria-hidden="true">✓</span></div>
         <div class="cel fout"><span class="verborgen">Vittorie — sbagliato</span><span aria-hidden="true"><span class="celwaarde">50+</span></span><span class="merkje" aria-hidden="true">↑</span></div>
     </div>
@@ -138,7 +149,7 @@
         <div class="cel fout"><span class="verborgen">Paese — sbagliato</span><span aria-hidden="true"><span class="celwaarde">🇩🇰</span></span><span class="merkje" aria-hidden="true">✕</span></div>
         <div class="cel bijna"><span class="verborgen">Età — vicino</span><span aria-hidden="true"><span class="celwaarde">29</span></span><span class="merkje" aria-hidden="true">↓</span></div>
         <div class="cel fout"><span class="verborgen">Squadra — sbagliato</span><span aria-hidden="true"><span class="celwaarde">TVL</span></span><span class="merkje" aria-hidden="true">✕</span></div>
-        <div class="cel goed"><span class="verborgen">Tipo — giusto</span><span aria-hidden="true"><span class="celwaarde">Completo</span></span><span class="merkje" aria-hidden="true">✓</span></div>
+        <div class="cel goed"><span class="verborgen">Tipo: Completo — giusto</span><span aria-hidden="true"><svg class="celicoon"><use href="#i-t-allround"></use></svg></span><span class="merkje" aria-hidden="true">✓</span></div>
         <div class="cel goed"><span class="verborgen">Pro — giusto</span><span aria-hidden="true"><span class="celwaarde">2019</span></span><span class="merkje" aria-hidden="true">✓</span></div>
         <div class="cel fout"><span class="verborgen">Vittorie — sbagliato</span><span aria-hidden="true"><span class="celwaarde">50+</span></span><span class="merkje" aria-hidden="true">↑</span></div>
     </div>
@@ -156,7 +167,7 @@
         <div class="cel bijna"><span class="verborgen">Paese — paese confinante</span><span aria-hidden="true"><span class="celwaarde">🇮🇹</span></span><span class="merkje" aria-hidden="true">~</span></div>
         <div class="cel bijna"><span class="verborgen">Età — vicino</span><span aria-hidden="true"><span class="celwaarde">30</span></span><span class="merkje" aria-hidden="true">↓</span></div>
         <div class="cel fout"><span class="verborgen">Squadra — sbagliato</span><span aria-hidden="true"><span class="celwaarde">NCI</span></span><span class="merkje" aria-hidden="true">✕</span></div>
-        <div class="cel fout"><span class="verborgen">Tipo — sbagliato</span><span aria-hidden="true"><span class="celwaarde">Crono</span></span><span class="merkje" aria-hidden="true">✕</span></div>
+        <div class="cel fout"><span class="verborgen">Tipo: Crono — sbagliato</span><span aria-hidden="true"><svg class="celicoon"><use href="#i-t-tijdrit"></use></svg></span><span class="merkje" aria-hidden="true">✕</span></div>
         <div class="cel fout"><span class="verborgen">Pro — sbagliato</span><span aria-hidden="true"><span class="celwaarde">2015</span></span><span class="merkje" aria-hidden="true">↑</span></div>
         <div class="cel fout"><span class="verborgen">Vittorie — sbagliato</span><span aria-hidden="true"><span class="celwaarde">25+</span></span><span class="merkje" aria-hidden="true">↑</span></div>
     </div>
@@ -174,7 +185,7 @@
         <div class="cel goed"><span class="verborgen">Paese — giusto</span><span aria-hidden="true"><span class="celwaarde">🇸🇮</span></span><span class="merkje" aria-hidden="true">✓</span></div>
         <div class="cel fout"><span class="verborgen">Età — sbagliato</span><span aria-hidden="true"><span class="celwaarde">36</span></span><span class="merkje" aria-hidden="true">↓</span></div>
         <div class="cel fout"><span class="verborgen">Squadra — sbagliato</span><span aria-hidden="true"><span class="celwaarde">RBH</span></span><span class="merkje" aria-hidden="true">✕</span></div>
-        <div class="cel fout"><span class="verborgen">Tipo — sbagliato</span><span aria-hidden="true"><span class="celwaarde">Scalatore</span></span><span class="merkje" aria-hidden="true">✕</span></div>
+        <div class="cel fout"><span class="verborgen">Tipo: Scalatore — sbagliato</span><span aria-hidden="true"><svg class="celicoon"><use href="#i-t-klimmer"></use></svg></span><span class="merkje" aria-hidden="true">✕</span></div>
         <div class="cel bijna"><span class="verborgen">Pro — vicino</span><span aria-hidden="true"><span class="celwaarde">2016</span></span><span class="merkje" aria-hidden="true">↑</span></div>
         <div class="cel fout"><span class="verborgen">Vittorie — sbagliato</span><span aria-hidden="true"><span class="celwaarde">50+</span></span><span class="merkje" aria-hidden="true">↑</span></div>
     </div>
@@ -192,13 +203,16 @@
         <div class="cel goed"><span class="verborgen">Paese — giusto</span><span aria-hidden="true"><span class="celwaarde">🇸🇮</span></span><span class="merkje" aria-hidden="true">✓</span></div>
         <div class="cel goed"><span class="verborgen">Età — giusto</span><span aria-hidden="true"><span class="celwaarde">27</span></span><span class="merkje" aria-hidden="true">✓</span></div>
         <div class="cel goed"><span class="verborgen">Squadra — giusto</span><span aria-hidden="true"><span class="celwaarde">UEX</span></span><span class="merkje" aria-hidden="true">✓</span></div>
-        <div class="cel goed"><span class="verborgen">Tipo — giusto</span><span aria-hidden="true"><span class="celwaarde">Completo</span></span><span class="merkje" aria-hidden="true">✓</span></div>
+        <div class="cel goed"><span class="verborgen">Tipo: Completo — giusto</span><span aria-hidden="true"><svg class="celicoon"><use href="#i-t-allround"></use></svg></span><span class="merkje" aria-hidden="true">✓</span></div>
         <div class="cel goed"><span class="verborgen">Pro — giusto</span><span aria-hidden="true"><span class="celwaarde">2019</span></span><span class="merkje" aria-hidden="true">✓</span></div>
         <div class="cel goed"><span class="verborgen">Vittorie — giusto</span><span aria-hidden="true"><span class="celwaarde">99+</span></span><span class="merkje" aria-hidden="true">✓</span></div>
     </div>
   </div>
 
   <p class="gokuitleg">Fatto. Tutte e sei le caselle verdi: <strong>Tadej Pogačar</strong>, sloveno, UAE Team Emirates, completo, professionista dal 2019 e con più di novantanove vittorie. Un talento fuori dal comune che vince sia le classiche sia i grandi giri, proprio come Merckx, ed è esattamente per questo che Tipo era subito verde.</p>
+
+    <p class="laatste">Sei tentativi non erano per forza necessari: con otto tentativi c’è spazio per ragionare invece che tirare a indovinare. Ogni casella che diventa verde resta verde.</p>
+  </div>
 
   <h2>Che cosa significano i colori</h2>
 
@@ -225,6 +239,17 @@
     <li><strong>Pro</strong> — l’anno del primo contratto da professionista, con una freccia verso l’anno giusto.</li>
     <li><strong>Vittorie</strong> — vittorie su strada in carriera, a fasce: 0–9, 10+, 25+, 50+, 99+, con una freccia.</li>
   </ul>
+
+  <div class="typelegende">
+    <h3>I cinque tipi</h3>
+    <ul>
+      <li><svg class="typeicoon" aria-hidden="true"><use href="#i-t-klimmer"></use></svg><span>Scalatore</span></li>
+      <li><svg class="typeicoon" aria-hidden="true"><use href="#i-t-sprinter"></use></svg><span>Velocista</span></li>
+      <li><svg class="typeicoon" aria-hidden="true"><use href="#i-t-klassiek"></use></svg><span>Classicomane</span></li>
+      <li><svg class="typeicoon" aria-hidden="true"><use href="#i-t-tijdrit"></use></svg><span>Cronoman</span></li>
+      <li><svg class="typeicoon" aria-hidden="true"><use href="#i-t-allround"></use></svg><span>Completo</span></li>
+    </ul>
+  </div>
 
   <h2>Alcuni giorni sono più difficili</h2>
 

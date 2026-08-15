@@ -5,11 +5,15 @@
  * pixelmaat die in tokens.json thuishoort** (CLAUDE.md §1.3); de site en de app
  * horen dezelfde kleuren te hebben, en dat blijft alleen zo met één bron.
  *
- * Geen framework, geen buildstap, geen externe fonts, geen JavaScript. Dat
- * laatste is geen luiheid maar een belofte: /privacy zegt dat er geen script op
- * staat. Er is niets dat dat afdwingt sinds _headers weg is (2026-08-10),
- * dus het is een regel en geen garantie. De taalkiezer is daarom drie
- * links en geen menu.
+ * Geen framework, geen buildstap, geen externe fonts, geen eigen JavaScript.
+ * Dat laatste is geen luiheid maar een belofte: /privacy zegt dat er geen
+ * script op staat. Er is niets dat dat afdwingt sinds _headers weg is
+ * (2026-08-10), dus het is een regel en geen garantie.
+ *
+ * **De taalkiezer is sinds 2026-08-15 een uitklapmenu** (zes talen werden te
+ * veel voor een rij links) en houdt zich aan diezelfde regel: `<details>` en
+ * `<summary>` doen het uitklappen, dus er komt geen regel script aan te pas.
+ * Hier stond dat een dropdown JavaScript vraagt — dat klopt niet.
  *
  * **Alle paden zijn relatief.** De site moet zowel op decoureur.eu/ werken als op
  * een submap; een pad dat met / begint breekt in het tweede geval. Zie
@@ -62,34 +66,100 @@ body {
 
 /* MARK: - Taalkiezer
  *
- * Rechtsboven, drie links, geen menu. Een dropdown vraagt JavaScript en dat mag
- * hier niet; bij drie talen is een rij links bovendien sneller in gebruik. */
+ * **Een uitklapmenu sinds 2026-08-15** (Lode: *"De website moet ook de taal
+ * rechtsboven in een drop down list invoeren in plaats van allemaal zichtbaar.
+ * Nu zeker omdat er 6 talen zijn."*). Hier stonden zes losse links op een rij;
+ * dat werkte bij drie talen en werd bij zes een balk die om aandacht vraagt op
+ * de plek waar de pagina hoort te beginnen.
+ *
+ * **Zonder JavaScript**, en dat is de reden dat het een `<details>` is en geen
+ * `<select>` of een eigen menu: deze site draagt geen eigen scripts (zie
+ * `README.md`), en `<details>`/`<summary>` is een uitklapper die de browser
+ * zelf levert — met toetsenbordbediening en de juiste rol voor een schermlezer
+ * inbegrepen. Hier stond eerder dat een dropdown JavaScript vraagt; dat klopt
+ * niet, en dat was de enige onderbouwing van de rij links.
+ *
+ * De namen staan in hun eigen taal (Nederlands, English, Deutsch …): in een
+ * menu met ruimte zegt "Deutsch" meer dan "DE". Het knopje zelf houdt de
+ * tweeletterige code, want daar is de ruimte er niet. */
 
 .talen {
   display: flex;
   justify-content: flex-end;
-  gap: var(--ruimte-s);
   padding: var(--ruimte-l) var(--ruimte-xl) 0;
-  font-size: 0.8125rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
-.talen a {
-  color: var(--kleur-ink-secondary);
-  text-decoration: none;
+.taalkiezer { position: relative; }
+
+.taalkiezer > summary {
+  /* Het driehoekje van de browser weg; de kiezer draagt zijn eigen chevron. */
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--ruimte-xs);
+  /* DESIGN-BRIEF §3.4 vraagt een raakvlak van 44 punten; met de padding
+   * hieronder komt de rij daar net op uit. */
+  min-height: 2.75rem;
   padding: var(--ruimte-xs) var(--ruimte-s);
   border-radius: var(--rondig-s);
+  border: 1px solid var(--kleur-divider);
+  background: var(--kleur-card);
+  color: var(--kleur-ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
-.talen a:hover { color: var(--kleur-ink); }
+.taalkiezer > summary::-webkit-details-marker { display: none; }
 
-/* De huidige taal is geen link maar een markering. `aria-current` doet het
- * semantische werk; deze regel maakt het zichtbaar. */
-.talen [aria-current="true"] {
-  color: var(--kleur-ink);
+/* De chevron, en hij draait mee als het menu openstaat — dat is het enige
+ * signaal dat er iets uitgeklapt is zodra het menu buiten beeld valt. */
+.taalkiezer > summary::after {
+  content: "";
+  width: 0.4em;
+  height: 0.4em;
+  border-right: 1.5px solid var(--kleur-ink-secondary);
+  border-bottom: 1.5px solid var(--kleur-ink-secondary);
+  transform: translateY(-0.15em) rotate(45deg);
+}
+
+.taalkiezer[open] > summary::after { transform: translateY(0.1em) rotate(-135deg); }
+
+.taalkiezer > summary:hover { border-color: var(--kleur-ink-secondary); }
+
+.taalkiezer ul {
+  position: absolute;
+  right: 0;
+  top: calc(100% + var(--ruimte-xs));
+  z-index: 10;
+  min-width: 11rem;
+  margin: 0;
+  padding: var(--ruimte-xs);
+  list-style: none;
   background: var(--kleur-card);
   border: 1px solid var(--kleur-divider);
+  border-radius: var(--rondig-m);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 8%);
+}
+
+.taalkiezer li { margin: 0; }
+
+.taalkiezer a {
+  display: block;
+  padding: var(--ruimte-s);
+  border-radius: var(--rondig-s);
+  color: var(--kleur-ink-secondary);
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.taalkiezer a:hover { background: var(--kleur-background); color: var(--kleur-ink); }
+
+/* De huidige taal is een markering en geen bestemming. `aria-current` doet het
+ * semantische werk; deze regel maakt het zichtbaar. */
+.taalkiezer [aria-current="true"] {
+  color: var(--kleur-ink);
   font-weight: 600;
 }
 
@@ -493,6 +563,57 @@ li { margin-bottom: var(--ruimte-s); }
 
 .celwaarde { display: block; }
 .celicoon { width: 18px; height: 18px; }  /* AttributeCell.iconHoogte */
+
+/* MARK: - De legende bij de kolom Type (2026-08-15)
+ *
+ * De Type-cellen droegen tot vandaag een tekstlabel ("Allround", "Klimmer");
+ * sinds de vectoren van Claude Design er zijn, staat daar hetzelfde symbool als
+ * in de app. Een symbool zonder legende is een raadsel erbij in plaats van een
+ * uitleg, dus die legende hoort er in dezelfde adem bij — vandaar dit blok,
+ * meteen onder de opsomming van de zes kolommen.
+ *
+ * De namen komen letterlijk uit de zin erboven, zodat de twee niet uit elkaar
+ * kunnen lopen. `mockup 3.png` is hetzelfde ding in de app. */
+
+.typelegende {
+  background: var(--kleur-card);
+  border: 1px solid var(--kleur-divider);
+  border-radius: var(--rondig-m);
+  padding: var(--ruimte-l) var(--ruimte-xl);
+  margin: var(--ruimte-l) 0 var(--ruimte-xl);
+}
+
+.typelegende h3 {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--kleur-ink-secondary);
+  margin: 0 0 var(--ruimte-s);
+}
+
+.typelegende ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ruimte-s) var(--ruimte-l);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.typelegende li {
+  display: flex;
+  align-items: center;
+  gap: var(--ruimte-xs);
+  margin: 0;
+}
+
+.typeicoon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  color: var(--kleur-ink);
+}
 
 .cel.goed  { background: var(--kleur-correct); color: var(--kleur-correct-ink); }
 .cel.bijna { background: var(--kleur-close);   color: var(--kleur-close-ink); }
