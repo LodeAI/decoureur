@@ -1,4 +1,4 @@
-/* De landingspagina van De Coureur (plan.md §18).
+/* De landingspagina van Coureur (plan.md §18).
  *
  * Kleuren, spacing en radius komen uit tokens.css, dat bestand is gegenereerd
  * uit design/tokens.json, net als logo.svg. **Typ hier nooit een hexcode of een
@@ -201,10 +201,23 @@ body {
  * COUREUR" op de tokenrol `wordmark`, en die is die dag van medium naar bold
  * gegaan (Lode). Deze regel stond op 500 en week daarmee af op precies de plek
  * waar site en app identiek horen te zijn. */
+/* **1,0833rem sinds 2026-08-16**, was 0,8125rem. De app heet Coureur en het
+ * woordmerk is dus COUREUR in plaats van DE COUREUR; Lode wil de kop even breed
+ * houden in een groter lettertype, en de site hoort daar precies in mee te gaan
+ * (zie de sectie hierboven: kop van de site = kop van de app).
+ *
+ * De factor is gemeten en niet geschat: op de systeemletter is DE COUREUR met
+ * deze spatiëring 1,3333 keer zo breed als COUREUR, en 0,8125 x 4/3 = 1,0833.
+ * Omdat `letter-spacing` in em staat, schaalt de spatiëring vanzelf mee en
+ * blijft de verhouding kloppen.
+ *
+ * De meting is gedaan op San Francisco. Op Windows en Android staat er een
+ * andere letter uit `--letter-tekst` en wijkt de breedte een fractie af; dat is
+ * inherent aan een systeemletterstapel en geen fout. */
 .woordmerk {
   display: block;
   font-family: var(--letter-tekst);
-  font-size: 0.8125rem;
+  font-size: 1.0833rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -230,7 +243,11 @@ body {
 }
 
 .kop.groot .woordmerk {
-  font-size: clamp(1.125rem, 4.5vw, 1.5rem);
+  /* Alle drie de waarden maal 1,3397, om dezelfde reden en met dezelfde meting
+   * als bij `.woordmerk` hierboven; hier met 0,22em spatiëring in plaats van
+   * 0,16em, wat een fractie andere factor geeft. Was
+   * clamp(1.125rem, 4.5vw, 1.5rem). */
+  font-size: clamp(1.507rem, 6.03vw, 2.01rem);
   /* Bold, net als `wordmarkHero` in de app (2026-08-10). */
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -786,12 +803,6 @@ footer {
   margin: 0 0 var(--ruimte-xs);
   font-size: 0.8125rem;
   opacity: 0.8;
-}
-
-.voet-pitch {
-  margin: 0 auto var(--ruimte-l);
-  max-width: 38rem;
-  color: var(--kleur-ink);
 }
 
 .voet-streep {

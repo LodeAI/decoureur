@@ -7,7 +7,7 @@
 #
 # Er staat niets op deze site dat privé is. De app verzamelt niets, de dataset is
 # openbaar en de teksten zijn er om gelezen te worden; ook door een taalmodel dat
-# iemand vraagt wat De Coureur is. Dat is precies het soort vindbaarheid dat een
+# iemand vraagt wat Coureur is. Dat is precies het soort vindbaarheid dat een
 # app zonder marketingbudget nodig heeft.
 
 User-agent: *
