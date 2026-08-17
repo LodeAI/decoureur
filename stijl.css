@@ -270,7 +270,20 @@ body {
 
 main {
   flex: 1;
-  padding: var(--ruimte-l) 0 var(--ruimte-xxxl);
+}
+
+/* **Dezelfde valkuil als bij de voet** (gerepareerd 2026-08-17). De verticale
+   padding stond op `main` alleen en werd door `.omhulsel` op nul gezet; een
+   klasse (0,1,0) wint van een elementselector (0,0,1). Elke pagina liep dus
+   zonder lucht van de kop naar de tekst en van de tekst naar de voetstreep.
+
+   Dat `main.start` hieronder `padding-top: 0` zet, verraadt dat die padding ooit
+   bedoeld was te werken. Die regel is (0,1,1) en staat later, dus de startpagina
+   houdt zijn strakke aansluiting op de kop. */
+
+main.omhulsel {
+  padding-top: var(--ruimte-l);
+  padding-bottom: var(--ruimte-xxxl);
 }
 
 /* **Niet verticaal centreren.** Dat deed het hier eerst, en dan zweefde de pitch
@@ -789,18 +802,42 @@ li { margin-bottom: var(--ruimte-s); }
 
 footer {
   border-top: 1px solid var(--kleur-divider);
-  padding: var(--ruimte-l) 0 var(--ruimte-xxl);
   color: var(--kleur-ink-secondary);
   font-size: 0.875rem;
   text-align: center;
 }
 
-/* De voet leest van boven naar onder: de kleine letter, de pitch, een streep, en
-   onderaan de links. Die volgorde is een keuze van Lode (2026-08-05); de links
-   staan het dichtst bij de duim en zijn het enige waar je in een voet op tikt. */
+/* **De verticale ruimte staat op `footer.omhulsel` en niet op `footer`, en dat is
+   de reparatie van 2026-08-17.**
+
+   Hier stond `padding: var(--ruimte-l) 0 var(--ruimte-xxl)` op `footer` alleen, en
+   die regel heeft nooit iets gedaan. Elke voet draagt ook `class="omhulsel"`, en
+   die zet `padding: 0 var(--ruimte-xl)`; een klasse (0,1,0) wint van een
+   elementselector (0,0,1), dus boven- en onderruimte werden allebei op nul gezet.
+   Het gevolg was zichtbaar: de kleine letter plakte tegen de streep van de voet en
+   de linkjes plakten tegen de onderrand van de pagina (Lode, 2026-08-17: *"onder
+   die shortcuts mag er ook wat witruimte zijn"*).
+
+   `footer.omhulsel` is (0,1,1) en wint wél. Zet hier dus nooit een kale
+   `footer`-regel neer voor iets wat `.omhulsel` ook aanraakt. */
+
+footer.omhulsel {
+  padding-top: var(--ruimte-xl);
+  padding-bottom: var(--ruimte-xxl);
+}
+
+/* De voet leest van boven naar onder: de kleine letter, een streep, en onderaan
+   de links. Die volgorde is een keuze van Lode (2026-08-05); de links staan het
+   dichtst bij de duim en zijn het enige waar je in een voet op tikt. */
+
+/* **Even veel lucht boven als onder de streep** (Lode, 2026-08-17: *"teveel
+   witspace tussen de lijn … en dan de shortcuts"*). Er stond 4 px boven en 16 px
+   onder; die asymmetrie las als een gat tussen de streep en de linkjes, terwijl de
+   regel erboven juist tegen de streep aan zat. Twaalf om twaalf leest als één
+   blok. Wijzig je de een, wijzig dan de ander mee. */
 
 .voet-klein {
-  margin: 0 0 var(--ruimte-xs);
+  margin: 0 0 var(--ruimte-m);
   font-size: 0.8125rem;
   opacity: 0.8;
 }
@@ -808,7 +845,7 @@ footer {
 .voet-streep {
   border: 0;
   border-top: 1px solid var(--kleur-divider);
-  margin: 0 auto var(--ruimte-l);
+  margin: 0 auto var(--ruimte-m);
   max-width: 38rem;
 }
 
