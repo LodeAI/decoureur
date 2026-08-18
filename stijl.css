@@ -798,7 +798,29 @@ li { margin-bottom: var(--ruimte-s); }
   color: var(--kleur-accent);
 }
 
-/* MARK: - Voet */
+/* MARK: - Voet
+ *
+ * **Opnieuw gemaakt op 2026-08-18** (Lode: *"die trekt nog altijd op niets met die
+ * horizontale lijnen die precies langer/korter zijn en de whitespace die precies
+ * ook niet klopt. Maak het opnieuw, maak er iets simpels van."*).
+ *
+ * Wat er mis was, en het was niet de witruimte alleen: **er stonden twee strepen
+ * onder elkaar met een verschillende lengte.** De rand van `footer` liep over de
+ * volle breedte van het omhulsel; de `<hr class="voet-streep">` daaronder was
+ * `max-width: 38rem` en werd door de padding van het omhulsel nog eens ingekort.
+ * Twee bijna-gelijke lijnen op 12 px van elkaar lezen als een fout, want niets op
+ * de pagina verklaart waarom de ene korter is dan de andere.
+ *
+ * **Nu: één streep, en die zit op `footer` zelf.** De `<hr>` is uit alle 37
+ * pagina's verwijderd. Wat overblijft is een blok van drie maten die je in één
+ * zin kunt zeggen: 24 boven, 16 tussen de kleine letter en de links, 24 onder.
+ * Boven en onder gelijk, want er is geen reden dat de ene groter is.
+ *
+ * **De verticale ruimte staat op `footer.omhulsel` en niet op `footer`.** Elke
+ * voet draagt ook `class="omhulsel"`, en die zet `padding: 0 var(--ruimte-xl)`;
+ * een klasse (0,1,0) wint van een elementselector (0,0,1), dus een kale
+ * `footer`-regel voor padding doet niets. Dat is de reparatie van 2026-08-17 en
+ * ze blijft nodig. */
 
 footer {
   border-top: 1px solid var(--kleur-divider);
@@ -807,46 +829,23 @@ footer {
   text-align: center;
 }
 
-/* **De verticale ruimte staat op `footer.omhulsel` en niet op `footer`, en dat is
-   de reparatie van 2026-08-17.**
-
-   Hier stond `padding: var(--ruimte-l) 0 var(--ruimte-xxl)` op `footer` alleen, en
-   die regel heeft nooit iets gedaan. Elke voet draagt ook `class="omhulsel"`, en
-   die zet `padding: 0 var(--ruimte-xl)`; een klasse (0,1,0) wint van een
-   elementselector (0,0,1), dus boven- en onderruimte werden allebei op nul gezet.
-   Het gevolg was zichtbaar: de kleine letter plakte tegen de streep van de voet en
-   de linkjes plakten tegen de onderrand van de pagina (Lode, 2026-08-17: *"onder
-   die shortcuts mag er ook wat witruimte zijn"*).
-
-   `footer.omhulsel` is (0,1,1) en wint wél. Zet hier dus nooit een kale
-   `footer`-regel neer voor iets wat `.omhulsel` ook aanraakt. */
-
 footer.omhulsel {
   padding-top: var(--ruimte-xl);
-  padding-bottom: var(--ruimte-xxl);
+  padding-bottom: var(--ruimte-xl);
 }
 
-/* De voet leest van boven naar onder: de kleine letter, een streep, en onderaan
-   de links. Die volgorde is een keuze van Lode (2026-08-05); de links staan het
-   dichtst bij de duim en zijn het enige waar je in een voet op tikt. */
+/* De voet leest van boven naar onder: de kleine letter, dan de links. Die
+   volgorde is een keuze van Lode (2026-08-05); de links staan het dichtst bij de
+   duim en zijn het enige waar je in een voet op tikt.
 
-/* **Even veel lucht boven als onder de streep** (Lode, 2026-08-17: *"teveel
-   witspace tussen de lijn … en dan de shortcuts"*). Er stond 4 px boven en 16 px
-   onder; die asymmetrie las als een gat tussen de streep en de linkjes, terwijl de
-   regel erboven juist tegen de streep aan zat. Twaalf om twaalf leest als één
-   blok. Wijzig je de een, wijzig dan de ander mee. */
+   **Geen `opacity` meer.** De kleine letter stond op `--kleur-ink-secondary` met
+   `opacity: 0.8` eroverheen, en dat haalt 3,2:1 op papier; onder de 4,5:1 die
+   WCAG voor tekst van 13 px vraagt. De kleur zelf haalt 4,6:1. Gedempt genoeg
+   dus, en dan hoeft de doorzichtigheid er niet bij. */
 
 .voet-klein {
-  margin: 0 0 var(--ruimte-m);
+  margin: 0 0 var(--ruimte-l);
   font-size: 0.8125rem;
-  opacity: 0.8;
-}
-
-.voet-streep {
-  border: 0;
-  border-top: 1px solid var(--kleur-divider);
-  margin: 0 auto var(--ruimte-m);
-  max-width: 38rem;
 }
 
 footer nav {
@@ -878,9 +877,42 @@ footer nav a:focus-visible {
 @media (max-width: 30rem) {
   .omhulsel { padding: 0 var(--ruimte-l); }
   .talen { padding: var(--ruimte-m) var(--ruimte-l) 0; }
-  .rij { grid-template-columns: repeat(3, 1fr); }
   .kaart { padding: var(--ruimte-l); }
   .kop { padding-left: var(--ruimte-l); padding-right: var(--ruimte-l); }
+
+  /* **Zes op één regel, ook op een telefoon** (Lode, 2026-08-18: *"Op mobiel zou
+     dit ook net op 1 lijn moeten komen te staan, net zoals ze in de app ook op 1
+     lijn staan."*).
+
+     Hier stond `repeat(3, 1fr)`. Dat brak de rij in twee halve rijen van drie,
+     terwijl `.kolomkoppen` op zes bleef staan: de strook zei COUNTRY AGE TEAM TYPE
+     PRO WINS en daaronder stonden zes vakjes die met geen enkele kop meer onder
+     elkaar stonden. Een uitleg die het spel verkeerd uitlegt is erger dan een
+     krappe. De app doet zes en houdt dat vol op elk toestel; dit doet nu hetzelfde.
+
+     **De gap blijft `--ruimte-xs`,** want dat is `GuessGridHeader.columnSpacing`
+     in de app. Krimpen om ruimte te maken zou precies de gelijkenis opgeven die
+     hier de bedoeling is.
+
+     Wat er dan te weinig ruimte heeft is de tekst, en daar doet de app hetzelfde
+     mee: `AttributeCell` zet `.lineLimit(1)` met `.minimumScaleFactor(0.55)`, dus
+     de waarde krimpt in plaats van af te kappen of te wikkelen. CSS kent dat niet,
+     dus het staat hier uitgerekend. Een cel is binnenin `(100vw - 108px) / 6`
+     breed; dat is de vensterbreedte min de padding van `.omhulsel` (2×16), die van
+     `.kaart` (2×16), de vijf gaten (5×4) en de padding van de cel zelf (2×2).
+     Gedeeld door 15 past de langste waarde die er staat, een jaartal van vier
+     cijfers, er met marge in. Het `min()` zorgt dat er niets gebeurt zolang het
+     past: vanaf 375 px staat de tekst gewoon op 17 px, net als in de app.
+
+     Verandert de padding van `.omhulsel` of `.kaart` hierboven, dan verandert die
+     108 mee. */
+  .rij { grid-template-columns: repeat(6, 1fr); }
+  .cel { font-size: min(1.0625rem, calc((100vw - 108px) / 15)); }
+
+  /* Dezelfde behandeling voor de kopjes erboven, om dezelfde reden: "COUNTRY" is
+     het langste woord van de zes en past onder ~370 px niet meer in een zesde van
+     het scherm. Boven die breedte doet dit niets. */
+  .kolomkoppen span { font-size: min(0.5625rem, calc((100vw - 108px) / 30)); }
 }
 
 /* MARK: - Binnenkort beschikbaar (2026-08-05) */
