@@ -506,12 +506,38 @@ li { margin-bottom: var(--ruimte-s); }
 
 .goknr { background: var(--kleur-surface); color: var(--kleur-ink-secondary); }
 
-/* Het geslachtsteken staat in de app in een groen getint vakje. */
+/* Het geslachtsteken staat in de app in een groen getint vakje.
+ *
+ * **Het teken is een SVG en geen letterteken meer (2026-08-21).** Hier stond
+ * `\u2642` als tekst in de span, en op een telefoon stond dat merkbaar scheef in
+ * het vakje (Lode). Twee dingen samen veroorzaakten dat, en ze zijn allebei
+ * eigen aan een glyph en niet aan de opmaak:
+ *
+ *   - **Een glyph wordt op zijn basislijn gezet, niet op zijn inkt.**
+ *     `align-items: center` centreert de regelbox; waar de inkt daarbinnen valt
+ *     bepaalt het lettertype. Het marsteken tekent zijn pijl bóven de
+ *     kapitaalhoogte, dus zijn inkt zit hoger dan het midden van die regelbox.
+ *   - **`\u2642` heeft geen vaste terugval.** `-apple-system` levert hem niet in
+ *     elke snede, en dan kiest iOS er zelf een, tot Apple Color Emoji aan toe.
+ *     Die heeft heel andere maten en zet het teken zichtbaar naar beneden.
+ *
+ * Beide gaten zitten in het lettertype, dus daar valt met CSS niet omheen te
+ * rekenen. Een SVG heeft geen basislijn en geen terugval: hij vult het vakje
+ * precies zoals hij getekend is, op elk toestel. Dat is meteen wat de rest van
+ * deze pagina al doet; de zes kolomiconen en de typeiconen staan er ook zo in.
+ *
+ * De app houdt wél het letterteken (`GenderMark.swift`), en dat blijft kloppen:
+ * daar staat het teken los in een regel tekst en niet in een vakje, dus de
+ * basislijn is er juist de bedoeling. */
 .gokgeslacht {
   background: color-mix(in srgb, var(--kleur-correct) 14%, var(--kleur-card));
   color: var(--kleur-correct);
-  font-size: 1.0625rem;
 }
+
+/* Achttien punten, dezelfde maat als `.kolomicoon`, zodat het teken en de
+ * kolomkoppen even zwaar wegen. Als flex-item in `.gokgeslacht` wordt de SVG
+ * geblokkeerd, dus er blijft geen regelruimte onder staan. */
+.geslachticoon { width: 18px; height: 18px; }
 
 .goknaam {
   flex: 1;
